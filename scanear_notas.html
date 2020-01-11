@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="input-group">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroupFileAddon01">Pasta para Scanear: </span>
+        </div>
+        <div class="custom-file">
+            <input directory webkitdirectory type="file" class="custom-file-input" id="pasta_xmls" aria-describedby="inputGroupFileAddon01">
+            <label class="custom-file-label" for="pasta_xmls">Selecione a Pasta</label>
+        </div>
+    </div>
+</div>
+
+<div id="sumario_arquivos" style="display: none;">
+
+    <h3>Sumários de Arquivos:</h3><br>
+    <b>Nº de Arquivos: </b><label id="n_arquivos">0</label><br>
+    <b>% de Arquivos Processados: </b><label id="porcentagem_arquivos">0%</label><br>
+    <b>Tempo Decorrido: </b><label id="tempo_decorrido">00:00:00</label><br>
+
+	<div class="row">
+		<div class="col-2 offset-5">	
+			<button type="button" class="btn btn-success" id="processar">Processar</button>
+		</div>
+	</div>
+
+</div>
+
+<div style="color: red;">
+	INFORMAÇÕES DOUGLAS: <br>
+	PRIMEIRO SELECIONA A PASTA PRA TU VER COMO EU DEIXEI AS COISAS.<br>
+	TU VAI PEGAR OS ARQUIVOS UM A UM PELO COMANDO: <b>$("#pasta_xmls")[0].files[numero_do_arquivo_aqui];</b><br>
+	DEPOIS TU VAI LER AS INFORMAÇÕES DO ARQUIVO E JOGAR NO BANDO DE DADOS CAMPO POR CAMPO.<br>
+	TEM UMA PASTA NOVA AQUI CHAMADA XMLS, É DELA QUE TU VAI LER OS DADOS, CADA ARQUIVO DELA TEM CAMPOS DELIMITADOS POR TAGS QUE NEM AQUI NO HTML.<br>
+	VÊ NA INTERNET COMO LER CAMPOS DE XMLS COM JAVASCRIPT E JQUERY.<br>
+</div>
+
+<script type="text/javascript">
+$("#pasta_xmls").change(function(event) {
+    $("#sumario_arquivos").css({
+    	display: 'block'
+    });
+    $(".custom-file-label").html($("#pasta_xmls")[0].files[0].path.replace($("#pasta_xmls")[0].files[0].path.split("\\")[$("#pasta_xmls")[0].files[0].path.split("\\").length - 1], ""));
+    $("#n_arquivos").html($("#pasta_xmls")[0].files.length);
+});
+</script>
+<style type="text/css">
+.custom-file-label::after {
+    display: none;
+}
+</style>

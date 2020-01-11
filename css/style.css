@@ -301,46 +301,6 @@ ul.dropdown-menu{
     z-index: 1;
     display: inline-block;
 }
-.sb-search-input {
-    outline: none;
-    background: #fff;
-    width: 100%;
-    margin: 0;
-    z-index: 10;
-    font-size: 1em;
-    color: #383838;
-    padding: 0.5em 1em;
-    border: 1px solid #8c8c8c;
-    background: url(../images/search-icon.png) no-repeat 160px 12px;
-	-webkit-appearance: none; /* for box shadows to show on iOS */
-}
-.sb-search-input::-webkit-input-placeholder {
-	color:#888;
-}
-.sb-search-input:-moz-placeholder {
-	color: #888;
-}
-.sb-search-input::-moz-placeholder {
-	color: #888;
-}
-.sb-search-input:-ms-input-placeholder {
-	color: #888;
-}
-.input__label {
-	-webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-    cursor: text;
-}
-
 .graphic {
 	fill: none;
 	-webkit-transform: scale3d(1, -1, 1);
@@ -353,30 +313,6 @@ ul.dropdown-menu{
     stroke-dasharray: 962;
     stroke-dashoffset: 962;
 }
-/* Madoka */
-.input__field--madoka {
-	display: block;
-	float: right;
-}
-.input__field--madoka:focus {
-	outline: none;
-}
-.input__field--madoka:focus + .input__label,
-.input--filled .input__label {
-	cursor: default;
-	pointer-events: none;
-}
-.input__field--madoka:focus + .input__label .graphic,
-.input--filled .graphic {
-	stroke-dashoffset: 0;
-}
-
-.input__field--madoka:focus + .input__label .input__label-content{
-	-webkit-transform: scale3d(0.81, 0.81, 1) translate3d(0, 4em, 0);
-	transform: scale3d(0.81, 0.81, 1) translate3d(0, 4em, 0);
-}
-/*--//search-ends --*/
-/*--- Progress Bar ----*/
 .meter {
 	position: relative;
 }
@@ -1493,21 +1429,6 @@ section#tables  p {
     margin-top:2em;
     padding: 2em;
 }
-/* --  general forms  -- */
-.form-control1, .form-control_2.input-sm{
-  border: 1px solid #ccc;
-  padding: 5px 8px;
-  color: #616161;
-  background: #fff;
-  box-shadow: none !important;
-  width: 100%;
-  font-size: 0.85em;
-  font-weight: 300;
-  height: 40px;
-  border-radius: 0;
-  -webkit-appearance: none;
-  resize: none;
-}
 .general .tab-content {
     padding: 1.5em 0.5em 0;
 }
@@ -1555,21 +1476,6 @@ button.note-color-btn {
   margin-bottom: 1em;
   font-weight: 300;
 }
-.input-icon.right > i, .input-icon.right .icon {
-  right:12px;
-  float: right;
-}
-.input-icon > i, .input-icon .icon {
-  position: absolute;
-  display: block;
-  margin: 10px 8px;
-  line-height: 14px;
-  color: #999;
-}
-.form-group input#disabledinput {
-	cursor: not-allowed;
-}
-/*--//forms--*/
 /*--validation--*/
 .validation-grids {
     padding: 0;
@@ -1665,9 +1571,6 @@ form.search-form {
     color: #888;
     margin-bottom: 1em;
 }
-.error-page input.form-control {
-    height: 36px;
-}
 .error-page h3 i.fa {
     color: #F2B33F;
 }
@@ -1720,22 +1623,6 @@ form.search-form {
 .login-top  h4  a:hover{
     color: #555;
 }
-.login-page input[type="email"], .login-page input[type="password"] {
-    font-size: 1em;
-    padding: 14px 15px 14px 37px;
-    width: 100%;
-    color: #A8A8A8;
-    outline: none;
-    border: 1px solid #D3D3D3;
-    background: #FFFFFF;
-    margin: 0em 0em 1.5em 0em;
-}
-.login-page input.user {
-    background: url(../images/user.png)no-repeat 8px 16px #fff;
-}
-.login-page input.lock {
-    background: url(../images/lock.png)no-repeat 8px 16px #fff;
-}
 .login-page label.checkbox {
     margin: 0 0 0 1.3em;
     font-size: 1em;
@@ -1768,26 +1655,6 @@ form.search-form {
 }
 .forgot a:hover{
     color: #f2b33f;
-}
-.login-page input[type="submit"] {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: #fff;
-    background: #F2B33F;
-    width: 40%;
-    padding: .6em 1em;
-    font-size: 1em;
-    margin: 0.5em auto 0;
-    display: block;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	-o-transition: 0.5s all;
-}
-.login-page input[type="submit"]:hover{
-    background: #337ab7;
 }
 .login-page-bottom {
     text-align: center;
@@ -2061,28 +1928,6 @@ p.creating {
     float: left;
     margin-top: 1em;
 }
-.signup-page input[type="text"],.signup-page input[type="email"],.signup-page input[type="password"]{
-	outline:none;
-	border: 1px solid #D0D0D0;
-    background: none;
-    font-size: 15px;
-    padding: 14px 15px 14px 37px;
-	width:100%;
-    margin: 0em 0 1.5em 0;
-}
-.signup-page input[type="email"]{
-    background: url(../images/mail.png)no-repeat 8px 16px #fff;
-	background-size: 20px;
-}
-.signup-page input[type="text"] {
-    background: url(../images/user.png)no-repeat 8px 16px #fff;
-}
-.signup-page input[type="password"] {
-    background: url(../images/lock.png)no-repeat 8px 16px #fff;
-}
-.signup-page input[type="text"]:focus ,.signup-page input[type="email"]:focus,.signup-page input[type="password"]:focus,.login-page input[type="email"]:focus,.login-page input[type="password"]:focus{
-    border-color: #337ab7;
-}
 .signup-page h5,.signup-page h6{
 	margin: 0 0 1em;
     color: #629aa9;
@@ -2111,27 +1956,6 @@ p.creating {
 }
 .sub-login-right p a:hover{
 	color:#fff;
-}
-.sub_home  input[type="submit"] {
-    border: none;
-    outline: none;
-    cursor: pointer;
-    color: #fff;
-    background: #f2b33f;
-    width: 25%;
-    padding: .6em 1em;
-    font-size: 1em;
-    margin: 0.5em auto 0em;
-    display: block;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-}
-.sub_home input[type="submit"]:hover {
-    background-color: #337ab7;
 }
 .signup-page .radios {
     margin-top: 1.5em;
@@ -2412,9 +2236,6 @@ li.head i.fa {
     font-size: 1em;
     color: #555;
 }
-.inbox-page input.checkbox {
-    margin: 13px 0 0;
-}
 .inbox-page img {
     width: 100%;
     vertical-align: bottom;
@@ -2499,32 +2320,6 @@ li.head i.fa {
     font-size: 0.9em;
     line-height: 1.8em;
 }
-.mail-body input[type="text"]{
-    width: 100%;
-    border: none;
-    color: #000;
-    border-bottom: 1px solid #F5F5F5;
-    padding: 1em 0;
-	outline:none;
-	transition:.5s all;
-	-webkit-transition:.5s all;
-	-moz-transition:.5s all;
-	font-size:1em;
-}
-.mail-body input[type="text"]:focus{
-	padding: 2em 0;
-	border-bottom: 1px solid #C7C5C5;
-}
-.mail-body input[type="submit"] {
-    border: none;
-    background: none;
-    font-size: 1em;
-    margin-top: 0.5em;
-    color: #4F52BA;
-	outline:none;
-	font-weight: 600;
-}
-/*--//inbox--*/
 /*--compose mail--*/
 .compose-left{
     width: 28%;
@@ -2626,34 +2421,12 @@ li.head i.fa {
     background: #f2b33f;
     color: #fff;
 }
-.compose-right .btn.btn-file>input[type='file'] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    outline: none;
-    background: white;
-    cursor: inherit;
-    display: inline-flex;
-    width: 100%;
-    padding: 0.4em;
-}
 .compose-right p.help-block {
     display: inline-block;
     margin-left: 0.5em;
     font-size: 0.9em;
     color: #6F6F6F;
 }
-.compose-right input[type="submit"] {
-    font-size: 0.9em;
-    background-color: #255a87;
-    border: 1px solid #255a87;
-    color: #fff;
-    padding: 0.4em 1em;
-    margin-top: 1em;
-}
-/*--//compose mail--*/
 /*--widgets-page--*/
 
 /*---photoday-section-----*/ 
@@ -2804,9 +2577,6 @@ caption, th {
 }
 td, th {
     padding: 0;
-}
-*, a, button, i, input {
-    -webkit-font-smoothing: antialiased;
 }
 .list-group .list-group-item {
     border: 0;
@@ -3321,79 +3091,7 @@ ul.bt-list li a {
     color: #fff;
     width: 90%;
 }
-.col-1 {
-    background-color: #399834;
-}
-.col-2 {
-    background-color: #c65186;
-}
-.col-3 {
-    background-color: #2f72c3;
-}
-.col-4 {
-    background-color: #768b82;
-}
-.col-5 {
-    background-color: #e84c3d;
-}
-.col-6 {
-    background-color: #b147cb;
-}
-.col-7 {
-    background-color: #1bbc9b;
-}
-.col-24 {
-    background-color: #4c4c4c;
-}
-.col-8 {
-    background-color: #739b9d;
-}
-.col-9 {
-    background-color: #3598db;
-}
-.col-10 {
-    background-color: #27ae61;
-}
-.col-11 {
-    background-color: #f98b02;
-}
-.col-12 {
-    background-color: #a1a8ae;
-}
-.col-13 {
-    background-color: #eca900;
-}
-
-.col-14 {
-    background-color: #9b58b5;
-}
-.col-15 {
-    background-color: #44ccf6;
-}
-.col-16 {
-    background-color: #7f7f7f;
-}
-.col-17 {
-    background-color: #2ecd71;
-}
-.col-18 {
-    background-color: #e63f51;
-}
-.col-19 {
-    background-color: #b9bf15;
-}
-.col-20 {
-    background-color: #399834;
-}
-.col-21 {
-    background-color: #c65186;
-}
-.col-22{
-    background-color: #2f72c3;
-}
-.col-23{
-    background-color: #758f84;
-}
+  
 /* ICONS */
 /* Icon Back */
 .hvr-icon-back {
@@ -5747,56 +5445,10 @@ i.fa.fa-facebook.profile-icon {
 .chat-bottom {
     padding: 1em;
 }
-.chat-bottom input[type="text"] {
-    width: 100%;
-    border: none;
-    border-bottom: 1px solid #D4CFCF;
-    padding: 0.6em 1em;
-    outline: none;
-    transition: .5s all;
-    -webkit-transition: .5s all;
-    -moz-transition: .5s all;
-    box-shadow: 0px -1px 2px #CECECE;
-	-webkit-box-shadow: 0px -1px 2px #CECECE;
-	-moz-box-shadow: 0px -1px 2px #CECECE;
-}
-/*--//chat--*/
 /*--todo--*/
 .single-bottom ul li {
     list-style: none;
     padding: 0px 10px 18px;
-}
-.single-bottom ul li input[type="checkbox"] {
-    display: none;
-}
-.single-bottom ul li input[type="checkbox"]+label {
-    position: relative;
-    padding-left: 2em;
-    border: none;
-    outline: none;
-    font-size: 0.9em;
-    color: #999;
-    font-weight: 400;
-	cursor: pointer;
-}
-.single-bottom ul li input[type="checkbox"]+label span:first-child {
-    width: 17px;
-    height: 17px;
-    display: inline-block;
-    border: 2px solid #C8C8C8;
-    position: absolute;
-    left: 0;
-	top: 2px;
-}
-.single-bottom ul li input[type="checkbox"]:checked+label span:first-child:before {
-    content: "";
-    background: url(../images/tick.png)no-repeat;
-    position: absolute;
-    left: 1px;
-    top: 2px;
-    font-size: 10px;
-    width: 10px;
-    height: 10px;
 }
 /*--//todo--*/
 /*--weather--*/
@@ -6112,33 +5764,6 @@ i.icon_13{
 	background: #eee;
     padding: 1em 0em;
 }
-.activity_box input[type="text"]{
-	outline: none;
-    border: 1px solid #888888;
-    padding: 10px;
-    color: #333;
-    font-size: 13px;
-    width: 70%;
-    background: #fff;
-}
-.activity_box input[type="submit"]{
-	outline: none;
-    width: 20%;
-    font-size: 1em;
-    color: #fff;
-    background: #629aa9;
-    border: none;
-    padding: 8px 0;
-    margin-left: 0.5em;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-ms-transition: 0.5s all;
-	-o-transition: 0.5s all;
-}
-.activity_box input[type="submit"]:hover{
-	background: #F2B33F;
-}
 .activity-desc-sub1:after{
 	right:-6%;
     top: 20%;
@@ -6187,37 +5812,6 @@ i.icon_13{
 .single-bottom ul li{
 	list-style:none;
 	padding:0px 20px 18px;
-}
-.single-bottom ul li input[type="checkbox"] {
-  display: none;
-}
-.single-bottom ul li input[type="checkbox"]+label {
-    position: relative;
-    padding-left: 31px;
-    border: none;
-    outline: none;
-    font-size:14px;
-    color: #444;
-	cursor: pointer;
-}
-.single-bottom ul li input[type="checkbox"]+label span:first-child {
-	width: 17px;
-    height: 17px;
-    display: inline-block;
-    border:2px solid #CCC;
-    position: absolute;
-    left: 0;
-    bottom: 4px;
-}
-.single-bottom ul li input[type="checkbox"]:checked+label span:first-child:before {
-	content: "";
-    background: url(../images/tick.png)no-repeat;
-    position: absolute;
-    left: 1px;
-    top: 2px;
-    font-size: 10px;
-    width: 10px;
-    height: 10px;
 }
 .activity_box{
   background: #fff;
@@ -7077,10 +6671,6 @@ h4.asd label {
 	.login-top h4 {
 		font-size: 1em;
 	}
-	.sign-up2 input[type="text"], .sign-up2 input[type="password"] {
-		padding: 8px 10px;
-		margin: 0.5em 0;
-	}
 	.sign-up1 h4 {
 		margin: 1em 0 0;
 	}
@@ -7097,10 +6687,6 @@ h4.asd label {
 		margin-left: 27%;
 		width: 23%;
 	}
-	.sb-search-input {
-		width: 80%;
-		background: url(../images/search-icon.png) no-repeat 130px 12px;
-	}
 	.search-box {
 		width: 46%;
 		margin: .7em 0 0 0em;
@@ -7115,10 +6701,6 @@ h4.asd label {
 	}
 	.icon-box {
 		width: 50%;
-	}
-	.input__label {
-		width: 80%;
-		left: 20%;
 	}
 	.mail.mail-name {
 		width: 9%;
@@ -7164,10 +6746,6 @@ h4.asd label {
 	}
 	.search-box {
 		width: 44%;
-	}
-	.sb-search-input {
-		width: 80%;
-		background: url(../images/search-icon.png) no-repeat 100px 12px;
 	}
 	.button_set_one.three .btn {
 		margin: 5px 2px 0;
@@ -7223,10 +6801,6 @@ h4.asd label {
 		float: right;
 		width: 55%;
 	}
-	.sb-search-input {
-		width: 80%;
-		background: url(../images/search-icon.png) no-repeat 120px 12px;
-	}
 	.login-page, .signup-page {
 		width: 60%;
 	}
@@ -7278,15 +6852,8 @@ h4.asd label {
 		border-bottom: 8px solid #4b7884;
 		font-size: 1.4em;
 	}
-	.login-page input[type="email"], .login-page input[type="password"],.signup-page input[type="text"], .signup-page input[type="email"], .signup-page input[type="password"]{
-		font-size: .9em;
-		padding: 12px 15px 12px 37px;
-	}
 	.login-body {
 		padding: 3em 2em;
-	}
-	.login-page input[type="submit"],.sub_home input[type="submit"] {
-		padding: .5em 1em;
 	}
 	.compose-left,.compose-right {
 		width: 100%;
@@ -7531,10 +7098,6 @@ h4.asd label {
 		width: 44%;
 		margin: .7em 0 0 0em;
 	}
-	.sb-search-input {
-		width: 90%;
-		background: url(../images/search-icon.png) no-repeat 110px 12px;
-	}
 	.login-page, .signup-page {
 		width: 70%;
 	}
@@ -7696,17 +7259,6 @@ h4.asd label {
 	.mail-body {
 		padding: 0.5em 1em;
 	}
-	.mail-body input[type="text"] {
-		padding: 0.5em 0;
-		font-size: 0.9em;
-	}
-	.mail-body input[type="text"]:focus {
-		padding: 1em 0;
-	}
-	.mail-body input[type="submit"] {
-		font-size: 0.9em;
-		margin-top: 0.2em;
-	}
 	.inbox-page.row {
 		margin-top: 1em;
 	}
@@ -7765,9 +7317,6 @@ h4.asd label {
 	.login-body {
 		padding: 1.5em;
 	}
-	.login-page input[type="text"], .login-page input[type="password"] {
-		margin: 0 0 1em 0;
-	}
 	.login-page label.checkbox {
 		font-size: 0.9em;
 	}
@@ -7790,11 +7339,6 @@ h4.asd label {
 	.sign-up2 label {
 		margin: 0em 2em 0 0;
 		font-size: .9em;
-	}
-	.sub_home input[type="submit"] {
-		margin: 0.5em 0 0 6.6em;
-		width: 28%;
-		font-size: 0.9em;
 	}
 	.blank-page {
 		padding: 1.5em;
@@ -7839,14 +7383,6 @@ h4.asd label {
 	}
 	.cbp-spmenu-push div#page-wrapper {
 		padding: 9em 1em 2em;
-	}
-	.input__label {
-		width: 90%;
-		left: 10%;
-	}
-	.sb-search-input {
-		width: 90%;
-		background: url(../images/search-icon.png) no-repeat 160px 12px;
 	}
 	.stat {
 		width: 100%;
@@ -7900,10 +7436,6 @@ h4.asd label {
 	}
 }
 @media(max-width:414px){
-	.sb-search-input {
-		width: 90%;
-		background: url(../images/search-icon.png) no-repeat 135px 12px;
-	}
 	.r3_counter_box .fa {
 		font-size: 20px;
 		width: 55px;
@@ -7926,9 +7458,6 @@ h4.asd label {
 		width: 100%;
 		float: none;
 	}
-	.signup-page input[type="text"] {
-		background: url(../images/user.png)no-repeat 8px 10px #fff;
-	}
 	.login-page h2.title1, .signup-page h2.title1 {
 		padding: .8em 1em;
 		font-size: 1.4em;
@@ -7942,19 +7471,11 @@ h4.asd label {
 		float: right;
 		margin-right: 0em;
 	}
-	.sb-search-input {
-		width: 90%;
-		background: url(../images/search-icon.png) no-repeat 130px 12px;
-	}
 	ul.bt-list li a {
 		width: 100%;
 	}
 }
 @media(max-width:375px){
-	.sb-search-input {
-		width: 90%;
-		background: url(../images/search-icon.png) no-repeat 125px 12px;
-	}
 }
 @media(max-width:320px){
 	.r3_counter_box {
@@ -7965,10 +7486,6 @@ h4.asd label {
 	}
 	.registration {
 		font-size: 14px;
-	}
-	.sb-search-input {
-		width: 90%;
-		background: url(../images/search-icon.png) no-repeat 105px 7px;
 	}
 	.grid_3.grid_4 {
 		padding: 2em 1em ! important;
@@ -7992,10 +7509,6 @@ h4.asd label {
 	}
 	.search-box {
 		margin: 0.2em 0 0 0em;
-	}
-	.sb-search-input {
-		font-size: 0.75em;
-		padding: 0.5em .8em;
 	}
 	.header-right {
 		margin-top: 0.5em;
@@ -8294,14 +7807,6 @@ h4.asd label {
 	h4.title3 {
 		padding: 0.6em 1em;
 	}
-	.single-bottom ul li input[type="checkbox"]+label {
-		font-size: 0.8em;
-	}
-	.single-bottom ul li input[type="checkbox"]+label span:first-child {
-		width: 15px;
-		height: 15px;
-		top: 1px;
-	}
 	.compose-left ul li.head {
 		font-size: 1em;
 	}
@@ -8311,9 +7816,6 @@ h4.asd label {
 	.compose-right .panel-body {
 		padding: 1em;
 	}
-	.form-control1,.form-control_2.input-sm {
-		height: 35px;
-	}
 	.validation .form-control {
 		height: 29px;
 	}
@@ -8322,9 +7824,6 @@ h4.asd label {
 	}
 	.control2 {
 		height: 150px;
-	}
-	.compose-right input[type="submit"] {
-		margin-top: 0.5em;
 	}
 	.tables .panel-body, .tables .bs-example {
 		padding: 1.5em 1em;
@@ -8356,26 +7855,7 @@ h4.asd label {
 	.login-body {
 		padding: 1em;
 	}
-	.login-page input.user, .login-page input.lock{
-		background-position: 11px 11px;
-		background-size: 6%;
-		padding: 8px 15px 8px 37px;
-	}
-	.signup-page input[type="text"], .signup-page input[type="email"], .signup-page input[type="password"] {
-		font-size: .9em;
-		padding: 10px 15px 10px 37px;
-	}
-	.signup-page input[type="email"] {
-		background: url(../images/mail.png)no-repeat 8px 10px #fff;
-		background-size: 20px;
-	}
-	.signup-page input[type="password"] {
-		background: url(../images/lock.png)no-repeat 8px 10px #fff;
-	}
 	.forgot a {
-		font-size: 0.9em;
-	}
-	.login-page input[type="submit"] {
 		font-size: 0.9em;
 	}
 	.login-page-bottom h5 {
@@ -8396,20 +7876,11 @@ h4.asd label {
 		float: none;
 		width: 100%;
 	}
-	.sign-up2 input[type="text"], .sign-up2 input[type="password"] {
-		padding: 7px 10px;
-		font-size: 12px;
-	}
 	.sign-up1 h4 {
 		margin: .5em 0 0;
 	}
 	.blank-page {
 		padding: 1em;
-	}
-	.sub_home input[type="submit"] {
-		margin: 0.5em 0 0 0;
-		width: 34%;
-		font-size: 0.8em;
 	}
 	.chrt-page-grids {
 		padding: 0.5em 1em;
