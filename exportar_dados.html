@@ -11,46 +11,8 @@ th,td {
 
 
 <button type="button" onclick="loadXMLDoc()">Fazer o bagulho</button>
-<br><br>
-<table id="demo"></table>
 
-<script>
-function loadXMLDoc() {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xmlhttp.open("GET", "13161010189079000102550010010430151000825713-procNFe.xml", true);
-  xmlhttp.send();
-}
-function myFunction(xml) {
-  var i;
-  var y;
-  var xmlDoc = xml.responseXML;
-  var table="<tr><th>Nome</th><th>Estado</th></tr>";
-  var x = xmlDoc.getElementsByTagName("emit");
-  for (i = 0; i <x.length; i++) { 
-    table += "<tr><td>" +
-    x[i].getElementsByTagName("xNome")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("UF")[0].childNodes[0].nodeValue +
-    "</td></tr>";
-  }
-  
-
- // var m = xmlDoc.getElementsByTagName("ide");
- // for (y = 0; y <m.length; y++) { 
- //   table += "<tr><td>" +
- //   m[y].getElementsByTagName("natOp")[0].childNodes[0].nodeValue +
- //   "</td><td>" +
- //   m[y].getElementsByTagName("mod")[0].childNodes[0].nodeValue +
- //   "</td></tr>";
- // }
-  document.getElementById("demo").innerHTML = table;
-}
-</script>
+<script src="arquivos.js"></script>
 
 
 
