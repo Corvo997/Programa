@@ -1,3 +1,5 @@
+<script src="arquivos.js"></script>
+
 <div class="row">
     <div class="input-group">
         <div class="input-group-prepend">
@@ -18,20 +20,14 @@
     <b>Tempo Decorrido: </b><label id="tempo_decorrido">00:00:00</label><br>
 
 	<div class="row">
-		<div class="col-2 offset-5">	
-			<button type="button" class="btn btn-success" id="processar">Processar</button>
+		<div class="col" style="text-align: right;">	
+			<button type="button" class="btn btn-success" id="processar" onclick="loadXMLDoc();">PROCESSAR</button>
 		</div>
+        <div class="col" id="botao_download" style="text-align: left;">    
+            <button type="button" style="display: none;" class="btn btn-primary" id="salvar" onclick='xls.exportToXLS("Base_Dados_"+hoje);'>SALVAR ARQUIVO</button>
+        </div>
 	</div>
 
-</div>
-
-<div style="color: red;">
-	INFORMAÇÕES DOUGLAS: <br>
-	PRIMEIRO SELECIONA A PASTA PRA TU VER COMO EU DEIXEI AS COISAS.<br>
-	TU VAI PEGAR OS ARQUIVOS UM A UM PELO COMANDO: <b>$("#pasta_xmls")[0].files[numero_do_arquivo_aqui];</b><br>
-	DEPOIS TU VAI LER AS INFORMAÇÕES DO ARQUIVO E JOGAR NO BANDO DE DADOS CAMPO POR CAMPO.<br>
-	TEM UMA PASTA NOVA AQUI CHAMADA XMLS, É DELA QUE TU VAI LER OS DADOS, CADA ARQUIVO DELA TEM CAMPOS DELIMITADOS POR TAGS QUE NEM AQUI NO HTML.<br>
-	VÊ NA INTERNET COMO LER CAMPOS DE XMLS COM JAVASCRIPT E JQUERY.<br>
 </div>
 
 <script type="text/javascript">
@@ -46,6 +42,9 @@ $("#pasta_xmls").change(function(event) {
 <style type="text/css">
 .custom-file-label::after {
     display: none;
+}
+td, th{
+    white-space: nowrap !important;
 }
 </style>
 

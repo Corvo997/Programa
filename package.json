@@ -9,11 +9,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "electron": "^7.1.7"
+    "electron": "^7.1.7",
+    "electron-rebuild": "^1.8.8"
   },
   "dependencies": {
     "readdirp": "^3.3.0",
+    "serialport": "^8.0.6",
     "sqlite-sync": "^0.3.9",
+    "sqlite3": "^4.1.1",
+    "xlsexport": "^1.5.2",
     "xml2js": "^0.4.23"
   }
 }

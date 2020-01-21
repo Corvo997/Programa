@@ -1,50 +1,199 @@
 function loadXMLDoc() {
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      xml = $(exportTree(this));
-      
-      // Aqui Douglas, procura elemento por elemento e coloca no array
 
-      array_db = [];
-      array_items = [];
+  n_files = $("#pasta_xmls")[0].files.length;
 
-      //Dados de Emissão da Nota
+  array_infos_db = [];
+  array_prods_db = [];
 
-      //Dados do Emissor
+  for(i = 0; i < $("#pasta_xmls")[0].files.length; i++){
+    $("#porcentagem_arquivos").html(((i + 1)/n_files)*100 + "%");
 
-      array_db.push(xml.find("emit CNPJ").text()); //PEGA O CNPJ DA EMPRESA
-      array_db.push(xml.find("emit xNome").text()); //PEGA A RAZÃO SOCIAL DA EMPRESA
-      array_db.push(xml.find("emit xFant").text()); //PEGA O NOME FANTASIA DA EMPRESA
+    $.ajax({
+      type:'GET',
+      url: $("#pasta_xmls")[0].files[i].path,
+      contentType: false,
+      processData: false,
+      success: function(response){
 
-      //Dados do Destinatário
+        xml = $(response);
+    
+        array_db = [];
+        array_items = [];
 
-      //Dados de Produtos (Array Separado, Aqui tu tem que fazer um for)
+        //Dados de Emissão da Nota
+        array_db.push(xml.find("ide cUF").text());
+        array_db.push(xml.find("ide cNF").text());
+        array_db.push(xml.find("ide natOp").text());
+        array_db.push(xml.find("ide indPag").text());
+        array_db.push(xml.find("ide mod").text());
+        array_db.push(xml.find("ide serie").text());
+        array_db.push(xml.find("ide nNF").text());
+        array_db.push(xml.find("ide dhEmi").text());
+        array_db.push(xml.find("ide dhSainEnt").text());
+        array_db.push(xml.find("ide tpNF").text());
+        array_db.push(xml.find("ide idDest").text());
+        array_db.push(xml.find("ide cMunFG").text());
+        array_db.push(xml.find("ide tpImp").text());
+        array_db.push(xml.find("ide tpEmis").text());
+        array_db.push(xml.find("ide cDV").text());
+        array_db.push(xml.find("ide tpAmb").text());
+        array_db.push(xml.find("ide finNFe").text());
+        array_db.push(xml.find("ide indFinal").text());
+        array_db.push(xml.find("ide indPres").text());
+        array_db.push(xml.find("ide procEmi").text());
+        array_db.push(xml.find("ide verProc").text());
 
-      for( i = 0; i < xml.find("det").length; i++ ){
-        array_items.push(xml.find("det").eq(i).find("prod cProd").text()); //CÓDIGO DO PRODUTO
-        array_items.push(xml.find("det").eq(i).find("prod xProd").text()); //DESCRIÇÃO DO PRODUTO
+        //Dados do Emissor
+        array_db.push(xml.find("emit CNPJ").text()); //PEGA O CNPJ DA EMPRESA
+        array_db.push(xml.find("emit xNome").text()); //PEGA A RAZÃO SOCIAL DA EMPRESA
+        array_db.push(xml.find("emit xFant").text()); //PEGA O NOME FANTASIA DA EMPRESA
+        array_db.push(xml.find("emit enderEmit xLgr").text());
+        array_db.push(xml.find("emit enderEmit nro").text());
+        array_db.push(xml.find("emit enderEmit xBairro").text());
+        array_db.push(xml.find("emit enderEmit cMun").text());
+        array_db.push(xml.find("emit enderEmit xMun").text());
+        array_db.push(xml.find("emit enderEmit UF").text());
+        array_db.push(xml.find("emit enderEmit CEP").text());
+        array_db.push(xml.find("emit enderEmit cPais").text());
+        array_db.push(xml.find("emit enderEmit xPais").text());
+        array_db.push(xml.find("emit enderEmit fone").text());
+        array_db.push(xml.find("emit IE").text());
+        array_db.push(xml.find("emit CRT").text());
+
+        //Dados do Destinatário
+        array_db.push(xml.find("dest CPF").text());
+        array_db.push(xml.find("dest xNome").text());
+        array_db.push(xml.find("dest enderDest xLgr").text());
+        array_db.push(xml.find("dest enderDest nro").text());
+        array_db.push(xml.find("dest enderDest xBairro").text());
+        array_db.push(xml.find("dest enderDest cMun").text());
+        array_db.push(xml.find("dest enderDest xMun").text());
+        array_db.push(xml.find("dest enderDest UF").text());
+        array_db.push(xml.find("dest enderDest CEP").text());
+        array_db.push(xml.find("dest enderDest cPais").text());
+        array_db.push(xml.find("dest enderDest xPais").text());
+        array_db.push(xml.find("dest enderDest fone").text());
+        array_db.push(xml.find("dest indIEDest").text());
+
+        //Dados de Produtos (Array Separado, Aqui tu tem que fazer um for)
+        for( i = 0; i < xml.find("det").length; i++ ){
+          array_items.push(xml.find("det").eq(i).find("prod cProd").text()); //CÓDIGO DO PRODUTO
+          array_items.push(xml.find("det").eq(i).find("prod xProd").text()); //DESCRIÇÃO DO PRODUTO
+          array_items.push(xml.find("det").eq(i).find("prod NCM").text());
+          array_items.push(xml.find("det").eq(i).find("prod CFOP").text());
+          array_items.push(xml.find("det").eq(i).find("prod uCom").text());
+          array_items.push(xml.find("det").eq(i).find("prod qCom").text());
+          array_items.push(xml.find("det").eq(i).find("prod vUnCom").text());
+          array_items.push(xml.find("det").eq(i).find("prod vProd").text());
+          array_items.push(xml.find("det").eq(i).find("prod uTrib").text());
+          array_items.push(xml.find("det").eq(i).find("prod qTrib").text());
+          array_items.push(xml.find("det").eq(i).find("prod vUnTrib").text());
+          array_items.push(xml.find("det").eq(i).find("prod vOutro").text());
+          array_items.push(xml.find("det").eq(i).find("prod indTot").text()); 
+
+          //Dados de Imposto
+          array_items.push(xml.find("det").eq(i).find("imposto ICMS ICMS60 orig").text());
+          array_items.push(xml.find("det").eq(i).find("imposto ICMS ICMS60 CST").text());
+          array_items.push(xml.find("det").eq(i).find("imposto ICMS ICMS60 vBCSTRet").text());
+          array_items.push(xml.find("det").eq(i).find("imposto ICMS ICMS60 vICMSSTRet").text());
+          array_items.push(xml.find("det").eq(i).find("imposto PIS PISAliq CST").text());
+          array_items.push(xml.find("det").eq(i).find("imposto PIS PISAliq vBC").text());
+          array_items.push(xml.find("det").eq(i).find("imposto PIS PISAliq pPIS").text());
+          array_items.push(xml.find("det").eq(i).find("imposto PIS PISAliq vPIS").text());
+          array_items.push(xml.find("det").eq(i).find("imposto COFINS CONFINSAliq CST").text());
+          array_items.push(xml.find("det").eq(i).find("imposto COFINS CONFINSAliq vBC").text());
+          array_items.push(xml.find("det").eq(i).find("imposto COFINS COFINSAliq pCONFINS").text());
+          array_items.push(xml.find("det").eq(i).find("imposto COFINS COFINSAliq vCONFINS").text());
+        }
+
+        //Dados Total
+        array_db.push(xml.find("total ICMSTot vBC").text());
+        array_db.push(xml.find("total ICMSTot vICMS").text());
+        array_db.push(xml.find("total ICMSTot vICMSDeson").text());
+        array_db.push(xml.find("total ICMSTot vICMSUFDest").text());     
+        array_db.push(xml.find("total ICMSTot vFCPUFDest").text());
+        array_db.push(xml.find("total ICMSTot vICMSUFRemet").text());
+        array_db.push(xml.find("total ICMSTot vBCST").text());
+        array_db.push(xml.find("total ICMSTot vST").text());
+        array_db.push(xml.find("total ICMSTot vProd").text());
+        array_db.push(xml.find("total ICMSTot vFrete").text());
+        array_db.push(xml.find("total ICMSTot vSeg").text());
+        array_db.push(xml.find("total ICMSTot vDesc").text());
+        array_db.push(xml.find("total ICMSTot vII").text());
+        array_db.push(xml.find("total ICMSTot vIPI").text());
+        array_db.push(xml.find("total ICMSTot vPIS").text());
+        array_db.push(xml.find("total ICMSTot vCONFINS").text());
+        array_db.push(xml.find("total ICMSTot vOutro").text());
+        array_db.push(xml.find("total ICMSTot vNF").text());
+
+        //Dados de Transporte
+        array_db.push(xml.find("transp modFrete").text());
+        array_db.push(xml.find("transp transporta CNPJ").text());
+        array_db.push(xml.find("transp transporta xNome").text());
+        array_db.push(xml.find("transp transporta IE").text());
+        array_db.push(xml.find("transp transporta xEnder").text());
+        array_db.push(xml.find("transp transporta xMun").text());
+        array_db.push(xml.find("transp transporta UF").text());
+        array_db.push(xml.find("transp veicTransp placa").text());
+        array_db.push(xml.find("transp veicTransp UF").text());
+        array_db.push(xml.find("transp vol qVol").text());
+        array_db.push(xml.find("transp vol esp").text());
+        array_db.push(xml.find("transp vol pesoL").text());
+        array_db.push(xml.find("transp vol pesoB").text());
+
+        //Dados de Cobrança
+        array_db.push(xml.find("cobr fat nFat").text());
+        array_db.push(xml.find("cobr fat vOrig").text());
+        array_db.push(xml.find("cobr fat vLiq").text());
+        array_db.push(xml.find("cobr dup nDup").text());
+        array_db.push(xml.find("cobr dup dVenc").text());
+        array_db.push(xml.find("cobr dup vDup").text());
+
+        //Informações Adicionais
+        array_db.push(xml.find("infAdic InfCpl").text());
+
+        array_infos_db.push(array_db);
+        array_prods_db.push(array_items);
+
       }
 
-      //Dados de Imposto
+    });
 
-      //Dados de Transporte
+  }
 
-      //Dados de Cobrança
+  //JOGA NO BANCO - A FAZER
 
-      //Informações Adicionais
-
+  var sqlite3 = require('sqlite3').verbose();
+  db = new sqlite3.Database('database/database.db', sqlite3.OPEN_READWRITE, (err) => {
+    if (err) {
+      console.error(err.message);
     }
-  };
-  xmlhttp.open("GET", "13161010189079000102550010010430151000825713-procNFe.xml", true);
-  xmlhttp.send();
-}
-function exportTree(xml) {
-  parser = new DOMParser();
-  xmlDoc = parser.parseFromString(xml.responseText,"text/xml");
-  return xmlDoc;
-}
+    console.log('Connected to database.');
+  });
 
+  hoje = new Date();
+  hoje = hoje.getDay()+"_"+(hoje.getMonth() + 1)+"_"+hoje.getFullYear();
+
+  xls = new XlsExport(array_infos_db, "Base_Dados_"+hoje);
+
+  $("#salvar").css('display', 'block');
+  
+  // db.run(`
+
+  //   CREATE TABLE IF NOT EXISTS analisador_nfs.nfs (
+  //     column_1 text,
+  //     column_1 text,
+  //     column_1 text,
+  //     column_1 text,
+  //     column_1 text,
+  //     column_1 text,
+  //     column_1 text,
+  //     column_1 text
+  // ) [WITHOUT ROWID];
+
+  // `);
+
+}
 
 
 
