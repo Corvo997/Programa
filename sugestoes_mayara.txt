@@ -1,0 +1,9 @@
+nº de notas ja processadas
+nomes das empresas de emissao e destino com quantidades de notas de cada uma
+gerar gráficos de valores por produtos 
+
+
+
+
+
+

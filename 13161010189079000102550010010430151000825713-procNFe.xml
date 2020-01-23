@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <nfeProc versao="3.10" xmlns="http://www.portalfiscal.inf.br/nfe">
 	<NFe xmlns="http://www.portalfiscal.inf.br/nfe">
-		<infNFe Id="NFe13161010189079000102550010010430151000825713" versao="3.10">
+		<infNFe Id="NFe13161010189079000102550010010430151000825713 - CHAVE DA NOTA" versao="3.10">
 			<ide>
 				<cUF>13</cUF>
-				<cNF>00082571</cNF>
-				<natOp>VENDA MERC ADQ/REC 3o MERC SUJ</natOp>
-				<indPag>1</indPag>
-				<mod>55</mod>
-				<serie>1</serie>
-				<nNF>1043015</nNF>
-				<dhEmi>2016-10-01T08:52:22-04:00</dhEmi>
-				<dhSaiEnt>2016-10-01T08:52:22-04:00</dhSaiEnt>
-				<tpNF>1</tpNF>
-				<idDest>1</idDest>
-				<cMunFG>1302603</cMunFG>
-				<tpImp>1</tpImp>
-				<tpEmis>1</tpEmis>
-				<cDV>3</cDV>
-				<tpAmb>1</tpAmb>
-				<finNFe>1</finNFe>
-				<indFinal>0</indFinal>
-				<indPres>9</indPres>
-				<procEmi>0</procEmi>
-				<verProc>29031980</verProc>
+				<cNF>00082571</cNF> 
+				<natOp>VENDA MERC ADQ/REC 3o MERC SUJ</natOp> 
+				<indPag>1</indPag> 
+				<mod>55</mod> 
+				<serie>1</serie> 
+				<nNF>1043015</nNF> 
+				<dhEmi>2016-10-01T08:52:22-04:00</dhEmi> 
+				<dhSaiEnt>2016-10-01T08:52:22-04:00</dhSaiEnt> 
+				<tpNF>1</tpNF> 
+				<idDest>1</idDest> 
+				<cMunFG>1302603</cMunFG> 
+				<tpImp>1</tpImp> 
+				<tpEmis>1</tpEmis> 
+				<cDV>3</cDV> 
+				<tpAmb>1</tpAmb> 
+				<finNFe>1</finNFe> 
+				<indFinal>0</indFinal> 
+				<indPres>9</indPres> 
+				<procEmi>0</procEmi> 
+				<verProc>29031980</verProc> 
 			</ide>
 			<emit>
 				<CNPJ>10189079000102</CNPJ>
@@ -41,8 +41,8 @@
 					<xPais>BRASIL</xPais>
 					<fone>9236368479</fone>
 				</enderEmit>
-				<IE>042256178</IE>
-				<CRT>3</CRT>
+				<IE>042256178</IE> 
+				<CRT>3</CRT> 
 			</emit>
 			<dest>
 				<CPF>00574548254</CPF>
@@ -129,7 +129,7 @@
 				</ICMSTot>
 			</total>
 			<transp>
-				<modFrete>0</modFrete>
+				<modFrete>0</modFrete> 
 				<transporta>
 					<CNPJ>10189079000102</CNPJ>
 					<xNome>ADISBEL AMAZONAS DIST BEB LTDA</xNome>
@@ -142,14 +142,14 @@
 					<placa>MWB7715</placa>
 					<UF>AM</UF>
 				</veicTransp>
-				<vol>
-					<qVol>12</qVol>
-					<esp>EB</esp>
-					<pesoL>50.880</pesoL>
+				<vol> VOLUME
+					<qVol>12</qVol> 
+					<esp>EB</esp> 
+					<pesoL>50.880</pesoL> 
 					<pesoB>53.760</pesoB>
 				</vol>
 			</transp>
-			<cobr>
+			<cobr> 
 				<fat>
 					<nFat>1043015-PAG PRAZO/CARTAO- 01- PARC/VENCIMENTO:02/11/2016</nFat>
 					<vOrig>230.44</vOrig>
@@ -161,11 +161,11 @@
 					<vDup>230.44</vDup>
 				</dup>
 			</cobr>
-			<infAdic>
+			<infAdic> 
 				<infCpl>MENSAGEM: Val Aprox dos Tributos R$ 20,37(8,83 %)\PED: 0001\ ROM: 001\ VEND: 203\ ADICIONAL FINANCEIRO: 2.44\ ***** VALOR A RECEBER: R$ 230.44 *****\ VENCIMENTO : 02/11/2016\ COND.PAG.: CARTAO DE CREDITO\ CLIENTE: 0008-2571\ FANTASIA: BAR DA SIMONE\ MOTORISTA: BALCAO\ TIP. COB.: CARTAO \ PTO REF: MERC SILVA \ VALOR PIS: 3.64 VALOR COFINS: 16.73. NAO RECEBER CHEQUE DE TERCEIROS. INFORMACOES ADICIONAIS DE INTERESSE DO FISCO|</infCpl>
 			</infAdic>
 		</infNFe>
-		<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+		<Signature xmlns="http://www.w3.org/2000/09/xmldsig#"> 
 			<SignedInfo>
 				<CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
 				<SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
@@ -186,7 +186,7 @@
 			</KeyInfo>
 		</Signature>
 	</NFe>
-	<protNFe versao="3.10" xmlns="http://www.portalfiscal.inf.br/nfe">
+	<protNFe versao="3.10" xmlns="http://www.portalfiscal.inf.br/nfe"> 
 		<infProt>
 			<tpAmb>1</tpAmb>
 			<verAplic>AM3.10</verAplic>

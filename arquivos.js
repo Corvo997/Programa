@@ -4,6 +4,7 @@ function loadXMLDoc() {
 
   array_infos_db = [];
   array_prods_db = [];
+  array_teste = [];
 
   for(i = 0; i < $("#pasta_xmls")[0].files.length; i++){
     $("#porcentagem_arquivos").html(((i + 1)/n_files)*100 + "%");
@@ -100,8 +101,8 @@ function loadXMLDoc() {
           array_items.push(xml.find("det").eq(i).find("imposto PIS PISAliq vBC").text());
           array_items.push(xml.find("det").eq(i).find("imposto PIS PISAliq pPIS").text());
           array_items.push(xml.find("det").eq(i).find("imposto PIS PISAliq vPIS").text());
-          array_items.push(xml.find("det").eq(i).find("imposto COFINS CONFINSAliq CST").text());
-          array_items.push(xml.find("det").eq(i).find("imposto COFINS CONFINSAliq vBC").text());
+          array_items.push(xml.find("det").eq(i).find("imposto COFINS COFINSAliq CST").text());
+          array_items.push(xml.find("det").eq(i).find("imposto COFINS COFINSAliq vBC").text());
           array_items.push(xml.find("det").eq(i).find("imposto COFINS COFINSAliq pCONFINS").text());
           array_items.push(xml.find("det").eq(i).find("imposto COFINS COFINSAliq vCONFINS").text());
         }
@@ -154,7 +155,7 @@ function loadXMLDoc() {
 
         array_infos_db.push(array_db);
         array_prods_db.push(array_items);
-
+        array_teste = array_db.slice();
       }
 
     });
@@ -163,13 +164,14 @@ function loadXMLDoc() {
 
   //JOGA NO BANCO - A FAZER
 
-  var sqlite3 = require('sqlite3').verbose();
-  db = new sqlite3.Database('database/database.db', sqlite3.OPEN_READWRITE, (err) => {
-    if (err) {
-      console.error(err.message);
-    }
-    console.log('Connected to database.');
-  });
+const sqlite3 = require('sqlite3').verbose();
+ 
+let db = new sqlite3.Database('./database/database.db', sqlite3.OPEN_READWRITE, (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('Connected to the database.');
+});
 
   hoje = new Date();
   hoje = hoje.getDay()+"_"+(hoje.getMonth() + 1)+"_"+hoje.getFullYear();
@@ -178,26 +180,16 @@ function loadXMLDoc() {
 
   $("#salvar").css('display', 'block');
   
-  // db.run(`
 
-  //   CREATE TABLE IF NOT EXISTS analisador_nfs.nfs (
-  //     column_1 text,
-  //     column_1 text,
-  //     column_1 text,
-  //     column_1 text,
-  //     column_1 text,
-  //     column_1 text,
-  //     column_1 text,
-  //     column_1 text
-  // ) [WITHOUT ROWID];
 
-  // `);
+//db.run('INSERT INTO analise(cUF,cNF,natOp,indPag,mod,serie,nNF,dhEmi,dhSaiEnt,tpNF,idDest,cMunFG,tpImp,tpEmis,cDV,tpAmb,finNFe,indFinal,indPres,procEmi,verProc,emiCNPJ,emixNome,emixFant,emixLgr,eminro,emixBairro,emicMun,emixMun,emiUF,emiCEP,emicPais,emixPais,emifone,emiIE,emiCRT,destCPF,destxNome,destxLgr,destnro,destxBairro,destcMun,destxMun,destUF,destCEP,destcPais,destxPais,destfone,destindIEDest,totvBC,totvICMS,totvICMSDeson,totvFCPUFDest,totvICMSUFDest,totvICMSUFRemet,totvBCST,totvST,totvProd,totvFrete,totvSeg,totvDesc,totvII,totvIPI,totvPIS,totvCONFINS,totvOutro,totvNF,transpmodFrete, transpCNPJ,transpxNome,transpIE,transpxEnder,transpxMun,transpUF,veiculoplaca,veiculoUF,volqVol,volesp,volpesoL,volpesoB,cobrnFat,cobrvOrig,cobrvLiq,cobrnDup,cobrdVenc,cobrvDup,infInfCpl) VALUES '+array_infos_db[0]+','+array_infos_db[1]+','+array_infos_db[2]+','+array_infos_db[3]+','+array_infos_db[4]+','+array_infos_db[5]+','+array_infos_db[6]+','+array_infos_db[7]+','+array_infos_db[8]+','+array_infos_db[9]+','+array_infos_db[10]+','+array_infos_db[11]+','+array_infos_db[12]+','+array_infos_db[13]+','+array_infos_db[14]+','+array_infos_db[15]+','+array_infos_db[16]+','+array_infos_db[17]+','+array_infos_db[18]+','+array_infos_db[19]+','+array_infos_db[20]+','+array_infos_db[21]+','+array_infos_db[22]+','+array_infos_db[23]+','+array_infos_db[24]+','+array_infos_db[25]+','+array_infos_db[26]+','+array_infos_db[27]+','+array_infos_db[28]+','+array_infos_db[29]+','+array_infos_db[30]+','+array_infos_db[31]+','+array_infos_db[32]+','+array_infos_db[33]+','+array_infos_db[34]+','+array_infos_db[35]+','+array_infos_db[36]+','+array_infos_db[37]+','+array_infos_db[38]+','+array_infos_db[39]+','+array_infos_db[40]+','+array_infos_db[41]+','+array_infos_db[42]+','+array_infos_db[43]+','+array_infos_db[44]+','+array_infos_db[45]+','+array_infos_db[46]+','+array_infos_db[47]+','+array_infos_db[48]+','+array_infos_db[49]+','+array_infos_db[50]+','+array_infos_db[51]+','+array_infos_db[52]+','+array_infos_db[53]+','+array_infos_db[54]+','+array_infos_db[55]+','+array_infos_db[56]+','+array_infos_db[57]+','+array_infos_db[58]+','+array_infos_db[59]+','+array_infos_db[60]+','+array_infos_db[61]+','+array_infos_db[62]+','+array_infos_db[63]+','+array_infos_db[64]+','+array_infos_db[65]+','+array_infos_db[66]+','+array_infos_db[67]+','+array_infos_db[68]+','+array_infos_db[69]+','+array_infos_db[70]+','+array_infos_db[71]+','+array_infos_db[72]+','+array_infos_db[73]+','+array_infos_db[74]+','+array_infos_db[75]+','+array_infos_db[76]+','+array_infos_db[77]+','+array_infos_db[78]+','+array_infos_db[79]+','+array_infos_db[80]+','+array_infos_db[81]+','+array_infos_db[82]+','+array_infos_db[83]+','+array_infos_db[84]+','+array_infos_db[85]+','+array_infos_db[86]+','+array_infos_db[87]')');
+db.run("INSERT INTO analise(cUF,cNF,natOp) VALUES(?,?,?) , ('"+array_teste[0]+"','"+array_teste[1]+"','"+array_teste[2]+"')");
+
+// close the database connection
+db.close();
+
 
 }
-
-
-
-
 
 
 
