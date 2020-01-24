@@ -1,9 +1,20 @@
+//AQUI JA INICIA O BANCO QUANDO ENTRA NA ABA SCANEAR NOTAS
+const sqlite3 = require('sqlite3').verbose();
+ 
+let db = new sqlite3.Database('./database/database.db', (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('Connected to the database.');
+});
+
 function loadXMLDoc() {
 
   n_files = $("#pasta_xmls")[0].files.length;
 
   array_infos_db = [];
   array_prods_db = [];
+  //ESTE ARRAY PEGA OS ELEMENTOS DO array_db PQ ESTA COMO LOCAL E DA ERRO DE ARRAY NAO DEFINIDO, ENTAO CRIEI ESSE
   array_teste = [];
 
   for(i = 0; i < $("#pasta_xmls")[0].files.length; i++){
@@ -155,6 +166,7 @@ function loadXMLDoc() {
 
         array_infos_db.push(array_db);
         array_prods_db.push(array_items);
+        //AQUI ELE COPIA OS ELEMENTOS DO ARRAY
         array_teste = array_db.slice();
       }
 
@@ -164,14 +176,6 @@ function loadXMLDoc() {
 
   //JOGA NO BANCO - A FAZER
 
-const sqlite3 = require('sqlite3').verbose();
- 
-let db = new sqlite3.Database('./database/database.db', sqlite3.OPEN_READWRITE, (err) => {
-  if (err) {
-    console.error(err.message);
-  }
-  console.log('Connected to the database.');
-});
 
   hoje = new Date();
   hoje = hoje.getDay()+"_"+(hoje.getMonth() + 1)+"_"+hoje.getFullYear();
@@ -182,18 +186,20 @@ let db = new sqlite3.Database('./database/database.db', sqlite3.OPEN_READWRITE, 
   
 
 
+
 //db.run('INSERT INTO analise(cUF,cNF,natOp,indPag,mod,serie,nNF,dhEmi,dhSaiEnt,tpNF,idDest,cMunFG,tpImp,tpEmis,cDV,tpAmb,finNFe,indFinal,indPres,procEmi,verProc,emiCNPJ,emixNome,emixFant,emixLgr,eminro,emixBairro,emicMun,emixMun,emiUF,emiCEP,emicPais,emixPais,emifone,emiIE,emiCRT,destCPF,destxNome,destxLgr,destnro,destxBairro,destcMun,destxMun,destUF,destCEP,destcPais,destxPais,destfone,destindIEDest,totvBC,totvICMS,totvICMSDeson,totvFCPUFDest,totvICMSUFDest,totvICMSUFRemet,totvBCST,totvST,totvProd,totvFrete,totvSeg,totvDesc,totvII,totvIPI,totvPIS,totvCONFINS,totvOutro,totvNF,transpmodFrete, transpCNPJ,transpxNome,transpIE,transpxEnder,transpxMun,transpUF,veiculoplaca,veiculoUF,volqVol,volesp,volpesoL,volpesoB,cobrnFat,cobrvOrig,cobrvLiq,cobrnDup,cobrdVenc,cobrvDup,infInfCpl) VALUES '+array_infos_db[0]+','+array_infos_db[1]+','+array_infos_db[2]+','+array_infos_db[3]+','+array_infos_db[4]+','+array_infos_db[5]+','+array_infos_db[6]+','+array_infos_db[7]+','+array_infos_db[8]+','+array_infos_db[9]+','+array_infos_db[10]+','+array_infos_db[11]+','+array_infos_db[12]+','+array_infos_db[13]+','+array_infos_db[14]+','+array_infos_db[15]+','+array_infos_db[16]+','+array_infos_db[17]+','+array_infos_db[18]+','+array_infos_db[19]+','+array_infos_db[20]+','+array_infos_db[21]+','+array_infos_db[22]+','+array_infos_db[23]+','+array_infos_db[24]+','+array_infos_db[25]+','+array_infos_db[26]+','+array_infos_db[27]+','+array_infos_db[28]+','+array_infos_db[29]+','+array_infos_db[30]+','+array_infos_db[31]+','+array_infos_db[32]+','+array_infos_db[33]+','+array_infos_db[34]+','+array_infos_db[35]+','+array_infos_db[36]+','+array_infos_db[37]+','+array_infos_db[38]+','+array_infos_db[39]+','+array_infos_db[40]+','+array_infos_db[41]+','+array_infos_db[42]+','+array_infos_db[43]+','+array_infos_db[44]+','+array_infos_db[45]+','+array_infos_db[46]+','+array_infos_db[47]+','+array_infos_db[48]+','+array_infos_db[49]+','+array_infos_db[50]+','+array_infos_db[51]+','+array_infos_db[52]+','+array_infos_db[53]+','+array_infos_db[54]+','+array_infos_db[55]+','+array_infos_db[56]+','+array_infos_db[57]+','+array_infos_db[58]+','+array_infos_db[59]+','+array_infos_db[60]+','+array_infos_db[61]+','+array_infos_db[62]+','+array_infos_db[63]+','+array_infos_db[64]+','+array_infos_db[65]+','+array_infos_db[66]+','+array_infos_db[67]+','+array_infos_db[68]+','+array_infos_db[69]+','+array_infos_db[70]+','+array_infos_db[71]+','+array_infos_db[72]+','+array_infos_db[73]+','+array_infos_db[74]+','+array_infos_db[75]+','+array_infos_db[76]+','+array_infos_db[77]+','+array_infos_db[78]+','+array_infos_db[79]+','+array_infos_db[80]+','+array_infos_db[81]+','+array_infos_db[82]+','+array_infos_db[83]+','+array_infos_db[84]+','+array_infos_db[85]+','+array_infos_db[86]+','+array_infos_db[87]')');
-db.run("INSERT INTO analise(cUF,cNF,natOp) VALUES(?,?,?) , ('"+array_teste[0]+"','"+array_teste[1]+"','"+array_teste[2]+"')");
+//ESSE AQUI DA COMO UNDEFINIED
+//db.run("INSERT INTO analise(cUF,cNF) VALUES(?,?) , ('"+array_teste[0]+"','"+array_teste[1]+"')");
+  
+  //COMO CANSA FICAR CRIANDO E LIMPANDO O BANCO COM TANTAS COLUNAS ENTAO PRA FICAR TESTANDO CRIEI TRES COLUNAS
+  //SAO A ID, cUF E A cNF AS DUAS ESTAO COMO TEXT, O BANCO EU CRIO PELO CONSOLE QUE É MELHOR E DIMINUI A QUANTIDADE DE LINHAS
+  //O PROBLEMA É QUE QAUDNO TENTO INSERIR DADOS AS COLUNAS FICAM VAZIAS MAS ELE CRIA A LINHA COM O ID, E QUANDO CONSIGO INSERIR
+  //APARECE COMO UNDEFINIED, SO PRECISO CONSEGUIR INSERIR ESSES DOIS DADOS,SE CONSEGUIR O RESTO É CTRL+C CTRL+V
+  //ESSE DA COM VAZIO
+  db.run('INSERT INTO analise (cUF) VALUES(?)',[array_teste[0]]);
 
-// close the database connection
-db.close();
-
-
+  db.close();
 }
-
-
-
-
 
 
 
