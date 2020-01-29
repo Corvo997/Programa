@@ -50,121 +50,233 @@ function loadXMLDoc() {
         array_db.verProc = (xml.find("ide verProc").text());
 
         //Dados do Emissor
-        // array_db. = (xml.find("emit CNPJ").text()); //PEGA O CNPJ DA EMPRESA
-        // array_db. = (xml.find("emit xNome").text()); //PEGA A RAZÃO SOCIAL DA EMPRESA
-        // array_db. = (xml.find("emit xFant").text()); //PEGA O NOME FANTASIA DA EMPRESA
-        // array_db. = (xml.find("emit enderEmit xLgr").text());
-        // array_db. = (xml.find("emit enderEmit nro").text());
-        // array_db. = (xml.find("emit enderEmit xBairro").text());
-        // array_db. = (xml.find("emit enderEmit cMun").text());
-        // array_db. = (xml.find("emit enderEmit xMun").text());
-        // array_db. = (xml.find("emit enderEmit UF").text());
-        // array_db. = (xml.find("emit enderEmit CEP").text());
-        // array_db. = (xml.find("emit enderEmit cPais").text());
-        // array_db. = (xml.find("emit enderEmit xPais").text());
-        // array_db. = (xml.find("emit enderEmit fone").text());
-        // array_db. = (xml.find("emit IE").text());
-        // array_db. = (xml.find("emit CRT").text());
+        array_db.emitCNPJ = (xml.find("emit CNPJ").text()); //PEGA O CNPJ DA EMPRESA
+        array_db.emitNome = (xml.find("emit xNome").text()); //PEGA A RAZÃO SOCIAL DA EMPRESA
+        array_db.emitFant = (xml.find("emit xFant").text()); //PEGA O NOME FANTASIA DA EMPRESA
+        array_db.emitLgr = (xml.find("emit enderEmit xLgr").text());
+        array_db.emitnro = (xml.find("emit enderEmit nro").text());
+        array_db.emitBairro = (xml.find("emit enderEmit xBairro").text());
+        array_db.emitcMun = (xml.find("emit enderEmit cMun").text());
+        array_db.emitxMun= (xml.find("emit enderEmit xMun").text());
+        array_db.emitUF = (xml.find("emit enderEmit UF").text());
+        array_db.emitCEP = (xml.find("emit enderEmit CEP").text());
+        array_db.emitcPais = (xml.find("emit enderEmit cPais").text());
+        array_db.emitxPais = (xml.find("emit enderEmit xPais").text());
+        array_db.emitfone = (xml.find("emit enderEmit fone").text());
+        array_db.emitIE = (xml.find("emit IE").text());
+        array_db.emitCRT = (xml.find("emit CRT").text());
 
         // //Dados do Destinatário
-        // array_db. = (xml.find("dest CPF").text());
-        // array_db. = (xml.find("dest xNome").text());
-        // array_db. = (xml.find("dest enderDest xLgr").text());
-        // array_db. = (xml.find("dest enderDest nro").text());
-        // array_db. = (xml.find("dest enderDest xBairro").text());
-        // array_db. = (xml.find("dest enderDest cMun").text());
-        // array_db. = (xml.find("dest enderDest xMun").text());
-        // array_db. = (xml.find("dest enderDest UF").text());
-        // array_db. = (xml.find("dest enderDest CEP").text());
-        // array_db. = (xml.find("dest enderDest cPais").text());
-        // array_db. = (xml.find("dest enderDest xPais").text());
-        // array_db. = (xml.find("dest enderDest fone").text());
-        // array_db. = (xml.find("dest indIEDest").text());
+        array_db.destCPF = (xml.find("dest CPF").text());
+        array_db.destNome = (xml.find("dest xNome").text());
+        array_db.destLgr = (xml.find("dest enderDest xLgr").text());
+        array_db.destnro = (xml.find("dest enderDest nro").text());
+        array_db.destBairro = (xml.find("dest enderDest xBairro").text());
+        array_db.destcMun = (xml.find("dest enderDest cMun").text());
+        array_db.destxMun = (xml.find("dest enderDest xMun").text());
+        array_db.destUF = (xml.find("dest enderDest UF").text());
+        array_db.destCEP = (xml.find("dest enderDest CEP").text());
+        array_db.destcPais = (xml.find("dest enderDest cPais").text());
+        array_db.destxPais = (xml.find("dest enderDest xPais").text());
+        array_db.destfone = (xml.find("dest enderDest fone").text());
+        array_db.destindIEDest = (xml.find("dest indIEDest").text());
 
-        // //Dados de Produtos (Array Separado, Aqui tu tem que fazer um for)
-        // for( i = 0; i < xml.find("det").length; i++ ){
-        //   array_items. = (xml.find("det").eq(i).find("prod cProd").text()); //CÓDIGO DO PRODUTO
-        //   array_items. = (xml.find("det").eq(i).find("prod xProd").text()); //DESCRIÇÃO DO PRODUTO
-        //   array_items. = (xml.find("det").eq(i).find("prod NCM").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod CFOP").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod uCom").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod qCom").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod vUnCom").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod vProd").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod uTrib").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod qTrib").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod vUnTrib").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod vOutro").text());
-        //   array_items. = (xml.find("det").eq(i).find("prod indTot").text()); 
+        // Dados de Produtos (Array Separado, Aqui tu tem que fazer um for)
+        for( i = 0; i < xml.find("det").length; i++ ){
+           array_items.prodcProd = (xml.find("det").eq(i).find("prod cProd").text()); //CÓDIGO DO PRODUTO
+           array_items.prodxProd = (xml.find("det").eq(i).find("prod xProd").text()); //DESCRIÇÃO DO PRODUTO
+           array_items.prodNCM = (xml.find("det").eq(i).find("prod NCM").text());
+           array_items.prodCFOP = (xml.find("det").eq(i).find("prod CFOP").text());
+           array_items.produCom = (xml.find("det").eq(i).find("prod uCom").text());
+           array_items.prodqCom = (xml.find("det").eq(i).find("prod qCom").text());
+           array_items.prodvUnCom = (xml.find("det").eq(i).find("prod vUnCom").text());
+           array_items.prodvProd = (xml.find("det").eq(i).find("prod vProd").text());
+           array_items.produTrib = (xml.find("det").eq(i).find("prod uTrib").text());
+           array_items.prodqTrib = (xml.find("det").eq(i).find("prod qTrib").text());
+           array_items.prodvUnTrib = (xml.find("det").eq(i).find("prod vUnTrib").text());
+           array_items.prodvOutro = (xml.find("det").eq(i).find("prod vOutro").text());
+           array_items.prodindTot = (xml.find("det").eq(i).find("prod indTot").text()); 
 
-        //   //Dados de Imposto
-        //   array_items. = (xml.find("det").eq(i).find("imposto ICMS ICMS60 orig").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto ICMS ICMS60 CST").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto ICMS ICMS60 vBCSTRet").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto ICMS ICMS60 vICMSSTRet").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto PIS PISAliq CST").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto PIS PISAliq vBC").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto PIS PISAliq pPIS").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto PIS PISAliq vPIS").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq CST").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq vBC").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq pCONFINS").text());
-        //   array_items. = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq vCONFINS").text());
-        // }
+        //   Dados de Imposto
+           array_items.impostoorig = (xml.find("det").eq(i).find("imposto ICMS ICMS60 orig").text());
+           array_items.impostoICMSCST = (xml.find("det").eq(i).find("imposto ICMS ICMS60 CST").text());
+           array_items.impostovBCSTRet = (xml.find("det").eq(i).find("imposto ICMS ICMS60 vBCSTRet").text());
+           array_items.impostovICMSSTRet = (xml.find("det").eq(i).find("imposto ICMS ICMS60 vICMSSTRet").text());
+           array_items.impostoPISCST = (xml.find("det").eq(i).find("imposto PIS PISAliq CST").text());
+           array_items.impostoPISvBC = (xml.find("det").eq(i).find("imposto PIS PISAliq vBC").text());
+           array_items.impostoPISpPIS = (xml.find("det").eq(i).find("imposto PIS PISAliq pPIS").text());
+           array_items.impostoPISvPIS = (xml.find("det").eq(i).find("imposto PIS PISAliq vPIS").text());
+           array_items.impostoCOFINSCST = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq CST").text());
+           array_items.impostoCOFINSvBC = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq vBC").text());
+           array_items.impostoCOFINSpCOFINS = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq pCONFINS").text());
+           array_items.impostoCOFINSvCOFINS = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq vCONFINS").text());
+         }
 
-        // //Dados Total
-        // array_db. = (xml.find("total ICMSTot vBC").text());
-        // array_db. = (xml.find("total ICMSTot vICMS").text());
-        // array_db. = (xml.find("total ICMSTot vICMSDeson").text());
-        // array_db. = (xml.find("total ICMSTot vICMSUFDest").text());     
-        // array_db. = (xml.find("total ICMSTot vFCPUFDest").text());
-        // array_db. = (xml.find("total ICMSTot vICMSUFRemet").text());
-        // array_db. = (xml.find("total ICMSTot vBCST").text());
-        // array_db. = (xml.find("total ICMSTot vST").text());
-        // array_db. = (xml.find("total ICMSTot vProd").text());
-        // array_db. = (xml.find("total ICMSTot vFrete").text());
-        // array_db. = (xml.find("total ICMSTot vSeg").text());
-        // array_db. = (xml.find("total ICMSTot vDesc").text());
-        // array_db. = (xml.find("total ICMSTot vII").text());
-        // array_db. = (xml.find("total ICMSTot vIPI").text());
-        // array_db. = (xml.find("total ICMSTot vPIS").text());
-        // array_db. = (xml.find("total ICMSTot vCONFINS").text());
-        // array_db. = (xml.find("total ICMSTot vOutro").text());
-        // array_db. = (xml.find("total ICMSTot vNF").text());
+        // Dados Total
+        array_db.totalvBC = (xml.find("total ICMSTot vBC").text());
+        array_db.totalvICMS = (xml.find("total ICMSTot vICMS").text());
+        array_db.totalvICMSDeson = (xml.find("total ICMSTot vICMSDeson").text());
+        array_db.totalvICMSUFDest = (xml.find("total ICMSTot vICMSUFDest").text());     
+        array_db.totalvFCPUFDest = (xml.find("total ICMSTot vFCPUFDest").text());
+        array_db.totalvICMSUFRemet = (xml.find("total ICMSTot vICMSUFRemet").text());
+        array_db.totalvBCST = (xml.find("total ICMSTot vBCST").text());
+        array_db.totalvST = (xml.find("total ICMSTot vST").text());
+        array_db.totalvProd = (xml.find("total ICMSTot vProd").text());
+        array_db.totalvFrete = (xml.find("total ICMSTot vFrete").text());
+        array_db.totalvSeg = (xml.find("total ICMSTot vSeg").text());
+        array_db.totalvDesc = (xml.find("total ICMSTot vDesc").text());
+        array_db.totalvII = (xml.find("total ICMSTot vII").text());
+        array_db.totalvIPI = (xml.find("total ICMSTot vIPI").text());
+        array_db.totaalvPIS = (xml.find("total ICMSTot vPIS").text());
+        array_db.totalvCOFINS = (xml.find("total ICMSTot vCONFINS").text());
+        array_db.totalvOutro = (xml.find("total ICMSTot vOutro").text());
+        array_db.totalvNF = (xml.find("total ICMSTot vNF").text());
 
         // //Dados de Transporte
-        // array_db. = (xml.find("transp modFrete").text());
-        // array_db. = (xml.find("transp transporta CNPJ").text());
-        // array_db. = (xml.find("transp transporta xNome").text());
-        // array_db. = (xml.find("transp transporta IE").text());
-        // array_db. = (xml.find("transp transporta xEnder").text());
-        // array_db. = (xml.find("transp transporta xMun").text());
-        // array_db. = (xml.find("transp transporta UF").text());
-        // array_db. = (xml.find("transp veicTransp placa").text());
-        // array_db. = (xml.find("transp veicTransp UF").text());
-        // array_db. = (xml.find("transp vol qVol").text());
-        // array_db. = (xml.find("transp vol esp").text());
-        // array_db. = (xml.find("transp vol pesoL").text());
-        // array_db. = (xml.find("transp vol pesoB").text());
+        array_db.transpmodFrete = (xml.find("transp modFrete").text());
+        array_db.transpCNPJ = (xml.find("transp transporta CNPJ").text());
+        array_db.transpxNome = (xml.find("transp transporta xNome").text());
+        array_db.transpIE = (xml.find("transp transporta IE").text());
+        array_db.transpxEnder = (xml.find("transp transporta xEnder").text());
+        array_db.transpxMun = (xml.find("transp transporta xMun").text());
+        array_db.transpUF = (xml.find("transp transporta UF").text());
+        array_db.transpplaca = (xml.find("transp veicTransp placa").text());
+        array_db.transpUF = (xml.find("transp veicTransp UF").text());
+        array_db.transpqVol = (xml.find("transp vol qVol").text());
+        array_db.transpesp = (xml.find("transp vol esp").text());
+        array_db.transppesoL = (xml.find("transp vol pesoL").text());
+        array_db.transppesoB = (xml.find("transp vol pesoB").text());
 
-        // //Dados de Cobrança
-        // array_db. = (xml.find("cobr fat nFat").text());
-        // array_db. = (xml.find("cobr fat vOrig").text());
-        // array_db. = (xml.find("cobr fat vLiq").text());
-        // array_db. = (xml.find("cobr dup nDup").text());
-        // array_db. = (xml.find("cobr dup dVenc").text());
-        // array_db. = (xml.find("cobr dup vDup").text());
+        // Dados de Cobrança
+        array_db.cobrnFat = (xml.find("cobr fat nFat").text());
+        array_db.cobrvOrig = (xml.find("cobr fat vOrig").text());
+        array_db.cobrvLiq = (xml.find("cobr fat vLiq").text());
+        array_db.cobrnDup = (xml.find("cobr dup nDup").text());
+        array_db.cobrdVenc = (xml.find("cobr dup dVenc").text());
+        array_db.vDup = (xml.find("cobr dup vDup").text());
 
-        // //Informações Adicionais
-        // array_db. = (xml.find("infAdic InfCpl").text());
+        // Informações Adicionais
+        array_db.InfCpl = (xml.find("infAdic InfCpl").text());
 
         array_infos_db.push(array_db);
         array_prods_db.push(array_items);
 
-        db.run('INSERT INTO nota_fiscal(id, versao) VALUES(?, ?)',
+        db.run('INSERT INTO nota_fiscal(id, versao, codigo_uf_emitente, codigo_chave_acesso, natureza_operacao, forma_pagamento, modelo_documento_fiscal, serie_documento_fiscal, numero_documento_fiscal, data_hora_emissao, data_hora_saida_entrada, tipo_operacao, codigo_municipio_fato_gerador, formato_impressao, tipo_emissao, digito_verificador_chave_acesso, tipo_ambiente, finalidade_emissao_nf, indFinal, indPres, processo_emissao_nfe, versao_processo_emissao_nfe, cnpj_emitente, cpf_emitente, razao_social_nome_emitente, nome_fantasia_emitente, logradouro_emitente, numero_emitente, complemento_emitente, bairro_emitente, codigo_municipio_emitente, municipio_emitente, uf_sigla_emitente, codigo_cep_emitente, codigo_pais_emitente, pais_emitente, telefone_emitente, codigo_regime_tributario_emitente, cnpj_destinatario, cpf_destinatario, razao_social_nome_destinatario, nome_fantasia_destinatario, logradouro_destinatario, numero_destinatario, complemento_destinatario, bairro_destinatario, codigo_municipio_destinatario, municipio_destinatario, uf_sigla_destinatario, codigo_cep_destinatario, codigo_pais_destinatario, pais_destinatario, telefone_destinatario, codigo_regime_tributario_destinatario, quantidade_itens, base_calculo_icms, valor_total_icms, vICMSDeson, vFCPUFDest, vICMSUFDest, vICMSUFRemet, base_calculo_icmsst, valor_total_icmsst, valor_total_produtos_e_servicos, valor_total_frete, valor_total_seguro, valor_total_desconto, valor_total_ii, valor_total_ipi, valor_total_pis, valor_total_cofins, valor_total_outros, valor_total_nf, modalidade_frete, cnpj_transportador, cpf_transportador, razao_social_nome_transportador, inscricao_estadual_transportador, endereco_completo_transportador, nome_municipio_transportador, uf_sigla_transportador, placa_veiculo_transportador, sigla_veiculo_transportador, quantidade_volumes_transportados, especie_volumes, peso_liquido, peso_bruto, numero_fatura, valor_original, valor_liquido, numero_duplicata, data_vencimento, valor_duplicata, informacoes_adicionais) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
         [
           array_db.id, 
-          array_db.versao      
+          array_db.versao,
+          array_db.cuf,
+          array_db.cnf,
+          array_db.natop,
+          array_db.indPag,
+          array_db.mod,
+          array_db.serie,
+          array_db.nNF,
+          array_db.dhEmi,
+          array_db.dhSainEnt,
+          array_db.tpNF,
+          array_db.idDest,
+          array_db.cMunFG,
+          array_db.tpImp,
+          array_db.tpEmis,
+          array_db.cDV,
+          array_db.tpAmb,
+          array_db.finNFe,
+          array_db.indFinal,
+          array_db.indPres,
+          array_db.procEmi,
+          array_db.verProc,
+          array_db.emitCNPJ, 
+          array_db.emitNome, 
+          array_db.emitFant, 
+          array_db.emitLgr,
+          array_db.emitnro,
+          array_db.emitBairro,
+          array_db.emitcMun,
+          array_db.emitxMun,
+          array_db.emitUF,
+          array_db.emitCEP,
+          array_db.emitcPais,
+          array_db.emitxPais,
+          array_db.emitfone,
+          array_db.emitIE,
+          array_db.emitCRT,
+          array_db.destCPF,
+          array_db.destNome,
+          array_db.destLgr,
+          array_db.destnro,
+          array_db.destBairro,
+          array_db.destcMun,
+          array_db.destxMun,
+          array_db.destUF,
+          array_db.destCEP,
+          array_db.destcPais,
+          array_db.destxPais,
+          array_db.destfone,
+          array_db.destindIEDest,
+          array_items.prodcProd,
+          array_items.prodxProd,
+          array_items.prodNCM,
+          array_items.prodCFOP,
+          array_items.produCom,
+          array_items.prodqCom,
+          array_items.prodvUnCom,
+          array_items.prodvProd,
+          array_items.produTrib,
+          array_items.prodqTrib,
+          array_items.prodvUnTrib,
+          array_items.prodvOutro,
+          array_items.prodindTot, 
+          array_items.impostoorig,
+          array_items.impostoICMSCST,
+          array_items.impostovBCSTRet,
+          array_items.impostovICMSSTRet,
+          array_items.impostoPISCST,
+          array_items.impostoPISvBC,
+          array_items.impostoPISpPIS,
+          array_items.impostoPISvPIS,
+          array_items.impostoCOFINSCST,
+          array_items.impostoCOFINSvBC,
+          array_items.impostoCOFINSpCOFINS,
+          array_items.impostoCOFINSvCOFINS,
+          array_db.totalvBC,
+          array_db.totalvICMS,
+          array_db.totalvICMSDeson,
+          array_db.totalvICMSUFDest,
+          array_db.totalvFCPUFDest,
+          array_db.totalvICMSUFRemet,
+          array_db.totalvBCST,
+          array_db.totalvST,
+          array_db.totalvProd,
+          array_db.totalvFrete,
+          array_db.totalvSeg,
+          array_db.totalvDesc,
+          array_db.totalvII,
+          array_db.totalvIPI,
+          array_db.totaalvPIS,
+          array_db.totalvCOFINS,
+          array_db.totalvOutro,
+          array_db.totalvNF,
+          array_db.transpmodFrete,
+          array_db.transpCNPJ,
+          array_db.transpxNome,
+          array_db.transpIE,
+          array_db.transpxEnder,
+          array_db.transpxMun,
+          array_db.transpUF,
+          array_db.transpplaca,
+          array_db.transpUF,
+          array_db.transpqVol,
+          array_db.transpesp,
+          array_db.transppesoL,
+          array_db.transppesoB,
+          array_db.cobrnFat,
+          array_db.cobrvOrig,
+          array_db.cobrvLiq,
+          array_db.cobrnDup,
+          array_db.cobrdVenc,
+          array_db.vDup,
+          array_db.InfCpl
         ], function(err){
           console.log(err);
         });
