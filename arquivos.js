@@ -50,9 +50,10 @@ function loadXMLDoc() {
         array_db.verProc = (xml.find("ide verProc").text());
 
         //Dados do Emissor
-        array_db.emitCNPJ = (xml.find("emit CNPJ").text()); //PEGA O CNPJ DA EMPRESA
-        array_db.emitNome = (xml.find("emit xNome").text()); //PEGA A RAZÃO SOCIAL DA EMPRESA
-        array_db.emitFant = (xml.find("emit xFant").text()); //PEGA O NOME FANTASIA DA EMPRESA
+        array_db.emitCNPJ = (xml.find("emit CNPJ").text()); 
+        array_db.emitCPF = (xml.find("emit CPF").text()); // VERIFICAR COMO É NO XML
+        array_db.emitNome = (xml.find("emit xNome").text()); 
+        array_db.emitFant = (xml.find("emit xFant").text()); 
         array_db.emitLgr = (xml.find("emit enderEmit xLgr").text());
         array_db.emitnro = (xml.find("emit enderEmit nro").text());
         array_db.emitBairro = (xml.find("emit enderEmit xBairro").text());
@@ -65,10 +66,13 @@ function loadXMLDoc() {
         array_db.emitfone = (xml.find("emit enderEmit fone").text());
         array_db.emitIE = (xml.find("emit IE").text());
         array_db.emitCRT = (xml.find("emit CRT").text());
+        array_db.emitComplemento = (xml.find("emit Complemento")) // VERIFICAR COMO É NO XML
 
         // //Dados do Destinatário
+        array_db.destCNPJ = (xml.find("dest CNPJ").text());
         array_db.destCPF = (xml.find("dest CPF").text());
         array_db.destNome = (xml.find("dest xNome").text());
+        array_db.destFant = (xml.find("dest xFant").text());
         array_db.destLgr = (xml.find("dest enderDest xLgr").text());
         array_db.destnro = (xml.find("dest enderDest nro").text());
         array_db.destBairro = (xml.find("dest enderDest xBairro").text());
@@ -80,6 +84,7 @@ function loadXMLDoc() {
         array_db.destxPais = (xml.find("dest enderDest xPais").text());
         array_db.destfone = (xml.find("dest enderDest fone").text());
         array_db.destindIEDest = (xml.find("dest indIEDest").text());
+        array_db.destComplemento = (xml.find("dest Complemento").text());
 
         // Dados de Produtos (Array Separado, Aqui tu tem que fazer um for)
         for( i = 0; i < xml.find("det").length; i++ ){
@@ -141,11 +146,12 @@ function loadXMLDoc() {
         array_db.transpxMun = (xml.find("transp transporta xMun").text());
         array_db.transpUF = (xml.find("transp transporta UF").text());
         array_db.transpplaca = (xml.find("transp veicTransp placa").text());
-        array_db.transpUF = (xml.find("transp veicTransp UF").text());
+        array_db.transpveicUF = (xml.find("transp veicTransp UF").text());
         array_db.transpqVol = (xml.find("transp vol qVol").text());
         array_db.transpesp = (xml.find("transp vol esp").text());
         array_db.transppesoL = (xml.find("transp vol pesoL").text());
         array_db.transppesoB = (xml.find("transp vol pesoB").text());
+        array_db.transpCPF = (xml.find("transp transporta CPF").text());
 
         // Dados de Cobrança
         array_db.cobrnFat = (xml.find("cobr fat nFat").text());
@@ -161,7 +167,7 @@ function loadXMLDoc() {
         array_infos_db.push(array_db);
         array_prods_db.push(array_items);
 
-        db.run('INSERT INTO nota_fiscal(id, versao, codigo_uf_emitente, codigo_chave_acesso, natureza_operacao, forma_pagamento, modelo_documento_fiscal, serie_documento_fiscal, numero_documento_fiscal, data_hora_emissao, data_hora_saida_entrada, tipo_operacao, codigo_municipio_fato_gerador, formato_impressao, tipo_emissao, digito_verificador_chave_acesso, tipo_ambiente, finalidade_emissao_nf, indFinal, indPres, processo_emissao_nfe, versao_processo_emissao_nfe, cnpj_emitente, cpf_emitente, razao_social_nome_emitente, nome_fantasia_emitente, logradouro_emitente, numero_emitente, complemento_emitente, bairro_emitente, codigo_municipio_emitente, municipio_emitente, uf_sigla_emitente, codigo_cep_emitente, codigo_pais_emitente, pais_emitente, telefone_emitente, codigo_regime_tributario_emitente, cnpj_destinatario, cpf_destinatario, razao_social_nome_destinatario, nome_fantasia_destinatario, logradouro_destinatario, numero_destinatario, complemento_destinatario, bairro_destinatario, codigo_municipio_destinatario, municipio_destinatario, uf_sigla_destinatario, codigo_cep_destinatario, codigo_pais_destinatario, pais_destinatario, telefone_destinatario, codigo_regime_tributario_destinatario, quantidade_itens, base_calculo_icms, valor_total_icms, vICMSDeson, vFCPUFDest, vICMSUFDest, vICMSUFRemet, base_calculo_icmsst, valor_total_icmsst, valor_total_produtos_e_servicos, valor_total_frete, valor_total_seguro, valor_total_desconto, valor_total_ii, valor_total_ipi, valor_total_pis, valor_total_cofins, valor_total_outros, valor_total_nf, modalidade_frete, cnpj_transportador, cpf_transportador, razao_social_nome_transportador, inscricao_estadual_transportador, endereco_completo_transportador, nome_municipio_transportador, uf_sigla_transportador, placa_veiculo_transportador, sigla_veiculo_transportador, quantidade_volumes_transportados, especie_volumes, peso_liquido, peso_bruto, numero_fatura, valor_original, valor_liquido, numero_duplicata, data_vencimento, valor_duplicata, informacoes_adicionais) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+        db.run('INSERT INTO nota_fiscal(id, versao, codigo_uf_emitente, codigo_chave_acesso, natureza_operacao, forma_pagamento, modelo_documento_fiscal, serie_documento_fiscal, numero_documento_fiscal, data_hora_emissao, data_hora_saida_entrada, tipo_operacao, codigo_municipio_fato_gerador, formato_impressao, tipo_emissao, digito_verificador_chave_acesso, tipo_ambiente, finalidade_emissao_nf, indFinal, indPres, processo_emissao_nfe, versao_processo_emissao_nfe, cnpj_emitente, cpf_emitente, razao_social_nome_emitente, nome_fantasia_emitente, logradouro_emitente, numero_emitente, complemento_emitente, bairro_emitente, codigo_municipio_emitente, municipio_emitente, uf_sigla_emitente, codigo_cep_emitente, codigo_pais_emitente, pais_emitente, telefone_emitente, codigo_regime_tributario_emitente, cnpj_destinatario, cpf_destinatario, razao_social_nome_destinatario, nome_fantasia_destinatario, logradouro_destinatario, numero_destinatario, complemento_destinatario, bairro_destinatario, codigo_municipio_destinatario, municipio_destinatario, uf_sigla_destinatario, codigo_cep_destinatario, codigo_pais_destinatario, pais_destinatario, telefone_destinatario, codigo_regime_tributario_destinatario, quantidade_itens, base_calculo_icms, valor_total_icms, vICMSDeson, vFCPUFDest, vICMSUFDest, vICMSUFRemet, base_calculo_icmsst, valor_total_icmsst, valor_total_produtos_e_servicos, valor_total_frete, valor_total_seguro, valor_total_desconto, valor_total_ii, valor_total_ipi, valor_total_pis, valor_total_cofins, valor_total_outros, valor_total_nf, modalidade_frete, cnpj_transportador, cpf_transportador, razao_social_nome_transportador, inscricao_estadual_transportador, endereco_completo_transportador, nome_municipio_transportador, uf_sigla_transportador, placa_veiculo_transportador, sigla_veiculo_transportador, quantidade_volumes_transportados, especie_volumes, peso_liquido, peso_bruto, numero_fatura, valor_original, valor_liquido, numero_duplicata, data_vencimento, valor_duplicata, informacoes_adicionais) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
         [
           array_db.id, 
           array_db.versao,
@@ -175,7 +181,6 @@ function loadXMLDoc() {
           array_db.dhEmi,
           array_db.dhSainEnt,
           array_db.tpNF,
-          array_db.idDest,
           array_db.cMunFG,
           array_db.tpImp,
           array_db.tpEmis,
@@ -186,11 +191,13 @@ function loadXMLDoc() {
           array_db.indPres,
           array_db.procEmi,
           array_db.verProc,
-          array_db.emitCNPJ, 
+          array_db.emitCNPJ,
+          array_db.emitCPF, 
           array_db.emitNome, 
           array_db.emitFant, 
           array_db.emitLgr,
           array_db.emitnro,
+          array_db.emitComplemento,
           array_db.emitBairro,
           array_db.emitcMun,
           array_db.emitxMun,
@@ -201,10 +208,13 @@ function loadXMLDoc() {
           array_db.emitfone,
           array_db.emitIE,
           array_db.emitCRT,
+          array_db.destCNPJ,
           array_db.destCPF,
           array_db.destNome,
+          array_db.destFant,
           array_db.destLgr,
           array_db.destnro,
+          array_db.destComplemento,
           array_db.destBairro,
           array_db.destcMun,
           array_db.destxMun,
@@ -214,31 +224,6 @@ function loadXMLDoc() {
           array_db.destxPais,
           array_db.destfone,
           array_db.destindIEDest,
-          array_items.prodcProd,
-          array_items.prodxProd,
-          array_items.prodNCM,
-          array_items.prodCFOP,
-          array_items.produCom,
-          array_items.prodqCom,
-          array_items.prodvUnCom,
-          array_items.prodvProd,
-          array_items.produTrib,
-          array_items.prodqTrib,
-          array_items.prodvUnTrib,
-          array_items.prodvOutro,
-          array_items.prodindTot, 
-          array_items.impostoorig,
-          array_items.impostoICMSCST,
-          array_items.impostovBCSTRet,
-          array_items.impostovICMSSTRet,
-          array_items.impostoPISCST,
-          array_items.impostoPISvBC,
-          array_items.impostoPISpPIS,
-          array_items.impostoPISvPIS,
-          array_items.impostoCOFINSCST,
-          array_items.impostoCOFINSvBC,
-          array_items.impostoCOFINSpCOFINS,
-          array_items.impostoCOFINSvCOFINS,
           array_db.totalvBC,
           array_db.totalvICMS,
           array_db.totalvICMSDeson,
@@ -259,13 +244,14 @@ function loadXMLDoc() {
           array_db.totalvNF,
           array_db.transpmodFrete,
           array_db.transpCNPJ,
+          array_db.transpCPF,
           array_db.transpxNome,
           array_db.transpIE,
           array_db.transpxEnder,
           array_db.transpxMun,
           array_db.transpUF,
           array_db.transpplaca,
-          array_db.transpUF,
+          array_db.transpveicUF,
           array_db.transpqVol,
           array_db.transpesp,
           array_db.transppesoL,
