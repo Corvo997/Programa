@@ -130,6 +130,24 @@
       console.log(err);
     });
 
+    db.run(`CREATE TABLE IF NOT EXISTS produtos (
+      codigo_produto TEXT,
+      descricao_produto TEXT,
+      codigo_ncm TEXT,
+      codigo_fiscal_operacoes_prestacoes TEXT,
+      unidade_comercial TEXT,
+      quantidade_comercial TEXT,
+      valor_unitario_comercial TEXT,
+      valor_total_produtos_e_servicos TEXT,
+      unidade_tributavel TEXT,
+      quantidade_tributavel TEXT,
+      valor_unitario_tributacao TEXT,
+      outras_despesas TEXT,
+      valor_item_entra_no_total_nf TEXT
+    );`, [], function(err){
+      console.log(err);
+    });
+
     </script>
 </head>
 
