@@ -143,7 +143,27 @@
       quantidade_tributavel TEXT,
       valor_unitario_tributacao TEXT,
       outras_despesas TEXT,
-      valor_item_entra_no_total_nf TEXT
+      valor_item_entra_no_total_nf TEXT,
+      ICMS_origem_mercadoria TEXT,
+      ICMS_tributaçao TEXT,
+      modalidade_determinaçao_BC TEXT,
+      valor_BC_ICMS TEXT,
+      aliquota_imposto_ICMS TEXT,
+      valor_ICMS TEXT,
+      valor_BC_ICMSST_retido TEXT,
+      valor_ICMSST_retido TEXT,
+      codigo_situação_tributaria_PIS TEXT,
+      valor_base_calculo_PIS TEXT,
+      aliquota_PIS_percentual TEXT,
+      valor_PIS TEXT,
+      quantidade_vendida_PIS TEXT,
+      aliquota_PIS_reais TEXT,
+      codigo_situaçao_tributaria_COFINS TEXT,
+      valor_base_calculo_COFINS TEXT,
+      aliquota_COFINS_percentual TEXT,
+      valor_COFINS TEXT,
+      quantidade_vendida_COFINS TEXT,
+      aliquota_COFINS_reais TEXT
     );`, [], function(err){
       console.log(err);
     });

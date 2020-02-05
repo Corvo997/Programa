@@ -51,7 +51,7 @@ function loadXMLDoc() {
 
         //Dados do Emissor
         array_db.emitCNPJ = (xml.find("emit CNPJ").text()); 
-        array_db.emitCPF = (xml.find("emit CPF").text()); // VERIFICAR COMO É NO XML
+        array_db.emitCPF = (xml.find("emit CPF").text()); 
         array_db.emitNome = (xml.find("emit xNome").text()); 
         array_db.emitFant = (xml.find("emit xFant").text()); 
         array_db.emitLgr = (xml.find("emit enderEmit xLgr").text());
@@ -66,7 +66,7 @@ function loadXMLDoc() {
         array_db.emitfone = (xml.find("emit enderEmit fone").text());
         array_db.emitIE = (xml.find("emit IE").text());
         array_db.emitCRT = (xml.find("emit CRT").text());
-        array_db.emitComplemento = (xml.find("emit Complemento")) // VERIFICAR COMO É NO XML
+        array_db.emitComplemento = (xml.find("emit xCpl")) 
 
         // //Dados do Destinatário
         array_db.destCNPJ = (xml.find("dest CNPJ").text());
@@ -84,7 +84,7 @@ function loadXMLDoc() {
         array_db.destxPais = (xml.find("dest enderDest xPais").text());
         array_db.destfone = (xml.find("dest enderDest fone").text());
         array_db.destindIEDest = (xml.find("dest indIEDest").text());
-        array_db.destComplemento = (xml.find("dest Complemento").text());
+        array_db.destComplemento = (xml.find("dest xCpl").text());
 
         // Dados de Produtos (Array Separado, Aqui tu tem que fazer um for)
         for( i = 0; i < xml.find("det").length; i++ ){
@@ -105,16 +105,25 @@ function loadXMLDoc() {
         //   Dados de Imposto
            array_items.impostoorig = (xml.find("det").eq(i).find("imposto ICMS ICMS60 orig").text());
            array_items.impostoICMSCST = (xml.find("det").eq(i).find("imposto ICMS ICMS60 CST").text());
+           array_items.impostomodBC = (xml.find("det").eq(i).find("imposto ICMS  modBC").text());
+           array_items.impostovBC = (xml.find("det").eq(i).find("imposto ICMS  vBC").text());
+           array_items.impostopICMS = (xml.find("det").eq(i).find("imposto ICMS  pICMS").text());
+           array_items.impostovICMS = (xml.find("det").eq(i).find("imposto ICMS  vICMS").text());
            array_items.impostovBCSTRet = (xml.find("det").eq(i).find("imposto ICMS ICMS60 vBCSTRet").text());
            array_items.impostovICMSSTRet = (xml.find("det").eq(i).find("imposto ICMS ICMS60 vICMSSTRet").text());
            array_items.impostoPISCST = (xml.find("det").eq(i).find("imposto PIS PISAliq CST").text());
            array_items.impostoPISvBC = (xml.find("det").eq(i).find("imposto PIS PISAliq vBC").text());
            array_items.impostoPISpPIS = (xml.find("det").eq(i).find("imposto PIS PISAliq pPIS").text());
            array_items.impostoPISvPIS = (xml.find("det").eq(i).find("imposto PIS PISAliq vPIS").text());
+           array_items.impostoPISqBCProd = (xml.find("det").eq(i).find("imposto PIS qBCProd").text());
+           array_items.impostoPISvAliqProd = (xml.find("det").eq(i).find("imposto PIS vAliqProd").text());
            array_items.impostoCOFINSCST = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq CST").text());
            array_items.impostoCOFINSvBC = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq vBC").text());
            array_items.impostoCOFINSpCOFINS = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq pCONFINS").text());
            array_items.impostoCOFINSvCOFINS = (xml.find("det").eq(i).find("imposto COFINS COFINSAliq vCONFINS").text());
+           array_items.impostoCOFINSqBCProd = (xml.find("det").eq(i).find("imposto COFINS qBCProd").text());
+           array_items.impostoCOFINSvAliqProd = (xml.find("det").eq(i).find("imposto COFINS vAliqProd").text());
+
          }
 
         // Dados Total
@@ -266,7 +275,45 @@ function loadXMLDoc() {
         ], function(err){
           console.log(err);
         });
-
+        
+        db.run('INSERT INTO produtos(codigo_produto,descricao_produto,codigo_ncm,codigo_fiscal_operacoes_prestacoes,unidade_comercial,quantidade_comercial,valor_unitario_comercial,valor_total_produtos_e_servicos,unidade_tributavel,quantidade_tributavel,valor_unitario_tributacao,outras_despesas,valor_item_entra_no_total_nf,ICMS_origem_mercadoria,ICMS_tributaçao,modalidade_determinaçao_BC,valor_BC_ICMS,aliquota_imposto_ICMS,valor_ICMS,valor_BC_ICMSST_retido,valor_ICMSST_retido,codigo_situação_tributaria_PIS,valor_base_calculo_PIS,aliquota_PIS_percentual,valor_PIS,quantidade_vendida_PIS,aliquota_PIS_reais,codigo_situaçao_tributaria_COFINS,valor_base_calculo_COFINS,aliquota_COFINS_percentual,valor_COFINS,quantidade_vendida_COFINS,aliquota_COFINS_reais) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+        [
+          array_items.prodcProd,
+          array_items.prodxProd,
+          array_items.prodNCM,
+          array_items.prodCFOP, 
+          array_items.produCom,
+          array_items.prodqCom, 
+          array_items.prodvUnCom, 
+          array_items.prodvProd, 
+          array_items.produTrib, 
+          array_items.prodqTrib, 
+          array_items.prodvUnTrib, 
+          array_items.prodvOutro, 
+          array_items.prodindTot,
+          array_items.impostoorig, 
+          array_items.impostoICMSCST,
+          array_items.impostomodBC,
+          array_items.impostovBC,
+          array_items.impostopICMS,
+          array_items.impostovICMS, 
+          array_items.impostovBCSTRet, 
+          array_items.impostovICMSSTRet, 
+          array_items.impostoPISCST, 
+          array_items.impostoPISvBC, 
+          array_items.impostoPISpPIS, 
+          array_items.impostoPISvPIS,
+          array_items.impostoPISqBCProd,
+          array_items.impostoPISvAliqProd, 
+          array_items.impostoCOFINSCST, 
+          array_items.impostoCOFINSvBC, 
+          array_items.impostoCOFINSpCOFINS, 
+          array_items.impostoCOFINSvCOFINS,
+          array_items.impostoCOFINSqBCProd,
+           array_items.impostoCOFINSvAliqProd
+        ], function(err){
+          console.log(err);
+        });
       }
 
     });
