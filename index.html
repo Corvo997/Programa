@@ -130,7 +130,8 @@
       console.log(err);
     });
 
-    db.run(`CREATE TABLE IF NOT EXISTS produtos (
+    db.run(`CREATE TABLE IF NOT EXISTS produto (
+      id_nota_fiscal TEXT,
       codigo_produto TEXT,
       descricao_produto TEXT,
       codigo_ncm TEXT,

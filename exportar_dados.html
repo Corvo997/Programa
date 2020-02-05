@@ -1,0 +1,32 @@
+<script type="text/javascript">
+		
+    array_teste = `SELECT * FROM nota_fiscal INNER JOIN produto ON id_nota_fiscal = id`;
+
+	db.all(array_teste, [], (err, rows) => {
+	  if (err) {
+	    throw err;
+	  }
+	  rows.forEach((row) => {
+	    console.log(row);
+	  });
+	});
+
+
+
+	function exportarParaExcel(Dados) {
+	  var CsvString = "";
+	  Dados.forEach(function(RowItem, RowIndex) {
+	    RowItem.forEach(function(ColItem, ColIndex) {
+	      CsvString += ColItem + ',';
+	    });
+	    CsvString += "\r\n";
+	  });
+	  CsvString = "data:application/csv," + encodeURIComponent(CsvString);
+	  var x = document.createElement("A");
+	  x.setAttribute("href", CsvString );
+	  x.setAttribute("download","somedata.csv");
+	  document.body.appendChild(x);
+	  x.click();
+	}
+
+</script>
