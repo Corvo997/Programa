@@ -335,7 +335,7 @@ db.all(array_teste2, [], (err, rows) => {
     throw err;
   }
   rows.forEach((row) => {
-    
+    console.log(row);
   });
 });
 
