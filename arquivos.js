@@ -6,6 +6,8 @@ function loadXMLDoc() {
   array_prods_db = [];
   //ESTE ARRAY PEGA OS ELEMENTOS DO array_db PQ ESTA COMO LOCAL E DA ERRO DE ARRAY NAO DEFINIDO, ENTAO CRIEI ESSE
   array_teste = [];
+  arrray_teste2 = [];
+  
 
   for(i = 0; i < $("#pasta_xmls")[0].files.length; i++){
     $("#porcentagem_arquivos").html(((i + 1)/n_files)*100 + "%");
@@ -276,7 +278,7 @@ function loadXMLDoc() {
           console.log(err);
         });
         
-        db.run('INSERT INTO produtos(codigo_produto,descricao_produto,codigo_ncm,codigo_fiscal_operacoes_prestacoes,unidade_comercial,quantidade_comercial,valor_unitario_comercial,valor_total_produtos_e_servicos,unidade_tributavel,quantidade_tributavel,valor_unitario_tributacao,outras_despesas,valor_item_entra_no_total_nf,ICMS_origem_mercadoria,ICMS_tributaçao,modalidade_determinaçao_BC,valor_BC_ICMS,aliquota_imposto_ICMS,valor_ICMS,valor_BC_ICMSST_retido,valor_ICMSST_retido,codigo_situação_tributaria_PIS,valor_base_calculo_PIS,aliquota_PIS_percentual,valor_PIS,quantidade_vendida_PIS,aliquota_PIS_reais,codigo_situaçao_tributaria_COFINS,valor_base_calculo_COFINS,aliquota_COFINS_percentual,valor_COFINS,quantidade_vendida_COFINS,aliquota_COFINS_reais) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
+        db.run('INSERT INTO produtos(codigo_produto,descricao_produto,codigo_ncm,codigo_fiscal_operacoes_prestacoes,unidade_comercial,quantidade_comercial,valor_unitario_comercial,valor_total_produtos_e_servicos,unidade_tributavel,quantidade_tributavel,valor_unitario_tributacao,outras_despesas,valor_item_entra_no_total_nf,ICMS_origem_mercadoria,ICMS_tributaçao,modalidade_determinaçao_BC,valor_BC_ICMS,aliquota_imposto_ICMS,valor_ICMS,valor_BC_ICMSST_retido,valor_ICMSST_retido,codigo_situação_tributaria_PIS,valor_base_calculo_PIS,aliquota_PIS_percentual,valor_PIS,quantidade_vendida_PIS,aliquota_PIS_reais,codigo_situaçao_tributaria_COFINS,valor_base_calculo_COFINS,aliquota_COFINS_percentual,valor_COFINS,quantidade_vendida_COFINS,aliquota_COFINS_reais) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',
         [
           array_items.prodcProd,
           array_items.prodxProd,
@@ -314,13 +316,37 @@ function loadXMLDoc() {
         ], function(err){
           console.log(err);
         });
+        
+        array_teste = `SELECT * FROM nota_fiscal`;
+ 
+db.all(array_teste, [], (err, rows) => {
+  if (err) {
+    throw err;
+  }
+  rows.forEach((row) => {
+    console.log(row);
+  });
+});
+
+array_teste2 = `SELECT * FROM produtos`;
+ 
+db.all(array_teste2, [], (err, rows) => {
+  if (err) {
+    throw err;
+  }
+  rows.forEach((row) => {
+    
+  });
+});
+
+   
       }
 
     });
 
   }
 
-  //JOGA NO BANCO - A FAZER
+  
 
 
   hoje = new Date();
