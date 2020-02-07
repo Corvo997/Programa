@@ -7934,6 +7934,30 @@ h4.asd label {
 	button#showLeftPush {
 		font-size: 1em;
 	}
+  
+  
+}
+#selecionou, #nselecionou{
+    float: left;
+    background-color: white;
+    width: 250px;
+    padding-left: 10px;
+    margin: 12px;
+    height: 500px;
+    position: relative;
+    left: 90px;
+    bottom: 40px;
+    border: 1px solid white;
+    box-shadow: 15px 15px 25px #9c9c9c;
+    overflow:auto;
+  }
+.opcao{
+  margin: 5px;
+  border: 3px solid #d2f9ff;
+  background-color: #d2f9ff;
+  box-shadow: 10px 10px 25px #cbcbcb;
+  padding: 5px;
+  border-radius: 5px;
 }
 /*--//responsive-design---*/
 
