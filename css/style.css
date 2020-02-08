@@ -7940,13 +7940,12 @@ h4.asd label {
 #selecionou, #nselecionou{
     float: left;
     background-color: white;
-    width: 250px;
-    padding-left: 10px;
+    width: 328px;
+    padding-bottom: 50px;
     margin: 12px;
     height: 500px;
     position: relative;
-    left: 90px;
-    bottom: 40px;
+    bottom: 24px;
     border: 1px solid white;
     box-shadow: 15px 15px 25px #9c9c9c;
     overflow:auto;
@@ -7958,6 +7957,21 @@ h4.asd label {
   box-shadow: 10px 10px 25px #cbcbcb;
   padding: 5px;
   border-radius: 5px;
+}
+#filtro{
+ position: absolute;
+    right: 298px;
+    height: 37px;
+    width: 153px;
+    top: 16px;
+
+}
+#title{
+    left: 80px;
+    position: relative;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 500
 }
 /*--//responsive-design---*/
 
