@@ -7938,7 +7938,6 @@ h4.asd label {
   
 }
 #selecionou, #nselecionou{
-    float: left;
     background-color: white;
     width: 328px;
     padding-bottom: 50px;
@@ -7957,14 +7956,6 @@ h4.asd label {
   box-shadow: 10px 10px 25px #cbcbcb;
   padding: 5px;
   border-radius: 5px;
-}
-#filtro{
- position: absolute;
-    right: 298px;
-    height: 37px;
-    width: 153px;
-    top: 16px;
-
 }
 #title{
     left: 80px;

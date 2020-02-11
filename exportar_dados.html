@@ -1,398 +1,426 @@
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 
-   
-   <div class="wrapper"> 
-    <div id="nselecionou" class="box">
-       <label id="title">Não selecionadas</label>
-    	<div id="cUF" draggable="true" class="opcao">
-    	 <label>Código da UF</label>	
-    	</div>
-    	
-    	<div id="cNF" draggable="true" class="opcao">
-    		<label>Código Numérico</label>
-    	</div>
-    	<div id="natOp" draggable="true" class="opcao">
-    		<label>Naturezaa da Operação</label>
-    	</div>
-    	<div id="indPag" draggable="true" class="opcao">
-    		<label>Forma de Pagamento</label>
-    	</div>
-    	<div id="mod" draggable="true" class="opcao">
-    		<label>Modelo Documento Fiscal</label>
-    	</div>
-    	<div id="serie" draggable="true" class="opcao">
-    		<label>Série do Documento</label>
-    	</div>
-    	<div id="nNF" draggable="true" class="opcao">
-    		<label>Número do Documento</label>
-    	</div>
-    	<div id="dhEmi" draggable="true" class="opcao">
-    		<label>Data de emissão</label>
-    	</div>
-    	<div id="dhSaiEnt" draggable="true" class="opcao">
-    		<label>Data de saída ou entrada</label>
-    	</div>
-    	<div id="tpNF" draggable="true" class="opcao">
-    		<label>Tipo de operação</label>
-    	</div>
-    	<div id="cMunFG" draggable="true" class="opcao">
-    		<label>Código do Município</label>
-    	</div>
-    	<div id="tpImp" draggable="true" class="opcao">
-    		<label>Formato de Impressão</label>
-    	</div>
-    	<div id="tpEmis" draggable="true" class="opcao">
-    		<label>Tipo de Emissão</label>
-    	</div>
-    	<div id="cDV" draggable="true" class="opcao">
-    		<label>Dígito Verificador</label>
-    	</div>
-    	<div id="tpAmb" draggable="true" class="opcao">
-    		<label>Identificação do Ambiente</label>
-    	</div>
-    	<div id="finNFe" draggable="true" class="opcao">
-    		<label>Finalidade de emissão</label>
-    	</div>
-    	<div id="idDest" draggable="true" class="opcao">
-    		<label>Id do Destinatário</label>
-    	</div>
-    	<div id="indFinal" draggable="true" class="opcao">
-    		<label>Índice Final</label>
-    	</div>
-    	<div id="indPres" draggable="true" class="opcao">
-    		<label>Índice Pres</label> 
-    	</div>
-    	<div id="procEmi" draggable="true" class="opcao">
-    		<label>Processo de emissão</label>
-    	</div>
-    	<div id="verProc" draggable="true" class="opcao">
-    		<label>Versão do Processo</label>
-    	</div>
-    	<div id="emitCNPJ" draggable="true" class="opcao">
-    		<label>CNPJ do emitente</label>
-    	</div>
-    	<div id="emitCPF" draggable="true" class="opcao">
-    		<label>CPF do emitente</label>
-    	</div>
-    	<div id="emitxNome" draggable="true" class="opcao">
-    		<label>Nome do Emitente</label>
-    	</div>
-    	<div id="emitxFant" draggable="true" class="opcao">
-    		<label>Nome Fantasia do Emitente</label>
-    	</div>
-    	<div id="emitxLgr" draggable="true" class="opcao">
-    		<label>Logradouro Emitente</label>
-    	</div>
-    	<div id="emitnro" draggable="true" class="opcao">
-    		<label>Número Emitente</label>
-    	</div>
-    	<div id="emitxBairro" draggable="true" class="opcao">
-    		<label>Bairro Emitente</label>
-    	</div>
-    	<div id="emitcMun" draggable="true" class="opcao">
-    		<label>Código do município do Emitente</label>
-    	</div>
-    	<div id="emitxMun" draggable="true" class="opcao">
-    		<label>Nome do município do emitente</label>
-    	</div>
-    	<div id="emitUF" draggable="true" class="opcao">
-    		<label>UF Emitente</label>
-    	</div>
-    	<div id="emitCEP" draggable="true" class="opcao">
-    		<label>CEP Emitente</label>
-    	</div>
-    	<div id="emitcPais" draggable="true" class="opcao">
-    		<label>Código País Emitente</label>
-    	</div>
-    	<div id="emitxPais" draggable="true" class="opcao">
-    		<label>Nome País Emitente</label>
-    	</div>
-    	<div id="emitfone" draggable="true" class="opcao">
-    		<label>Telefone Emitente</label>
-    	</div>
-    	<div id="emitIE" draggable="true" class="opcao">
-    		<label>IE Emitente</label>
-    	</div>
-    	<div id="emitCRT" draggable="true" class="opcao">
-    		<label>Código de Regime Tributário Emitente</label>
-    	</div>
-    	<div id="emitxCpl" draggable="true" class="opcao">
-    		<label>Complemento Emitente</label>
-    	</div>
-    	<div id="destCNPJ" draggable="true" class="opcao">
-    		<label>CNPJ do Destinatário</label>
-    	</div>
-    	<div id="destCPF" draggable="true" class="opcao">
-    		<label>CPF do Destinatário</label>
-    	</div>
-    	<div id="destxNome" draggable="true" class="opcao">
-    		<label>Nome do Destinatário</label>
-    	</div>
-    	<div id="destxFant" draggable="true" class="opcao">
-    		<label>Nome Fantasia do Destinatário</label>
-    	</div>
-    	<div id="destLgr" draggable="true" class="opcao">
-    		<label>Logradouro do Destinatário</label>
-    	</div>
-    	<div id="destnro" draggable="true" class="opcao">
-    		<label>Número do Destinatário</label>
-    	</div>
-    	<div id="destxBairro" draggable="true" class="opcao">
-    		<label>Bairro Destinatário</label>
-    	</div>
-    	<div id="destcMun" draggable="true" class="opcao">
-    		<label>Código Município Destinatário</label>
-    	</div>
-    	<div id="destxMun" draggable="true" class="opcao">
-    		<label>Nome município Destinatário</label>
-    	</div>
-    	<div id="destUF" draggable="true" class="opcao">
-    		<label>UF Destinatário</label>
-    	</div>
-    	<div id="destCEP" draggable="true" class="opcao">
-    		<label>CEP Destinatário</label>
-    	</div>
-    	<div id="destcPais" draggable="true" class="opcao">
-    		<label>Código País Destinatário</label>
-    	</div>
-    	<div id="destxPais" draggable="true" class="opcao">
-    		<label>Nome País Destinatário</label>
-    	</div>
-    	<div id="destFone" draggable="true" class="opcao">
-    		<label>Fone Destinatário</label>
-    	</div>
-    	<div id="destIE" draggable="true" class="opcao">
-    		<label>IE Destinatário</label>
-    	</div>
-    	<div id="destCpl" draggable="true" class="opcao">
-    		<label>Complemento do Destinatário</label>
-    	</div>
-    	<div id="cProd" draggable="true" class="opcao">
-    		<label>Código do Produto</label>
-    	</div>
-    	<div id="xProd" draggable="true" class="opcao">
-    		<label>Descrição do Produto</label>
-    	</div>
-    	<div id="NCM" draggable="true" class="opcao">
-    		<label>Código NCM</label>
-    	</div>
-    	<div id="CFOP" draggable="true" class="opcao">
-    		<label>Código Fiscal de Operações</label>
-    	</div>
-    	<div id="uCom" draggable="true" class="opcao">
-    		<label>Unidade Comercial</label>
-    	</div>
-    	<div id="qCom" draggable="true" class="opcao">
-    		<label>Quantidade Comercial</label>
-    	</div>
-    	<div id="vUnCom" draggable="true" class="opcao">
-    		<label>Valor Unitário de Comercialização</label>
-    	</div>
-    	<div id="vProd" draggable="true" class="opcao">
-    		<label>Valor Toal Bruto</label>
-    	</div>
-    	<div id="uTrib" draggable="true" class="opcao">
-    		<label>Unidade Tributável</label>
-    	</div>
-    	<div id="qTrib" draggable="true" class="opcao">
-    		<label>Quantidade Tributável</label>
-    	</div>
-    	<div id="vUnTrib" draggable="true"class="opcao">
-    		<label>Valor Unitário de tributação</label>
-    	</div>
-    	<div id="vOutro" draggable="true" class="opcao">
-    		<label>Outras despesas</label>
-    	</div>
-    	<div id="indTot" draggable="true" class="opcao">
-    		<label>Indicador de entrada do item no total</label>
-    	</div>
-    	<div id="ICMSorig" draggable="true" class="opcao">
-    		<label>Origem da mercadoria ICMS</label>
-    	</div>
-    	<div id="ICMSCST" draggable="true" class="opcao">
-    		<label>Tributação ICMS</label>
-    	</div>
-    	<div id="ICMSmodBC" draggable="true" class="opcao">
-    		<label>Modalidade BC do ICMS</label>
-    	</div>
-    	<div id="ICMSvBC" draggable="true" class="opcao">
-    		<label>Valor da BC ICMS</label>
-    	</div>
-    	<div id="pICMS" draggable="true" class="opcao">
-    		<label>Alíquota do ICMS</label>
-    	</div>
-    	<div id="vICMS" draggable="true" class="opcao">
-    		<label>Valor do ICMS</label>
-    	</div>
-    	<div id="ICMSvBCSTRet" draggable="true" class="opcao">
-    		<label>Valor BC do ICMS ST retido</label>
-    	</div>
-    	<div id="vICMSSTRet" draggable="true" class="opcao">
-    		<label>Valor do ICMS retido</label>
-    	</div>
-    	<div id="PISCST" draggable="true" class="opcao">
-    		<label>Tributação do PIS</label>
-    	</div>
-    	<div id="PISvBC" draggable="true" class="opcao">
-    		<label>Valor BC do PIS</label>
-    	</div>
-    	<div id="pPIS" draggable="true" class="opcao">
-    		<label>Alíquota do PIS(percentual)</label>
-    	</div>
-    	<div id="vPIS" draggable="true" class="opcao">
-    		<label>Valor do PIS</label>
-    	</div>
-    	<div id="PISqBCProd" draggable="true" class="opcao">
-    		<label>Quantidade Vendida PIS</label>
-    	</div>
-    	<div id="PISvAliqProd" draggable="true"class="opcao">
-    		<label>Alíquota do PIS(reais)</label>
-    	</div>
-    	<div id="COFINSCST" draggable="true" class="opcao">
-    		<label>Tributação COFINS</label>
-    	</div>
-    	<div id="COFINSvBC" draggable="true" class="opcao">
-    		<label>Valor BC da COFINS</label>
-    	</div>
-    	<div id="pCOFINS" draggable="true" class="opcao">
-    		<label>Alíquota da COFINS(percentual)</label>
-    	</div>
-    	<div id="vCOFINS" draggable="true" class="opcao">
-    		<label>Valor do COFINS</label>
-    	</div>
-    	<div id="COFINSqBCProd" draggable="true" class="opcao">
-    		<label>Quantidade Vendida COFINS</label>
-    	</div>
-    	<div id="COFINSvAliqProd" class="opcao">
-    		<label>Alíquota do COFINS(reais)</label>
-    	</div>
-    	<div id="totalvBC" draggable="true" class="opcao">
-    		<label>BC total do ICMS</label>
-    	</div>
-    	<div id="totalvICMS" draggable="true"class="opcao">
-    		<label>Valor Total do ICMS</label>
-    	</div>
-    	<div id="totalvBCST" draggable="true" class="opcao">
-    		<label>BC do ICMS ST Total</label>
-    	</div>
-    	<div id="totalvST" draggable="true" class="opcao">
-    		<label>Valor Total do ICMS ST</label>
-    	</div>
-    	<div id="totalvProd" draggable="true" class="opcao">
-    		<label>Valor Total dos Produtos</label>
-    	</div>
-    	<div id="totalvFrete" draggable="true" class="opcao">
-    		<label>Valor Total do Frete</label>
-    	</div>
-    	<div id="totalvSeg" draggable="true" class="opcao">
-    		<label>Valor Total do Seguro</label>
-    	</div>
-    	<div id="totalvDesc" draggable="true" class="opcao">
-    		<label>Valor Total do Desconto</label>
-    	</div>
-    	<div id="totalvII" draggable="true" class="opcao">
-    		<label>Valor Total do II</label>
-    	</div>
-    	<div id="totalvIPI" draggable="true"class="opcao">
-    		<label>Valor Total do IPI</label>
-    	</div>
-    	<div id="totalvPIS" draggable="true" class="opcao">
-    		<label>Valor do PIS</label>
-    	</div>
-    	<div id="totalvCOFINS" draggable="true" class="opcao">
-    		<label>Valor do COFINS</label>
-    	</div>
-    	<div id="totalvOutro" draggable="true" class="opcao">
-    		<label>Total de Outras Despesas</label>
-    	</div>
-    	<div id="totalvNF" draggable="true" class="opcao">
-    		<label>Valor Total da NF</label>
-    	</div>
-    	<div id="totalvFCPUFDest" draggable="true" class="opcao">
-    		<label>Valor Total FCP UF Destinatário</label>
-    	</div>
-    	<div id="totalvICMSUFRemet" draggable="true" class="opcao">
-    		<label>Valor Total ICMS UF Remetente </label>
-    	</div>
-    	<div id="totalvICMSDeson" draggable="true" class="opcao">
-    		<label>Valor Total do ICMS Deson</label>
-    	</div>
-    	<div id="totalvICMSUFDest" draggable="true" class="opcao">
-    		<label>Valor Totaldo ICMS UF Destinatário</label>
-    	</div>
-    	<div id="transpmodFrete" draggable="true" class="opcao">
-    		<label>Modalidade do frete</label>
-    	</div>
-    	<div id="transpCNPJ" draggable="true" class="opcao">
-    		<label>CNPJ do Transporte</label>
-    	</div>
-    	<div id="transpCPF" draggable="true" class="opcao">
-    		<label>CPF do Transporte</label>
-    	</div>
-    	<div id="transpxNome" draggable="true" class="opcao">
-    		<label>Nome do Transporte</label>
-    	</div>
-    	<div id="transpIE" draggable="true" class="opcao">
-    		<label>Inscrição Estadual do Transporte</label>
-    	</div>
-    	<div id="transpxEnder" draggable="true" class="opcao">
-    		<label>Endereço Completo do Transporte</label>
-    	</div>
-    	<div id="transpxMun" draggable="true" class="opcao">
-    		<label>Nome do Município do Transporte</label>
-    	</div>
-    	<div id="transpUF" draggable="true" class="opcao">
-    		<label>UF do Transporte</label>
-    	</div>
-    	<div id="transpplaca" draggable="true"class="opcao">
-    		<label>Placa do Veículo</label>
-    	</div>
-    	<div id="transpUF" draggable="true" class="opcao">
-    		<label>UF do Veículo</label>
-    	</div>
-    	<div id="transpqVol" draggable="true" class="opcao">
-    		<label>Quantidade de volumes transportados</label>
-    	</div>
-    	<div id="transpesp" draggable="true" class="opcao">
-    		<label>Espécie dos volumes transportados</label>
-    	</div>
-    	<div id="transppesoL" draggable="true"class="opcao">
-    		<label>Peso Líquido</label>
-    	</div>
-    	<div id="transppesoB" draggable="true" class="opcao">
-    		<label>Peso Bruto</label>
-    	</div>
-    	<div id="cobrnFat" draggable="true" class="opcao">
-    		<label>Número da Fatura</label>
-    	</div>
-    	<div id="cobrvOrig" draggable="true" class="opcao">
-    		<label>Valor Original da Fatura</label>
-    	</div>
-    	<div id="cobrvLiq" draggable="true" class="opcao">
-    		<label>Valor Líquido da Fatura</label>
-    	</div>
-    	<div id="cobrnDup" draggable="true"class="opcao">
-    		<label>Número da Duplicata</label>
-    	</div>
-    	<div id="cobrdVenc" draggable="true" class="opcao">
-    		<label>Data de Vencimento</label>
-    	</div>
-    	<div id="cobrvDup" draggable="true" class="opcao">
-    		<label>Valor da duplicata</label>
-    	</div>
-    	<div id="InfCpl" draggable="true" class="opcao">
-    		<label>Informações Complementares</label>
-    	</div>
+    <div class="row">
+        <div class="col">
+            <div class="wrapper"> 
+                <div style="float: right;" id="nselecionou" class="box">
+                   <label id="title">Não selecionadas</label>
+                	<div campo="cUF" draggable="true" class="opcao">
+                	 <label>Código da UF</label>	
+                	</div>
+                	<div campo="cNF" draggable="true" class="opcao">
+                		<label>Código Numérico</label>
+                	</div>
+                	<div campo="natOp" draggable="true" class="opcao">
+                		<label>Naturezaa da Operação</label>
+                	</div>
+                	<div campo="indPag" draggable="true" class="opcao">
+                		<label>Forma de Pagamento</label>
+                	</div>
+                	<div campo="mod" draggable="true" class="opcao">
+                		<label>Modelo Documento Fiscal</label>
+                	</div>
+                	<div campo="serie" draggable="true" class="opcao">
+                		<label>Série do Documento</label>
+                	</div>
+                	<div campo="nNF" draggable="true" class="opcao">
+                		<label>Número do Documento</label>
+                	</div>
+                	<div campo="dhEmi" draggable="true" class="opcao">
+                		<label>Data de emissão</label>
+                	</div>
+                	<div campo="dhSaiEnt" draggable="true" class="opcao">
+                		<label>Data de saída ou entrada</label>
+                	</div>
+                	<div campo="tpNF" draggable="true" class="opcao">
+                		<label>Tipo de operação</label>
+                	</div>
+                	<div campo="cMunFG" draggable="true" class="opcao">
+                		<label>Código do Município</label>
+                	</div>
+                	<div campo="tpImp" draggable="true" class="opcao">
+                		<label>Formato de Impressão</label>
+                	</div>
+                	<div campo="tpEmis" draggable="true" class="opcao">
+                		<label>Tipo de Emissão</label>
+                	</div>
+                	<div campo="cDV" draggable="true" class="opcao">
+                		<label>Dígito Verificador</label>
+                	</div>
+                	<div campo="tpAmb" draggable="true" class="opcao">
+                		<label>Identificação do Ambiente</label>
+                	</div>
+                	<div campo="finNFe" draggable="true" class="opcao">
+                		<label>Finalidade de emissão</label>
+                	</div>
+                	<div campo="idDest" draggable="true" class="opcao">
+                		<label>Id do Destinatário</label>
+                	</div>
+                	<div campo="indFinal" draggable="true" class="opcao">
+                		<label>Índice Final</label>
+                	</div>
+                	<div campo="indPres" draggable="true" class="opcao">
+                		<label>Índice Pres</label> 
+                	</div>
+                	<div campo="procEmi" draggable="true" class="opcao">
+                		<label>Processo de emissão</label>
+                	</div>
+                	<div campo="verProc" draggable="true" class="opcao">
+                		<label>Versão do Processo</label>
+                	</div>
+                	<div campo="emitCNPJ" draggable="true" class="opcao">
+                		<label>CNPJ do emitente</label>
+                	</div>
+                	<div campo="emitCPF" draggable="true" class="opcao">
+                		<label>CPF do emitente</label>
+                	</div>
+                	<div campo="emitxNome" draggable="true" class="opcao">
+                		<label>Nome do Emitente</label>
+                	</div>
+                	<div campo="emitxFant" draggable="true" class="opcao">
+                		<label>Nome Fantasia do Emitente</label>
+                	</div>
+                	<div campo="emitxLgr" draggable="true" class="opcao">
+                		<label>Logradouro Emitente</label>
+                	</div>
+                	<div campo="emitnro" draggable="true" class="opcao">
+                		<label>Número Emitente</label>
+                	</div>
+                	<div campo="emitxBairro" draggable="true" class="opcao">
+                		<label>Bairro Emitente</label>
+                	</div>
+                	<div campo="emitcMun" draggable="true" class="opcao">
+                		<label>Código do município do Emitente</label>
+                	</div>
+                	<div campo="emitxMun" draggable="true" class="opcao">
+                		<label>Nome do município do emitente</label>
+                	</div>
+                	<div campo="emitUF" draggable="true" class="opcao">
+                		<label>UF Emitente</label>
+                	</div>
+                	<div campo="emitCEP" draggable="true" class="opcao">
+                		<label>CEP Emitente</label>
+                	</div>
+                	<div campo="emitcPais" draggable="true" class="opcao">
+                		<label>Código País Emitente</label>
+                	</div>
+                	<div campo="emitxPais" draggable="true" class="opcao">
+                		<label>Nome País Emitente</label>
+                	</div>
+                	<div campo="emitfone" draggable="true" class="opcao">
+                		<label>Telefone Emitente</label>
+                	</div>
+                	<div campo="emitIE" draggable="true" class="opcao">
+                		<label>IE Emitente</label>
+                	</div>
+                	<div campo="emitCRT" draggable="true" class="opcao">
+                		<label>Código de Regime Tributário Emitente</label>
+                	</div>
+                	<div campo="emitxCpl" draggable="true" class="opcao">
+                		<label>Complemento Emitente</label>
+                	</div>
+                	<div campo="destCNPJ" draggable="true" class="opcao">
+                		<label>CNPJ do Destinatário</label>
+                	</div>
+                	<div campo="destCPF" draggable="true" class="opcao">
+                		<label>CPF do Destinatário</label>
+                	</div>
+                	<div campo="destxNome" draggable="true" class="opcao">
+                		<label>Nome do Destinatário</label>
+                	</div>
+                	<div campo="destxFant" draggable="true" class="opcao">
+                		<label>Nome Fantasia do Destinatário</label>
+                	</div>
+                	<div campo="destLgr" draggable="true" class="opcao">
+                		<label>Logradouro do Destinatário</label>
+                	</div>
+                	<div campo="destnro" draggable="true" class="opcao">
+                		<label>Número do Destinatário</label>
+                	</div>
+                	<div campo="destxBairro" draggable="true" class="opcao">
+                		<label>Bairro Destinatário</label>
+                	</div>
+                	<div campo="destcMun" draggable="true" class="opcao">
+                		<label>Código Município Destinatário</label>
+                	</div>
+                	<div campo="destxMun" draggable="true" class="opcao">
+                		<label>Nome município Destinatário</label>
+                	</div>
+                	<div campo="destUF" draggable="true" class="opcao">
+                		<label>UF Destinatário</label>
+                	</div>
+                	<div campo="destCEP" draggable="true" class="opcao">
+                		<label>CEP Destinatário</label>
+                	</div>
+                	<div campo="destcPais" draggable="true" class="opcao">
+                		<label>Código País Destinatário</label>
+                	</div>
+                	<div campo="destxPais" draggable="true" class="opcao">
+                		<label>Nome País Destinatário</label>
+                	</div>
+                	<div campo="destFone" draggable="true" class="opcao">
+                		<label>Fone Destinatário</label>
+                	</div>
+                	<div campo="destIE" draggable="true" class="opcao">
+                		<label>IE Destinatário</label>
+                	</div>
+                	<div campo="destCpl" draggable="true" class="opcao">
+                		<label>Complemento do Destinatário</label>
+                	</div>
+                	<div campo="cProd" draggable="true" class="opcao">
+                		<label>Código do Produto</label>
+                	</div>
+                	<div campo="xProd" draggable="true" class="opcao">
+                		<label>Descrição do Produto</label>
+                	</div>
+                	<div campo="NCM" draggable="true" class="opcao">
+                		<label>Código NCM</label>
+                	</div>
+                	<div campo="CFOP" draggable="true" class="opcao">
+                		<label>Código Fiscal de Operações</label>
+                	</div>
+                	<div campo="uCom" draggable="true" class="opcao">
+                		<label>Unidade Comercial</label>
+                	</div>
+                	<div campo="qCom" draggable="true" class="opcao">
+                		<label>Quantidade Comercial</label>
+                	</div>
+                	<div campo="vUnCom" draggable="true" class="opcao">
+                		<label>Valor Unitário de Comercialização</label>
+                	</div>
+                	<div campo="vProd" draggable="true" class="opcao">
+                		<label>Valor Toal Bruto</label>
+                	</div>
+                	<div campo="uTrib" draggable="true" class="opcao">
+                		<label>Unidade Tributável</label>
+                	</div>
+                	<div campo="qTrib" draggable="true" class="opcao">
+                		<label>Quantidade Tributável</label>
+                	</div>
+                	<div campo="vUnTrib" draggable="true"class="opcao">
+                		<label>Valor Unitário de tributação</label>
+                	</div>
+                	<div campo="vOutro" draggable="true" class="opcao">
+                		<label>Outras despesas</label>
+                	</div>
+                	<div campo="indTot" draggable="true" class="opcao">
+                		<label>Indicador de entrada do item no total</label>
+                	</div>
+                	<div campo="ICMSorig" draggable="true" class="opcao">
+                		<label>Origem da mercadoria ICMS</label>
+                	</div>
+                	<div campo="ICMSCST" draggable="true" class="opcao">
+                		<label>Tributação ICMS</label>
+                	</div>
+                	<div campo="ICMSmodBC" draggable="true" class="opcao">
+                		<label>Modalidade BC do ICMS</label>
+                	</div>
+                	<div campo="ICMSvBC" draggable="true" class="opcao">
+                		<label>Valor da BC ICMS</label>
+                	</div>
+                	<div campo="pICMS" draggable="true" class="opcao">
+                		<label>Alíquota do ICMS</label>
+                	</div>
+                	<div campo="vICMS" draggable="true" class="opcao">
+                		<label>Valor do ICMS</label>
+                	</div>
+                	<div campo="ICMSvBCSTRet" draggable="true" class="opcao">
+                		<label>Valor BC do ICMS ST retido</label>
+                	</div>
+                	<div campo="vICMSSTRet" draggable="true" class="opcao">
+                		<label>Valor do ICMS retido</label>
+                	</div>
+                	<div campo="PISCST" draggable="true" class="opcao">
+                		<label>Tributação do PIS</label>
+                	</div>
+                	<div campo="PISvBC" draggable="true" class="opcao">
+                		<label>Valor BC do PIS</label>
+                	</div>
+                	<div campo="pPIS" draggable="true" class="opcao">
+                		<label>Alíquota do PIS(percentual)</label>
+                	</div>
+                	<div campo="vPIS" draggable="true" class="opcao">
+                		<label>Valor do PIS</label>
+                	</div>
+                	<div campo="PISqBCProd" draggable="true" class="opcao">
+                		<label>Quantidade Vendida PIS</label>
+                	</div>
+                	<div campo="PISvAliqProd" draggable="true"class="opcao">
+                		<label>Alíquota do PIS(reais)</label>
+                	</div>
+                	<div campo="COFINSCST" draggable="true" class="opcao">
+                		<label>Tributação COFINS</label>
+                	</div>
+                	<div campo="COFINSvBC" draggable="true" class="opcao">
+                		<label>Valor BC da COFINS</label>
+                	</div>
+                	<div campo="pCOFINS" draggable="true" class="opcao">
+                		<label>Alíquota da COFINS(percentual)</label>
+                	</div>
+                	<div campo="vCOFINS" draggable="true" class="opcao">
+                		<label>Valor do COFINS</label>
+                	</div>
+                	<div campo="COFINSqBCProd" draggable="true" class="opcao">
+                		<label>Quantidade Vendida COFINS</label>
+                	</div>
+                	<div campo="COFINSvAliqProd" class="opcao">
+                		<label>Alíquota do COFINS(reais)</label>
+                	</div>
+                	<div campo="totalvBC" draggable="true" class="opcao">
+                		<label>BC total do ICMS</label>
+                	</div>
+                	<div campo="totalvICMS" draggable="true"class="opcao">
+                		<label>Valor Total do ICMS</label>
+                	</div>
+                	<div campo="totalvBCST" draggable="true" class="opcao">
+                		<label>BC do ICMS ST Total</label>
+                	</div>
+                	<div campo="totalvST" draggable="true" class="opcao">
+                		<label>Valor Total do ICMS ST</label>
+                	</div>
+                	<div campo="totalvProd" draggable="true" class="opcao">
+                		<label>Valor Total dos Produtos</label>
+                	</div>
+                	<div campo="totalvFrete" draggable="true" class="opcao">
+                		<label>Valor Total do Frete</label>
+                	</div>
+                	<div campo="totalvSeg" draggable="true" class="opcao">
+                		<label>Valor Total do Seguro</label>
+                	</div>
+                	<div campo="totalvDesc" draggable="true" class="opcao">
+                		<label>Valor Total do Desconto</label>
+                	</div>
+                	<div campo="totalvII" draggable="true" class="opcao">
+                		<label>Valor Total do II</label>
+                	</div>
+                	<div campo="totalvIPI" draggable="true"class="opcao">
+                		<label>Valor Total do IPI</label>
+                	</div>
+                	<div campo="totalvPIS" draggable="true" class="opcao">
+                		<label>Valor do PIS</label>
+                	</div>
+                	<div campo="totalvCOFINS" draggable="true" class="opcao">
+                		<label>Valor do COFINS</label>
+                	</div>
+                	<div campo="totalvOutro" draggable="true" class="opcao">
+                		<label>Total de Outras Despesas</label>
+                	</div>
+                	<div campo="totalvNF" draggable="true" class="opcao">
+                		<label>Valor Total da NF</label>
+                	</div>
+                	<div campo="totalvFCPUFDest" draggable="true" class="opcao">
+                		<label>Valor Total FCP UF Destinatário</label>
+                	</div>
+                	<div campo="totalvICMSUFRemet" draggable="true" class="opcao">
+                		<label>Valor Total ICMS UF Remetente </label>
+                	</div>
+                	<div campo="totalvICMSDeson" draggable="true" class="opcao">
+                		<label>Valor Total do ICMS Deson</label>
+                	</div>
+                	<div campo="totalvICMSUFDest" draggable="true" class="opcao">
+                		<label>Valor Totaldo ICMS UF Destinatário</label>
+                	</div>
+                	<div campo="transpmodFrete" draggable="true" class="opcao">
+                		<label>Modalidade do frete</label>
+                	</div>
+                	<div campo="transpCNPJ" draggable="true" class="opcao">
+                		<label>CNPJ do Transporte</label>
+                	</div>
+                	<div campo="transpCPF" draggable="true" class="opcao">
+                		<label>CPF do Transporte</label>
+                	</div>
+                	<div campo="transpxNome" draggable="true" class="opcao">
+                		<label>Nome do Transporte</label>
+                	</div>
+                	<div campo="transpIE" draggable="true" class="opcao">
+                		<label>Inscrição Estadual do Transporte</label>
+                	</div>
+                	<div campo="transpxEnder" draggable="true" class="opcao">
+                		<label>Endereço Completo do Transporte</label>
+                	</div>
+                	<div campo="transpxMun" draggable="true" class="opcao">
+                		<label>Nome do Município do Transporte</label>
+                	</div>
+                	<div campo="transpUF" draggable="true" class="opcao">
+                		<label>UF do Transporte</label>
+                	</div>
+                	<div campo="transpplaca" draggable="true"class="opcao">
+                		<label>Placa do Veículo</label>
+                	</div>
+                	<div campo="transpUF" draggable="true" class="opcao">
+                		<label>UF do Veículo</label>
+                	</div>
+                	<div campo="transpqVol" draggable="true" class="opcao">
+                		<label>Quantidade de volumes transportados</label>
+                	</div>
+                	<div campo="transpesp" draggable="true" class="opcao">
+                		<label>Espécie dos volumes transportados</label>
+                	</div>
+                	<div campo="transppesoL" draggable="true"class="opcao">
+                		<label>Peso Líquido</label>
+                	</div>
+                	<div campo="transppesoB" draggable="true" class="opcao">
+                		<label>Peso Bruto</label>
+                	</div>
+                	<div campo="cobrnFat" draggable="true" class="opcao">
+                		<label>Número da Fatura</label>
+                	</div>
+                	<div campo="cobrvOrig" draggable="true" class="opcao">
+                		<label>Valor Original da Fatura</label>
+                	</div>
+                	<div campo="cobrvLiq" draggable="true" class="opcao">
+                		<label>Valor Líquido da Fatura</label>
+                	</div>
+                	<div campo="cobrnDup" draggable="true"class="opcao">
+                		<label>Número da Duplicata</label>
+                	</div>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div id="selecionou" class="box">
+            	<label id="title">Selecionadas</label>
+                	<div campo="cobrdVenc" draggable="true" class="opcao">
+                		<label>Data de Vencimento</label>
+                	</div>
+                	<div campo="cobrvDup" draggable="true" class="opcao">
+                		<label>Valor da duplicata</label>
+                	</div>
+                	<div campo="InfCpl" draggable="true" class="opcao">
+                		<label>Informações Complementares</label>
+                	</div>
+            </div>        
+        </div>
+    </div>
+    <div class="row">
+        <div class="col" style="text-align: center;">
+            <input type="button" class="btn btn-success" onclick="FiltrarColunas();" name="filtrar" id="filtro" value="Filtrar">
+        </div>
     </div>
 
-    <div id="selecionou" class="box">
-    	<label id="title">Selecionadas</label>
-    </div>
-   </div>
-   <input type="button" class="btn btn-success" name="filtrar" id="filtro" value="Filtrar">
     
     
  <script type="text/javascript">
+
+    function FiltrarColunas(){
+
+        colunas = $("#selecionou div");
+
+        label_colunas = [];
+
+        for(i = 0; i < colunas.length; i++){
+
+            label_colunas.push(colunas.eq(i).attr("campo"));
+
+        }
+
+        console.log(label_colunas); //ISSO AQUI SÃO TODAS AS COLUNAS QUE ELA SELECIONOU
+
+        colunas_sql = label_colunas.join();
+
+        console.log(colunas_sql); //TU VAI JOGAR ISSO NO SQL
+
+    }
 
     var dropTarget = document.querySelector(".wrapper");
     var drag = document.querySelectorAll(".opcao");
@@ -457,7 +485,7 @@
 
 	}
 
-	exportarParaExcel();
+	// exportarParaExcel();
     
    
   
