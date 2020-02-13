@@ -7938,31 +7938,47 @@ h4.asd label {
   
 }
 #selecionou, #nselecionou{
-    background-color: white;
-    width: 328px;
+    background-color: #f2f2f2;
+    width: 334px;
     padding-bottom: 50px;
     margin: 12px;
     height: 500px;
     position: relative;
     bottom: 24px;
-    border: 1px solid white;
-    box-shadow: 15px 15px 25px #9c9c9c;
     overflow:auto;
   }
 .opcao{
   margin: 5px;
-  border: 3px solid #d2f9ff;
-  background-color: #d2f9ff;
-  box-shadow: 10px 10px 25px #cbcbcb;
-  padding: 5px;
+  border: 1px solid #aeddffb8;
+  background-color: #aeddffb8;
+  padding: 3px;
   border-radius: 5px;
+  width: 292px;
+  position: relative;
+  left: 12px;
 }
-#title{
-    left: 80px;
+#title{ 
     position: relative;
     font-family: Arial;
     font-size: 20px;
     font-weight: 500
+    bottom: 10px;
+    left: 28px;
+}
+
+#selecionou{
+   right: 12px;
+    bottom: 548px;
+    border-left: 1px solid #c9c9c9;
+}
+
+#title2{
+    position: relative;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 500;
+    bottom: 563px;
+    left: 375px;
 }
 /*--//responsive-design---*/
 
