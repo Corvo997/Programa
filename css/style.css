@@ -7943,8 +7943,8 @@ h4.asd label {
     padding-bottom: 50px;
     margin: 12px;
     height: 500px;
-    position: relative;
-    bottom: 24px;
+    position: absolute;
+    top: -37px;
     overflow:auto;
   }
 .opcao{
@@ -7958,27 +7958,32 @@ h4.asd label {
   left: 12px;
 }
 #title{ 
-    position: relative;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: 500
-    bottom: 10px;
-    left: 28px;
-}
-
-#selecionou{
-   right: 12px;
-    bottom: 548px;
-    border-left: 1px solid #c9c9c9;
-}
-
-#title2{
-    position: relative;
+    position: absolute;
     font-family: Arial;
     font-size: 20px;
     font-weight: 500;
-    bottom: 563px;
-    left: 375px;
+    top: -52px;
+    right: 523px;
+}
+
+#selecionou{
+  right: 13px;
+  border-left: 1px solid #c9c9c9;
+}
+
+#title2{
+    position: absolute;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 500;
+    top: -50px;
+    right: 222px;
+}
+
+#filtro{
+    position: absolute;
+    top: 480px;
+    left: 312px;
 }
 /*--//responsive-design---*/
 

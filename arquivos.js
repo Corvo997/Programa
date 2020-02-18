@@ -9,6 +9,7 @@ function loadXMLDoc() {
   arrray_teste2 = [];
   
 
+
   for(i = 0; i < $("#pasta_xmls")[0].files.length; i++){
     $("#porcentagem_arquivos").html(((i + 1)/n_files)*100 + "%");
 
@@ -23,23 +24,43 @@ function loadXMLDoc() {
     
         var array_db = {};
         var array_items = {};
-
+        
         //Chave da Nota
-        array_db.id = (xml.find("infNFe").attr('Id'));
+        array_db.id = (xml.find("infNFe").attr('Id'));       
         array_db.versao = (xml.find("infNFe").attr('versao'));
+        var teste = (xml.find("infNFe").attr('Id')); //variavel pra testar se ja existe ou nao
+        var filtro = [];// array do filtro
 
-        //Dados de Emissão da Nota
-        array_db.cuf = (xml.find("ide cUF").text());
-        array_db.cnf = (xml.find("ide cNF").text());
-        array_db.natop = (xml.find("ide natOp").text());
-        array_db.indPag = (xml.find("ide indPag").text());
-        array_db.mod = (xml.find("ide mod").text());
-        array_db.serie = (xml.find("ide serie").text());
-        array_db.nNF = (xml.find("ide nNF").text());
-        array_db.dhEmi = (xml.find("ide dhEmi").text());
-        array_db.dhSainEnt = (xml.find("ide dhSainEnt").text());
-        array_db.tpNF = (xml.find("ide tpNF").text());
-        array_db.idDest = (xml.find("ide idDest").text());
+       let sql = `SELECT id FROM nota_fiscal`; 
+        
+        db.all(sql, [], (err, consult) => {
+       if (err) {
+       throw err;
+         }
+       consult.forEach((row) => {
+         
+         console.log(consult);
+  }); //APÓS OS AJUSTES RETIRAR ESSE SQL DAQUI PRA NAO FICAR FAZENDO O SELECT TODO VEZ, FALTA MOVER
+});
+            if (filtro.indexOf(teste) === -1 ){
+              console.log(teste+ ' foi inserido');
+            } // O IF ELSE ESTAO FORA AINDA DOS INSERT PRA TESTAR, PREGUIÇA DE FICAR APAGANDO E COLOCANDO
+              //SE DER CERTO AÍ COLOCO ISSO DENTRO TUDO DA CONDIÇÃO 
+            else if(filtro.indexOf(teste) > -1){
+              console.log(teste+' já existe');
+            }
+            //Dados de Emissão da Nota
+             array_db.cuf = (xml.find("ide cUF").text());
+             array_db.cnf = (xml.find("ide cNF").text());
+             array_db.natop = (xml.find("ide natOp").text());
+             array_db.indPag = (xml.find("ide indPag").text());
+             array_db.mod = (xml.find("ide mod").text());
+             array_db.serie = (xml.find("ide serie").text());
+             array_db.nNF = (xml.find("ide nNF").text());
+             array_db.dhEmi = (xml.find("ide dhEmi").text());
+             array_db.dhSainEnt = (xml.find("ide dhSainEnt").text());
+             array_db.tpNF = (xml.find("ide tpNF").text());
+             array_db.idDest = (xml.find("ide idDest").text());
         array_db.cMunFG = (xml.find("ide cMunFG").text());
         array_db.tpImp = (xml.find("ide tpImp").text());
         array_db.tpEmis = (xml.find("ide tpEmis").text());
