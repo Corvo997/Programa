@@ -1,7 +1,22 @@
+        
 function loadXMLDoc() {
-
+ 
   n_files = $("#pasta_xmls")[0].files.length;
+  
+  const filtro = [];// array do filtro
 
+       let sql = `SELECT id FROM nota_fiscal`; 
+        
+        db.all(sql, [], (err, consult) => {
+       if (err) {
+       throw err;
+         }
+       consult.forEach((row) => {
+         filtro.push(row.id);
+         console.log(filtro);
+  }); 
+});
+        
   array_infos_db = [];
   array_prods_db = [];
   //ESTE ARRAY PEGA OS ELEMENTOS DO array_db PQ ESTA COMO LOCAL E DA ERRO DE ARRAY NAO DEFINIDO, ENTAO CRIEI ESSE
@@ -21,6 +36,8 @@ function loadXMLDoc() {
       success: function(response){
 
         xml = $(response);
+
+        
     
         var array_db = {};
         var array_items = {};
@@ -28,28 +45,11 @@ function loadXMLDoc() {
         //Chave da Nota
         array_db.id = (xml.find("infNFe").attr('Id'));       
         array_db.versao = (xml.find("infNFe").attr('versao'));
-        var teste = (xml.find("infNFe").attr('Id')); //variavel pra testar se ja existe ou nao
-        var filtro = [];// array do filtro
 
-       let sql = `SELECT id FROM nota_fiscal`; 
-        
-        db.all(sql, [], (err, consult) => {
-       if (err) {
-       throw err;
-         }
-       consult.forEach((row) => {
-         
-         console.log(consult);
-  }); //APÓS OS AJUSTES RETIRAR ESSE SQL DAQUI PRA NAO FICAR FAZENDO O SELECT TODO VEZ, FALTA MOVER
-});
-            if (filtro.indexOf(teste) === -1 ){
-              console.log(teste+ ' foi inserido');
-            } // O IF ELSE ESTAO FORA AINDA DOS INSERT PRA TESTAR, PREGUIÇA DE FICAR APAGANDO E COLOCANDO
-              //SE DER CERTO AÍ COLOCO ISSO DENTRO TUDO DA CONDIÇÃO 
-            else if(filtro.indexOf(teste) > -1){
-              console.log(teste+' já existe');
-            }
-            //Dados de Emissão da Nota
+        const teste = (xml.find("infNFe").attr('Id'));
+
+            if (filtro.indexOf(teste) === -1){
+              //Dados de Emissão da Nota
              array_db.cuf = (xml.find("ide cUF").text());
              array_db.cnf = (xml.find("ide cNF").text());
              array_db.natop = (xml.find("ide natOp").text());
@@ -347,6 +347,12 @@ function loadXMLDoc() {
         ], function(err){
           console.log(err);
         });
+              console.log(teste+ ' foi inserido');
+            } 
+            else if (filtro.indexOf(teste) >= 0){
+              console.log(teste+' já existe');
+            }
+            
    
       }
 
