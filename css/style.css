@@ -7942,6 +7942,10 @@ h4.asd label {
   justify-content: center;
   align-items: center
 }
+#btn1{
+  position: absolute;
+  bottom: 92px;
+}
 
 .sortable{
     background-color: #f2f2f2;
@@ -7988,7 +7992,6 @@ h4.asd label {
 }
 
 #filtro{
-    bottom: -356px;
     left: 297px;
     position: relative;
     display: flex;
@@ -8107,12 +8110,15 @@ h4.asd label {
 }
 
 #title2{
-    right: 0px;
-    bottom: 0px;
+    right: -49px;
+    bottom: 55px;
+}
+#title{
+   left: -239px;
 }
 #filtro{
     bottom: 18px;
-    left: -8px;
+    left: 535px;
     position: relative;
     width: 170px;
 }

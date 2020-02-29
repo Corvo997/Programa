@@ -25,7 +25,7 @@ dropTarget.addEventListener("drop", function(ev){
 
     function FiltrarColunas(){
 
-        colunas = $("#selecionou div");
+        colunas = $("#list-2 ul");
 
         label_colunas = [];
         titulo_colunas = [];
