@@ -7956,6 +7956,17 @@ h4.asd label {
     overflow-x: hidden;
 }
 
+
+li.dragging{
+  background: #aeddffb8;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  opacity: 1.0;
+  margin: 5px;
+  border: 1px solid #aeddffb8;
+  padding: 3px;
+  border-radius: 5px;
+  width: 254px;
+  }
 .opcao{
   margin: 5px;
   border: 1px solid #aeddffb8;
@@ -7963,6 +7974,7 @@ h4.asd label {
   padding: 3px;
   border-radius: 5px;
   width: 254px;
+  
 }
 
 #title{ 
