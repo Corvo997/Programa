@@ -1,10 +1,35 @@
+<label id="title">Não Selecionadas</label>
+<label id="title2">Selecionadas</label>
+
 <div class="container" id="exportar">
    
-   <div class="row">
-      <div class="col" >
-      <label id="title">Não Selecionadas</label>
-      
-      <ul id="list-1" class="sortable" style="list-style: none;">
+   <div class="row" id="linha">
+      <div class="col">     
+       <ul id="list-1" class="sortable" style="list-style: none;">
+         <li id="item-1" class="opcao" campo="codigo_uf_emitente">Código da UF</li>
+         <li id="item-2" class="opcao" campo="codigo_chave_acesso">Código Numérico</li>
+         <li id="item-3" class="opcao" campo="natureza_operacao">Natureza da Operação</li>
+         <li id="item-4" class="opcao" campo="forma_pagamento">Forma de Pagamento</li>
+         <li id="item-5" class="opcao" campo="modelo_documento_fiscal">Modelo Documento Fiscal</li>
+         <li id="item-6" class="opcao" campo="serie_documento_fiscal">Série do Documento</li>
+         <li id="item-1" class="opcao" campo="codigo_uf_emitente">Código da UF</li>
+         <li id="item-2" class="opcao" campo="codigo_chave_acesso">Código Numérico</li>
+         <li id="item-3" class="opcao" campo="natureza_operacao">Natureza da Operação</li>
+         <li id="item-4" class="opcao" campo="forma_pagamento">Forma de Pagamento</li>
+         <li id="item-5" class="opcao" campo="modelo_documento_fiscal">Modelo Documento Fiscal</li>
+         <li id="item-6" class="opcao" campo="serie_documento_fiscal">Série do Documento</li>
+         <li id="item-1" class="opcao" campo="codigo_uf_emitente">Código da UF</li>
+         <li id="item-2" class="opcao" campo="codigo_chave_acesso">Código Numérico</li>
+         <li id="item-3" class="opcao" campo="natureza_operacao">Natureza da Operação</li>
+         <li id="item-4" class="opcao" campo="forma_pagamento">Forma de Pagamento</li>
+         <li id="item-5" class="opcao" campo="modelo_documento_fiscal">Modelo Documento Fiscal</li>
+         <li id="item-6" class="opcao" campo="serie_documento_fiscal">Série do Documento</li>
+         <li id="item-1" class="opcao" campo="codigo_uf_emitente">Código da UF</li>
+         <li id="item-2" class="opcao" campo="codigo_chave_acesso">Código Numérico</li>
+         <li id="item-3" class="opcao" campo="natureza_operacao">Natureza da Operação</li>
+         <li id="item-4" class="opcao" campo="forma_pagamento">Forma de Pagamento</li>
+         <li id="item-5" class="opcao" campo="modelo_documento_fiscal">Modelo Documento Fiscal</li>
+         <li id="item-6" class="opcao" campo="serie_documento_fiscal">Série do Documento</li>
          <li id="item-1" class="opcao" campo="codigo_uf_emitente">Código da UF</li>
          <li id="item-2" class="opcao" campo="codigo_chave_acesso">Código Numérico</li>
          <li id="item-3" class="opcao" campo="natureza_operacao">Natureza da Operação</li>
@@ -17,7 +42,7 @@
 </div>
    
    <div class="col">
-      <label id="title2">Selecionadas</label>
+      
       
       <ul id="list-2" class="sortable" style="float: right; list-style: none;" id="selecionou">
          <li id="item-7" class="opcao" campo="cnpj_emitente">CNPJ do emitente</li>
@@ -37,5 +62,14 @@
         </div>
     </div>
 
-<script src="js/sortable.js"></script>
+<script type="text/javascript">
+   $(function() {
+    $("#list-1, #list-2").sortable({
+        connectWith: ".sortable"
+    }).disableSelection();
+});
+</script>
+
+
 <script type="text/javascript" src="exportar_dados.js"></script>
+<script src="js/jquery-ui.js"></script>

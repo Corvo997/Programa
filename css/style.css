@@ -7938,9 +7938,13 @@ h4.asd label {
 }
 
   #exportar{
-  display: flex;
-  justify-content: center;
-  align-items: center
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 471px;
+    position: relative;
+    bottom: 70px;
+    overflow: auto;
 }
 #btn1{
   position: absolute;
@@ -7952,11 +7956,7 @@ h4.asd label {
     width: 268px;
     margin: 12px;
     height: 432px;
-    overflow:auto;
-    overflow-x: hidden;
 }
-
-
 li.dragging{
   background: #aeddffb8;
   box-shadow: 0 4px 20px rgba(0,0,0,0.5);
@@ -7974,7 +7974,6 @@ li.dragging{
   padding: 3px;
   border-radius: 5px;
   width: 254px;
-  
 }
 
 #title{ 
@@ -7982,16 +7981,16 @@ li.dragging{
     font-family: Arial;
     font-size: 20px;
     font-weight: 500;
-    top: -31px;
-    left: -139px;
+    top: -66px;
+    left: 78px;
     width: 163px;
 }
 
 #list-2{
     border-left: 1px solid #c9c9c9;
     position: absolute !important;
-    left: -66px;
-    top: -21px;
+    left: -16px;
+    top: -230px;
 }
 
 #title2{
@@ -7999,12 +7998,13 @@ li.dragging{
     font-family: Arial;
     font-size: 20px;
     font-weight: 500;
-    bottom: 55px;
-    right: -37px;
+    top: 14px;
+    right: 255px;
 }
 
 #filtro{
-    left: 297px;
+    left: 260px;
+    bottom: -12px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -8012,10 +8012,9 @@ li.dragging{
 }
 #list-1{
     position: absolute !important;
-    top: -22px;
-    right: 42px;
+    top: -230px;
+    right: -7px;
 }
-
 
 
 @media only screen and (min-width: 1004px) and (max-width: 1040px){

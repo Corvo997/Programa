@@ -273,3 +273,4 @@ function initSortable( list, sbtn )
 // init lists 
 initSortable( "list-1", "sbtn-1" );
 initSortable( "list-2", "sbtn-2" );
+ 

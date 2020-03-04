@@ -1,28 +1,3 @@
-var dropTarget = document.querySelector(".container");
- var draggables = document.querySelectorAll(".opcao");
-
-for(let x = 0; x<draggables.length; x++){
-	draggables[x].addEventListener("dragstart", function(ev){
-     ev.dataTransfer.setData("srcId",ev.target.id);
-	});
-}
-
-dropTarget.addEventListener("dragover",function(ev){
- ev.preventDefault();
-});
-
-
-dropTarget.addEventListener("drop", function(ev){
-	ev.preventDefault();
-	let target = ev.target;
-	let srcId = ev.dataTransfer.getData("srcId");
-    
-    let droppable = target.classList.contains("box");
-    if (droppable) {
-	ev.target.appendChild(document.getElementById(srcId));
- }
-});
-
     function FiltrarColunas(){
 
         colunas = $("#list-2 li");
