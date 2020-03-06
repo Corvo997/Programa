@@ -32,14 +32,32 @@
 
 </div>
 
-<script type="text/javascript">
+<script type="text/javascript">   
+
+
+
 $("#pasta_xmls").change(function(event) {
-    $("#sumario_arquivos").css({
-    	display: 'block'
-    });
-    $(".custom-file-label").html($("#pasta_xmls")[0].files[0].path.replace($("#pasta_xmls")[0].files[0].path.split("\\")[$("#pasta_xmls")[0].files[0].path.split("\\").length - 1], ""));
-    $("#n_arquivos").html($("#pasta_xmls")[0].files.length);
+let indices = [];
+let array = ['xml', 'jpg', 'mp3', 'xml', 'xml', 'css']; //ARRAY QUE VAI ARMAZENAR AS EXTENSOES DO ARQUIVOS FALTA FAZER O METODO
+let element = 'xml';
+let ids = array.indexOf(element);
+while (ids != -1) {
+ indices.push(ids);
+  ids = array.indexOf(element, ids + 1);
+}
+console.log(indices);
+
+ for (var i = 0; i < indices.length; i++) {
+      //AQUI FICA PARTE ONDE SO VAI SCANEAR OS INDICES COM A EXTENSAO CORRETA
+      console.log(indices[i]);
+ } 
     
+    $("#sumario_arquivos").css({
+        display: 'block'
+    });
+$(".custom-file-label").html($("#pasta_xmls")[0].files[0].path.replace($("#pasta_xmls")[0].files[0].path.split("\\")[$("#pasta_xmls")[0].files[0].path.split("\\").length - 1], ""));
+    $("#n_arquivos").html($("#pasta_xmls")[0].files.length);
+  
 });
 
 
