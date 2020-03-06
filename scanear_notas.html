@@ -26,7 +26,7 @@
         <div class="col" id="botao_download" style="text-align: left;">    
             <button type="button" style="display: none;" class="btn btn-primary" id="salvar" onclick='xls.exportToXLS("Base_Dados_"+hoje);'>SALVAR ARQUIVO</button>
         </div>
-	</div>
+	</div>/
 
     <div class="row" id="informacoes_importacao"></div>
 
@@ -37,28 +37,37 @@
 
 
 $("#pasta_xmls").change(function(event) {
+var array = [];
+
+for (var i = 0; i < $("#pasta_xmls")[0].files.length;i++) {
+     array.push($("#pasta_xmls")[0].files[i].path.split('.').pop());
+     
+ }              //LAÇO FOR VAI PEGAR SÓ AS EXTENSOES DOS ARQUIVOS.
+console.log(array);
+                 //DAQUI
 let indices = [];
-let array = ['xml', 'jpg', 'mp3', 'xml', 'xml', 'css']; //ARRAY QUE VAI ARMAZENAR AS EXTENSOES DO ARQUIVOS FALTA FAZER O METODO
 let element = 'xml';
 let ids = array.indexOf(element);
 while (ids != -1) {
- indices.push(ids);
+  indices.push(ids);
   ids = array.indexOf(element, ids + 1);
-}
+}       
 console.log(indices);
-
- for (var i = 0; i < indices.length; i++) {
-      //AQUI FICA PARTE ONDE SO VAI SCANEAR OS INDICES COM A EXTENSAO CORRETA
-      console.log(indices[i]);
- } 
-    
-    $("#sumario_arquivos").css({
+                      //ATÉ AQUI É VAI FAZER A FILTRAGEM ONDE VAI SALVAR O INDICE ONDE OS ARQUIVOS SÃO XML.
+for (var y = 0; y < indices.length; y++) {
+    var esc = indices[y];
+    console.log(esc);    
+} //AQUI SERIA O LAÇO FOR ONDE VAI PEGAR O INDICE DO ARRAY E INSERIR NA PARTE ONDE BUSCA O ARQUIVO NO INDICE DESEJADO.
+   
+   $("#sumario_arquivos").css({
         display: 'block'
     });
 $(".custom-file-label").html($("#pasta_xmls")[0].files[0].path.replace($("#pasta_xmls")[0].files[0].path.split("\\")[$("#pasta_xmls")[0].files[0].path.split("\\").length - 1], ""));
     $("#n_arquivos").html($("#pasta_xmls")[0].files.length);
-  
+
+ 
 });
+
 
 
 </script>
