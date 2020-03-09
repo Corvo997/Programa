@@ -8,7 +8,7 @@
         for(i = 0; i < colunas.length; i++){
 
             label_colunas.push(colunas.eq(i).attr("campo"));
-            titulo_colunas.push(colunas.eq(i).find('li').html());
+            titulo_colunas.push(colunas.eq(i).html());
 
         }
 
