@@ -20,6 +20,10 @@
     <script src="js/custom.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/mdb.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="datatable/datatables.min.css"/>
+   
+  <script type="text/javascript" src="datatable/datatables.min.js"></script>
     
     <script>
     if (window.module) module = window.module;
@@ -33,7 +37,7 @@
     });
 
     db.run(`CREATE TABLE IF NOT EXISTS nota_fiscal (
-      id TEXT,
+      id TEXT PRIMARY KEY,
       versao TEXT,
       codigo_uf_emitente TEXT,
       codigo_chave_acesso TEXT,
@@ -129,7 +133,7 @@
       informacoes_adicionais TEXT 
     );`, [], function(err){
       console.log(err);
-    });
+    });    
 
     db.run(`CREATE TABLE IF NOT EXISTS produto (
       id_nota_fiscal TEXT,
@@ -167,6 +171,10 @@
       quantidade_vendida_COFINS TEXT,
       aliquota_COFINS_reais TEXT
     );`, [], function(err){
+      console.log(err);
+    });
+
+    db.run(`ALTER TABLE produto ADD CONSTRAINT Primary_key_prods PRIMARY KEY (id_nota_fiscal, codigo_produto);`, [], function(err){
       console.log(err);
     });
 
