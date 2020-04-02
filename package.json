@@ -13,8 +13,11 @@
     "electron-rebuild": "^1.8.8"
   },
   "dependencies": {
+    "dialogs": "^2.0.1",
+    "electron-osx-prompt": "^1.4.1",
     "readdirp": "^3.3.0",
     "serialport": "^8.0.6",
+    "smalltalk": "^4.0.6",
     "sqlite-sync": "^0.3.9",
     "sqlite3": "^4.1.1",
     "xlsexport": "^1.5.2",

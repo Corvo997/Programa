@@ -1,9 +1,14 @@
+ <label id="esc" >Filtros:</label>
+ <select id="escolhido" onmouseover="comboCaixa()" onchange="EscolhaCombo()">
+     <option></option>
+ </select>
+  
 
 <div class="container row" id="exportar">
    
    <div class="row" id="linha">
       <div class="col-6">     
-         <center>Não Selecionadas</center>
+         <center id = "title">Não Selecionadas</center>
          <ul id="list-1" class="sortable" style="list-style: none;">
             <li id="item-1" class="opcao" campo="codigo_uf_emitente">Código da UF</li>
             <li id="item-2" class="opcao" campo="codigo_chave_acesso">Código Numérico</li>
@@ -11,6 +16,10 @@
             <li id="item-4" class="opcao" campo="forma_pagamento">Forma de Pagamento</li>
             <li id="item-5" class="opcao" campo="modelo_documento_fiscal">Modelo Documento Fiscal</li>
             <li id="item-6" class="opcao" campo="serie_documento_fiscal">Série do Documento</li>
+            <li id="item-7" class="opcao" campo="cnpj_emitente">CNPJ do emitente</li>
+            <li id="item-8" class="opcao" campo="cpf_emitente">CPF do emitente</li>
+            <li id="item-9" class="opcao" campo="codigo_produto">Código do Produto</li>
+            <li id="item-10" class="opcao" campo="descricao_produto">Descrição do Produto</li>
             <li id="item-11" class="opcao" campo="numero_documento_fiscal">Número do Documento</li>
             <li id="item-12" class="opcao" campo="data_hora_emissao">Data de emissão</li>
             <li id="item-13" class="opcao" campo="data_hora_saida_entrada">Data de saída ou entrada</li>
@@ -132,12 +141,9 @@
    
       <div class="col-6">
          
-         <center>Selecionadas</center>
+         <center id = "title2">Selecionadas</center>
          <ul id="list-2" class="sortable" style="list-style: none;" id="selecionou">
-            <li id="item-7" class="opcao" campo="cnpj_emitente">CNPJ do emitente</li>
-            <li id="item-8" class="opcao" campo="cpf_emitente">CPF do emitente</li>
-            <li id="item-9" class="opcao" campo="codigo_produto">Código do Produto</li>
-            <li id="item-10" class="opcao" campo="descricao_produto">Descrição do Produto</li>
+            
          </ul>
          <label id="sbtn-2"></label>
       
@@ -148,6 +154,7 @@
 <div class="row" id="btn1">
         <div class="col">
             <input type="button" class="btn btn-success" onclick="FiltrarColunas();" name="filtrar" id="filtro" value="Filtrar">
+            <input type="button" class="btn btn-success" onclick="salvarFiltro();" name="salvar" id="save" value="Salvar">
         </div>
     </div>
 

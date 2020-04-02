@@ -21,10 +21,10 @@
                         <li><a href="media.html"><i class="fa fa-angle-right"></i> NFE</a></li>
                     </ul>
                 </li>
-                <li class="option-sidebar" page="exportar_dados.html">
+                <li onmouseout="comboCaixa()"  class="option-sidebar" page="exportar_dados.html">
                     <a href="#">
-                        <i class="fa fa-pie-chart"></i>
-                        <span>Exportar Dados</span>
+                        <i class="fa fa-pie-chart" ></i>
+                        <span >Exportar Dados</span>
                     </a>
                 </li>
             </ul>
@@ -36,3 +36,5 @@ $(".option-sidebar").click(function() {
     $("#main").load($(this).attr("page"));
 });
 </script>
+
+<script type="text/javascript" src="exportar_dados.js"></script>

@@ -20,6 +20,7 @@
     <script src="js/custom.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/mdb.js"></script>
+    
 
   <link rel="stylesheet" type="text/css" href="datatable/datatables.min.css"/>
    
@@ -174,6 +175,14 @@
       console.log(err);
     });
 
+    db.run(`CREATE TABLE IF NOT EXISTS filtro(
+      id_filtro INTEGER PRIMARY KEY AUTOINCREMENT,
+      nome TEXT,
+      itens TEXT
+      );`, [], function(err){
+      console.log(err);
+    });
+
     db.run(`ALTER TABLE produto ADD CONSTRAINT Primary_key_prods PRIMARY KEY (id_nota_fiscal, codigo_produto);`, [], function(err){
       console.log(err);
     });
@@ -191,6 +200,7 @@
         </div>
     </div>
     <!--footer-->
+
     <div class="footer" style="width: 85%; float: right;">
         <p>&copy; 2020 NFe Soft. Todos os direitos reservados.</p>
     </div>
@@ -202,6 +212,10 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.js"> </script>
     <!-- //Bootstrap Core JavaScript -->
+    <script type="text/javascript">
+    const Dialogs = require('dialogs')
+    const dialogs = Dialogs()
+</script>
 </body>
 
 </html>

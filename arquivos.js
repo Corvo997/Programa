@@ -27,39 +27,6 @@ function loadXMLDoc() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     for(i = 0; i < $("#pasta_xmls")[0].files.length; i++){
       $("#porcentagem_arquivos").html(((i + 1)/n_files)*100 + "%");
 

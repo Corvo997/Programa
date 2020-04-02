@@ -7943,6 +7943,7 @@ h4.asd label {
     height: 60vh;
     position: relative;
     overflow: auto;
+    bottom: 5px;
 }
 #btn1{
   position: absolute;
@@ -7979,14 +7980,16 @@ li.dragging{
     font-family: Arial;
     font-size: 20px;
     font-weight: 500;
-    top: -66px;
-    left: 78px;
+    top: 12px;
+    left: 68px;
     width: 163px;
 }
 
 #list-2{
   border-left: 1px solid #c9c9c9;
-  width: 45%;
+  width: 282px;
+  top: 30px;
+  position: relative;
 }
 
 #title2{
@@ -7995,51 +7998,77 @@ li.dragging{
     font-size: 20px;
     font-weight: 500;
     top: 14px;
-    right: 255px;
+    right: 176px;
 }
 
 #filtro{
-    left: 260px;
-    bottom: -12px;
+    left: 220px;
+    bottom: -58px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 #list-1{
-  width: 45%;
+    position: relative;
+    left: 51px;
 }
-
-
+#escolhido{
+  width: 25%;
+  position: absolute;
+  top: 4%;
+  left: 66%;
+}
+#save{
+  position: relative;
+    bottom: -6px;
+    left: 369px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#esc{
+    position: absolute;
+    top: 4%;
+    left: 60%;
+}
 @media only screen and (min-width: 1004px) and (max-width: 1040px){
     #filtro{
-      left: 307px;
+          left: 219px;
     }
 
 }
 @media only screen and (min-width: 1041px) and (max-width: 1100px){
     #filtro{
-      left: 330px;
+      left: 251px;
     }
-
+    
+    #save{
+      left: 405px;
+    }
 }
 @media only screen and (min-width: 1101px) and (max-width: 1148px){
     #filtro{
-      left: 356px;
+      left: 261px;
     }
-
+    #save{
+      left: 421px;
+    }
 }
 @media only screen and (min-width: 1149px) and (max-width: 1199px){
     #filtro{
-      left: 383px;
+      left: 292px;
     }
-
+    #save{
+      left: 442px;
+    }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1535px){
   .sortable{
      width: 333px;
      margin: 12px;
      height: 4554px;
+     left: 9px;
   }
 
   .opcao{
@@ -8049,65 +8078,82 @@ li.dragging{
 }
 
 #title2{
-    right: -49px;
+    right: 188px;
 }
 #title{
-    left: -190px;
+    left: 81px;
 }
     #filtro{
-      left: 383px;
+      left: 315px;
     }
-
+    #save{
+      left: 475px;
+    }
 }
 
 @media only screen and (min-width: 1213px) and (max-width: 1256px){
     #filtro{
-      left: 414px;
+      left: 318px;
     }
-
+    #save{
+      left: 478px;
+    }
 }
 
 @media only screen and (min-width: 1257px) and (max-width: 1300px){
     #filtro{
-      left: 433px;
+      left: 348px;
     }
-
+    #save{
+     left: 506px;
+    }
 }
 @media only screen and (min-width: 1301px) and (max-width: 1350px){
     #filtro{
-      left: 458px;
+      left: 365px;
     }
-
+    #save{
+      left: 523px;
+    }
 }
 @media only screen and (min-width: 1351px) and (max-width: 1372px){
     #filtro{
-      left: 483px;
+      left: 389px;
     }
-
+    #save{
+      left: 551px;
+    }
 }
 @media only screen and (min-width: 1373px) and (max-width: 1403px){
     #filtro{
-      left: 483px;
+      left: 402px;
     }
-
+    #save{
+      left: 561px;
+    }
 }
 @media only screen and (min-width: 1404px) and (max-width: 1470px){
     #filtro{
-      left: 517px;
+      left: 408px;
     }
-
+    #save{
+      left: 582px;
+    }
 }
 @media only screen and (min-width: 1471px) and (max-width: 1535px){
     #filtro{
-      left: 542px;
+      left: 424px;
     }
-
+    #save{
+      left: 592px;
+    }
 }
 @media only screen and (min-width: 1536px){
    .sortable{
      width: 381px;
      margin: 12px;
      height: 4554px;
+     left: 36px;
   }
 
   .opcao{
@@ -8117,16 +8163,27 @@ li.dragging{
 }
 
 #title2{
-    right: -49px;
+    right: 184px;
     bottom: 55px;
 }
 #title{
-   left: -239px;
+       left: 81px;
 }
 #filtro{
-    bottom: 18px;
-    left: 535px;
+    bottom: -33px;
+    left: 415px;
     position: relative;
     width: 170px;
+}
+
+#save{
+  position: relative;
+    bottom: 19px;
+        left: 628px;
+    width: 170px; 
+}
+#esc{
+    position: absolute;
+    left: 62%;
 }
 }
