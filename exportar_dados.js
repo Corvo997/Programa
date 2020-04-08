@@ -33,28 +33,29 @@ db.all(selt, [], (err, rows) => {
   }
 }
 
+comboCaixa();
 
 
 function EscolhaCombo(){
-result= [];
-    var escModelo = document.getElementById("escolhido");
-    indic = escModelo.selectedIndex;
-    escolha = escModelo.options[escModelo.selectedIndex].text;
-    console.log(escolha);
+  result= [];
+  var escModelo = document.getElementById("escolhido");
+  indic = escModelo.selectedIndex;
+  escolha = escModelo.options[escModelo.selectedIndex].text;
+  console.log(escolha);
 
-let valt = `SELECT itens FROM filtro WHERE nome = ?`;
+  let valt = `SELECT itens FROM filtro WHERE nome = ?`;
  
-db.get(valt, [escolha], (err, row) => {
-  if (err) {
-    throw err;
-  }
-    return row
-    ? result.push(row.itens)
-    :console.log('ah');
-});
-   console.log(result);
-   
-    
+  db.all(valt, [escolha], (err, rows) => {
+    if (err) {
+      throw err;
+    }
+    rows.forEach((row) => {
+      $("#list-1").append($("#list-2").html());
+      $("#list-2").empty();
+      for(i = 0; i < row.itens.split("@;,").length; i++)  
+        $(`.opcao[campo="${row.itens.split("@;,")[i]}"]`).detach().appendTo('#list-2');
+    });
+  });
 }
 
 
@@ -155,9 +156,9 @@ db.all(ver, [], (err, rows) => {
                    colunas = $("#list-2 li");
                    id_colunas = [];
                    for(j = 0; j < colunas.length; j++){
-                       id_colunas.push(colunas.eq(j).attr("id"));
+                       id_colunas.push(colunas.eq(j).attr("campo"));
                     }
-                   id_filtro = id_colunas.join();
+                   id_filtro = id_colunas.join("@;,");
                    db.run(`INSERT INTO filtro(itens,nome) VALUES(?,?)`,
                    [
                    id_filtro,
