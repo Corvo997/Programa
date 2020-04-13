@@ -10,6 +10,7 @@ function loadXMLDoc() {
 
   array_infos_db = [];
   array_prods_db = [];
+
   //ESTE ARRAY PEGA OS ELEMENTOS DO array_db PQ ESTA COMO LOCAL E DA ERRO DE ARRAY NAO DEFINIDO, ENTAO CRIEI ESSE
   array_teste = [];
   arrray_teste2 = [];
@@ -23,9 +24,6 @@ function loadXMLDoc() {
     consult.forEach((row) => {
       filtro.push(row.id);
     }); 
-
-
-
 
     for(i = 0; i < $("#pasta_xmls")[0].files.length; i++){
       $("#porcentagem_arquivos").html(((i + 1)/n_files)*100 + "%");
@@ -364,7 +362,19 @@ function loadXMLDoc() {
             });
             
             console.log(teste+ ' foi inserido');
-          
+
+            // move o arquivo
+
+            var fs = require('fs')
+
+            var oldPath = $("#pasta_xmls")[0].files[i].path
+            var newPath = `database/xml/${xml.find("infNFe").attr('Id')}.xml`;
+
+            fs.copyFile(oldPath, newPath, (err) => {
+               if (err) throw err;
+               console.log('Arquivo Copiado.');
+            });
+                     
           }else if (filtro.indexOf(teste) >= 0){
             
             console.log(teste+ ' ja foi inserido');
