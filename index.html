@@ -27,9 +27,14 @@
   <script type="text/javascript" src="datatable/datatables.min.js"></script>
     
     <script>
+    
     if (window.module) module = window.module;
 
     const sqlite3 = require('sqlite3').verbose();
+
+    const Danfe = require('djf-danfe');
+    var conversion = require("phantom-html-to-pdf")();
+    const fs = require('fs');
      
     let db = new sqlite3.Database('./database/database.db', (err) => {
       if (err) {

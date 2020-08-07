@@ -1,0 +1,37 @@
+<script>
+
+xml = fs.readFileSync('C:/Users/Corvo997/Documents/Programa/xmls/13161010189079000102550010010430151000825713-procNFe.xml').toString()
+
+var danfe = Danfe.fromXML(xml)
+html = danfe.toHtml();
+$("#pdf").html(html)
+
+
+
+conversion({ html: html }, function(err, pdf) {
+  var output = fs.createWriteStream('C:/Users/Corvo997/Documents/Programa/xmls/output.pdf')
+  console.log(pdf.logs);
+  console.log(pdf.numberOfPages);
+    // since pdf.stream is a node.js stream you can use it
+    // to save the pdf to a file (like in this example) or to
+    // respond an http request.
+  pdf.stream.pipe(output);
+});
+
+
+
+</script>
+
+
+<div id="pdf" style="background-color: white;">
+
+</div>
+<!--
+<textarea onmouseout="PDF()" cols="75" rows="20" id="save"></textarea>
+<div class="row" id="btn1">
+  <div class="col">
+      <input type="button"  class="btn btn-success" onclick="salvarPdf()" value="Salvar PDFs">
+  </div>
+</div>
+
+<script type="text/javascript" src="exportart_danfes.js"></script> -->

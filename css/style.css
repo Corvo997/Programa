@@ -8032,6 +8032,22 @@ li.dragging{
     top: 4%;
     left: 60%;
 }
+#xmls{
+  position: relative;
+  left: 160% !important;
+  height: 90% !important;
+  top: 60% !important;
+}
+#codigos{
+  position: absolute;
+  left: 31% !important;
+  bottom: 20% !important;
+}
+#inserir{
+  position: absolute;
+    top: 2% !important;
+}
+
 @media only screen and (min-width: 1004px) and (max-width: 1040px){
     #filtro{
           left: 219px;
@@ -8062,8 +8078,19 @@ li.dragging{
     #save{
       left: 442px;
     }
+    #xmls{
+      position: relative;
+      left: 227% !important;
+      height: 90% !important;
+      top: 60% !important;
+    }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
+    }
 }
-@media only screen and (min-width: 1200px) and (max-width: 1535px){
+@media only screen and (min-width: 1200px) and (max-width: 1212px){
   .sortable{
      width: 333px;
      margin: 12px;
@@ -8089,6 +8116,17 @@ li.dragging{
     #save{
       left: 475px;
     }
+    #xmls{
+      position: relative;
+      left: 227% !important;
+      height: 90% !important;
+      top: 60% !important;
+    }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
+    }
 }
 
 @media only screen and (min-width: 1213px) and (max-width: 1256px){
@@ -8097,6 +8135,17 @@ li.dragging{
     }
     #save{
       left: 478px;
+    }
+    #xmls{
+      position: relative;
+      left: 227% !important;
+      height: 90% !important;
+      top: 60% !important;
+    }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
     }
 }
 
@@ -8107,6 +8156,17 @@ li.dragging{
     #save{
      left: 506px;
     }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
+    }
+    #xmls{
+      position: relative;
+      left: 268% !important;
+      height: 90% !important;
+      top: 60% !important;
+    }
 }
 @media only screen and (min-width: 1301px) and (max-width: 1350px){
     #filtro{
@@ -8114,6 +8174,17 @@ li.dragging{
     }
     #save{
       left: 523px;
+    }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
+    }
+    #xmls{
+      position: relative;
+      left: 268% !important;
+      height: 90% !important;
+      top: 60% !important;
     }
 }
 @media only screen and (min-width: 1351px) and (max-width: 1372px){
@@ -8123,6 +8194,18 @@ li.dragging{
     #save{
       left: 551px;
     }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
+    }
+    #xmls{
+      position: relative;
+      left: 268% !important;
+      height: 90% !important;
+      top: 60% !important;
+    }
+    
 }
 @media only screen and (min-width: 1373px) and (max-width: 1403px){
     #filtro{
@@ -8130,6 +8213,17 @@ li.dragging{
     }
     #save{
       left: 561px;
+    }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
+    }
+    #xmls{
+      position: relative;
+      left: 268% !important;
+      height: 90% !important;
+      top: 60% !important;
     }
 }
 @media only screen and (min-width: 1404px) and (max-width: 1470px){
@@ -8139,6 +8233,17 @@ li.dragging{
     #save{
       left: 582px;
     }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
+    }
+    #xmls{
+      position: relative;
+      left: 307% !important;
+      height: 90% !important;
+      top: 60% !important;
+    }
 }
 @media only screen and (min-width: 1471px) and (max-width: 1535px){
     #filtro{
@@ -8146,6 +8251,17 @@ li.dragging{
     }
     #save{
       left: 592px;
+    }
+    #codigos{
+      position: absolute;
+      left: 36% !important;
+      bottom: 20% !important;
+    }
+    #xmls{
+      position: relative;
+      left: 307% !important;
+      height: 90% !important;
+      top: 60% !important;
     }
 }
 @media only screen and (min-width: 1536px){
@@ -8186,4 +8302,21 @@ li.dragging{
     position: absolute;
     left: 62%;
 }
+#xmls{
+  position: relative;
+    left: 340% !important;
+    height: 100% !important;
+    top: 60% !important;
 }
+#codigos{
+  position: absolute;
+  left: 39% !important;
+}
+#inserir{
+  position: absolute;
+  top: 7% !important;
+  left: 18%;
+}
+  }
+
+
