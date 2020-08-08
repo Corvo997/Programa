@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "brasil": "^1.0.0-security",
+    "copy-file": "0.0.1",
     "danfe": "file:danfe_lib",
     "dialogs": "^2.0.1",
     "djf-danfe": "^1.0.2",

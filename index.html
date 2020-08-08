@@ -35,7 +35,8 @@
     const Danfe = require('djf-danfe');
     var conversion = require("phantom-html-to-pdf")();
     const fs = require('fs');
-     
+    const copyFile = require('copy-file');
+
     let db = new sqlite3.Database('./database/database.db', (err) => {
       if (err) {
         console.error(err.message);

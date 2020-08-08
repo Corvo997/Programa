@@ -1,22 +1,15 @@
-var copyFile = require('./copy-file');
-//const { y } = require('pdfkit');
-
 var arquivos;
 var arq;
 var filter = [];
 
-
-
 function Atualizar(){
-  const fs = require("fs")
-fs.readdir("./database/xml", (err, paths) => {
-  arquivos = paths;
-  arq = paths.length;
- 
-})
+  fs.readdir("./database/xml", (err, paths) => {
+    arquivos = paths;
+    arq = paths.length; 
+  })
 
    for(y = 0;y < arq; y++){
-     filter[y] = arquivos[y].split('.')[0];
+     filter[y] = arquivos[y].split('.')[0].replace(/NFe/gi);
    }
   
 }
@@ -35,8 +28,10 @@ var nfe = [];
 var idx = 0;
 var indices = [];
 
-var array = ['NFe13161010189079000102550010010430151000825713', 'NFe13171210189079000102550010011761131000867138', 'NFe13171210189079000102550010011761161000853643']; //ARRAY DO TEXTAREA
-for(x = 0; x< array.length;x++){
+array = $("#codigos").val().toString().split("\n");
+
+for(x = 0; x < array.length;x++){
+  array[x] = array[x]; //Tira as letras da chave aqui e faz a busca
   indices[x] = filter.indexOf(array[x]);
    
 }
@@ -52,7 +47,7 @@ for(p = 0; p < indices.length; p++){
  function CopiarXml(copias){
   
   var async = require('async');
-  
+
   
    async.series([ 
          function (callback) {
