@@ -9,20 +9,13 @@ function Atualizar(){
   })
 
    for(y = 0;y < arq; y++){
-     filter[y] = arquivos[y].split('.')[0].replace(/NFe/gi);
+  //   filter[y] = arquivos[y].split('.')[0].replace(/NFe/gi);
+     filter[y] = arquivos[y].split('.')[0];
    }
-  
+  console.log(filter);
 }
 
 function salvarXMLS() {
-var adc;
-var adc2;
-var varios = document.getElementById("codigos").value; 
-adc= varios.split('/n');
-//adc2 = adc.split('↵'); 
-
-
-console.log(adc);
 
 var nfe = [];
 var idx = 0;
@@ -31,11 +24,11 @@ var indices = [];
 array = $("#codigos").val().toString().split("\n");
 
 for(x = 0; x < array.length;x++){
-  array[x] = array[x]; //Tira as letras da chave aqui e faz a busca
+  array[x] = "NFe"+array[x]; //Tira as letras da chave aqui e faz a busca
   indices[x] = filter.indexOf(array[x]);
    
 }
- 
+ console.log(array);
 for(p = 0; p < indices.length; p++){
   idx = indices[p];
   nfe[p] = filter[idx];
