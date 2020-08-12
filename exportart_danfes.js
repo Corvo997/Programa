@@ -2,6 +2,20 @@ var docs;
 var qnt;
 var filtragem = [];
 
+$("#pasta2").change(function(event) {
+  
+  array.push($("#pasta2")[0].files[0].path);
+ 
+  file = array[0].split("\\");
+   
+   
+   file.pop();
+ caminho = file.join('/');
+ 
+  salvarPdf();
+     });
+
+
 function PDF(){
     const fs = require("fs")
     fs.readdir("./xmls", (err, paths) => {
@@ -11,6 +25,7 @@ function PDF(){
     })
     for(y = 0;y < qnt; y++){
         filtragem[y] = docs[y].split('.')[0];
+        filtragem[y] = filtragem[y].split('-')[0];
       }
       
 }
@@ -19,14 +34,14 @@ function PDF(){
 
 function salvarPdf(){
 
-var documento = document.getElementById("save").value;
-
 var esc = [];
 var idy = 0;
 var indi = [];
 
-var vt = ['13161010189079000102550010010430151000825713-procNFe', '13171210189079000102550010011761161000853643-procNFe', '13171210189079000102550010011761441000271932-procNFe']; //ARRAY DO TEXTAREA
+var vt = $("#codigos").val().toString().split("\n");
+
 for(x = 0; x< vt.length;x++){
+  vt[x] = vt[x];
   indi[x] = filtragem.indexOf(vt[x]);
    
 }
@@ -36,27 +51,27 @@ for(p = 0; p < indi.length; p++){
   esc[p] = filtragem[idy];
 }
 
-console.log(esc);
+var xml = [];
+var danfe = [];
+var html = [];
+var output = [];
+for(j = 0;j < esc.length;j++){
+      xml[j] = fs.readFileSync('C:/Users/Corvo997/Documents/Programa/xmls/'+esc[j]+'-procNFe.xml').toString()
 
-  
-for(j = 0;j<3;j++){
-      xml = fs.readFileSync('C:/Users/Corvo997/Documents/Programa/xmls/'+esc[j]+'.xml').toString()
-
-      var danfe = Danfe.fromXML(xml)
-          html = danfe.toHtml();
+       danfe[j] = Danfe.fromXML(xml[j])
+          html[j] = danfe[j].toHtml();
       // $("#pdf").html(html)
 
 
-
 conversion({ html: html }, function(err, pdf) {
-  var output = fs.createWriteStream('C:/Users/Corvo997/Documents/Programa/xmls/'+esc[j]+'.pdf')
+   output[j] = fs.createWriteStream(caminho+'/'+j+'.pdf')
   console.log(pdf.logs);
   console.log(pdf.numberOfPages);
     
-  pdf.stream.pipe(output);
+  pdf.stream.pipe(output[j]);
 });  
-}
-  
+
+ } 
 }
 
 

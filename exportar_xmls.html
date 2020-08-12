@@ -4,7 +4,8 @@
 <textarea onmouseout="Atualizar()" cols="75" rows="20" id="codigos"></textarea>
 <div class="row" id="btn1">
     <div class="col">
-        <input type="button" id="xmls" class="btn btn-success" onclick="salvarXMLS()" value="Salvar XMLS">
+        <input directory webkitdirectory type="file"  id="pasta" aria-describedby="inputGroupFileAddon01" style="visibility: hidden; position: absolute;">
+        <label  class="btn btn-success" id="xmls" for="pasta">salvar XMLS</label>     
     </div>
 </div>
 
