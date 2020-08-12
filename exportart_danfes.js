@@ -12,21 +12,24 @@ $("#pasta2").change(function(event) {
    file.pop();
  caminho = file.join('/');
  
+  PDF();
+
   salvarPdf();
      });
 
 
 function PDF(){
     const fs = require("fs")
-    fs.readdir("./xmls", (err, paths) => {
+    fs.readdir("./database/xml", (err, paths) => {
       docs = paths;
       qnt = paths.length;
-     
-    })
-    for(y = 0;y < qnt; y++){
+
+      for(y = 0;y < qnt; y++){
         filtragem[y] = docs[y].split('.')[0];
         filtragem[y] = filtragem[y].split('-')[0];
       }
+
+    })
       
 }
 
@@ -40,8 +43,9 @@ var indi = [];
 
 var vt = $("#codigos").val().toString().split("\n");
 
+
 for(x = 0; x< vt.length;x++){
-  vt[x] = vt[x];
+  vt[x] = "NFe"+vt[x];
   indi[x] = filtragem.indexOf(vt[x]);
    
 }
@@ -55,23 +59,20 @@ var xml = [];
 var danfe = [];
 var html = [];
 var output = [];
-for(j = 0;j < esc.length;j++){
-      xml[j] = fs.readFileSync('C:/Users/Corvo997/Documents/Programa/xmls/'+esc[j]+'-procNFe.xml').toString()
+  for(j = 0;j < 1;j++){
 
-       danfe[j] = Danfe.fromXML(xml[j])
-          html[j] = danfe[j].toHtml();
-      // $("#pdf").html(html)
+      xml[j] = fs.readFileSync('./database/xml/'+esc[j]+'.xml').toString()
 
+      danfe[j] = Danfe.fromXML(xml[j]);
+      html[j] = danfe[j].toHtml();
+      
+      conversion({ html: html[j] }, function(err, pdf) {
+        output[j] = fs.createWriteStream(caminho+'/'+esc[j]+'.pdf')
+          
+        pdf.stream.pipe(output[j]);
+      });  
 
-conversion({ html: html }, function(err, pdf) {
-   output[j] = fs.createWriteStream(caminho+'/'+j+'.pdf')
-  console.log(pdf.logs);
-  console.log(pdf.numberOfPages);
-    
-  pdf.stream.pipe(output[j]);
-});  
-
- } 
+  } 
 }
 
 

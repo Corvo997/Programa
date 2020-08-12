@@ -1,38 +1,29 @@
-<script>
-//
-//xml = fs.readFileSync('C:/Users/Corvo997/Documents/Programa/xmls/13161010189079000102550010010430151000825713-procNFe.xml').toString()
-//
-//var danfe = Danfe.fromXML(xml)
-//html = danfe.toHtml();
-//$("#pdf").html(html)
-
-
-
-//conversion({ html: html }, function(err, pdf) {
-//  var output = fs.createWriteStream('C:/Users/Corvo997/Documents/Programa/xmls/output.pdf')
-//  console.log(pdf.logs);
-//  console.log(pdf.numberOfPages);
-    // since pdf.stream is a node.js stream you can use it
-    // to save the pdf to a file (like in this example) or to
-    // respond an http request.
-//  pdf.stream.pipe(output);
-//});
-
-
-
-</script>
-
-
 <div id="pdf" style="background-color: white;">
 
 </div>
 
-<textarea onmouseout="PDF()" cols="75" rows="20" id="codigos"></textarea>
-<div class="row" id="btn1">
+
+<div class="row">
   <div class="col">
+    <textarea cols="75" rows="15" id="codigos"></textarea>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4 offset-4" style="text-align: center;">
     <input directory webkitdirectory type="file"  id="pasta2" aria-describedby="inputGroupFileAddon01" style="visibility: hidden; position: absolute;">
     <label  class="btn btn-success" id="xmls" for="pasta2">Salvar PDF</label> 
   </div>
 </div>
+
+<style>
+
+  #codigos{
+      margin-left: 11% !important;
+      width: 78% !important;
+  }
+
+</style>
+
 
 <script type="text/javascript" src="exportart_danfes.js"></script> 

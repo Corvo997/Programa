@@ -1,12 +1,29 @@
 <h3 id="inserir">Insira a chave abaixo:</h3>
 
+<div class="row">
 
-<textarea onmouseout="Atualizar()" cols="75" rows="20" id="codigos"></textarea>
-<div class="row" id="btn1">
     <div class="col">
+    
+        <textarea cols="75" rows="15" id="codigos"></textarea>
+    
+    </div>
+
+</div>
+
+<div class="row">
+    <div class="col-4 offset-4" style="text-align: center;">
         <input directory webkitdirectory type="file"  id="pasta" aria-describedby="inputGroupFileAddon01" style="visibility: hidden; position: absolute;">
-        <label  class="btn btn-success" id="xmls" for="pasta">salvar XMLS</label>     
+        <label class="btn btn-success" id="xmls" for="pasta">salvar XMLS</label>     
     </div>
 </div>
+
+<style>
+
+    #codigos{
+        margin-left: 11% !important;
+        width: 78% !important;
+    }
+
+</style>
 
 <script type="text/javascript" src="exportar_xmls.js"></script>
