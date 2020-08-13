@@ -1,6 +1,9 @@
 var docs;
 var qnt;
 var filtragem = [];
+var caminho = [];
+var vt = []; 
+var array = [];
 
 $("#pasta2").change(function(event) {
   
@@ -11,9 +14,7 @@ $("#pasta2").change(function(event) {
    
    file.pop();
  caminho = file.join('/');
- 
-  PDF();
-
+ console.log(caminho);
   salvarPdf();
      });
 
@@ -26,11 +27,10 @@ function PDF(){
 
       for(y = 0;y < qnt; y++){
         filtragem[y] = docs[y].split('.')[0];
-        filtragem[y] = filtragem[y].split('-')[0];
       }
 
     })
-      
+     console.log(filtragem); 
 }
 
 
@@ -41,10 +41,10 @@ var esc = [];
 var idy = 0;
 var indi = [];
 
-var vt = $("#codigos").val().toString().split("\n");
+ vt = $("#codigos").val().toString().split("\n");
+console.log(vt);
 
-
-for(x = 0; x< vt.length;x++){
+for(x = 0; x < vt.length;x++){
   vt[x] = "NFe"+vt[x];
   indi[x] = filtragem.indexOf(vt[x]);
    
@@ -54,12 +54,14 @@ for(p = 0; p < indi.length; p++){
   idy = indi[p];
   esc[p] = filtragem[idy];
 }
+console.log(esc);
 
 var xml = [];
 var danfe = [];
 var html = [];
 var output = [];
-  for(j = 0;j < 1;j++){
+
+  for(j = 0;j < esc.length;j++){
 
       xml[j] = fs.readFileSync('./database/xml/'+esc[j]+'.xml').toString()
 
@@ -72,7 +74,16 @@ var output = [];
         pdf.stream.pipe(output[j]);
       });  
 
-  } 
+  }
+  
+
+  docs;
+  qnt;
+  vt = []; 
+  array = [];
+
+  
+   
 }
 
 

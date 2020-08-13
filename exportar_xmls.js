@@ -14,7 +14,7 @@ $("#pasta").change(function(event) {
    
    file.pop();
  caminho = file.join('/');
-
+console.log(caminho);
  Atualizar();
  
   salvarXMLS();
@@ -41,7 +41,7 @@ var indices = [];
 
 array = $("#codigos").val().toString().split("\n");
 
-console.log(array);
+
 
 for(x = 0; x < array.length;x++){
   array[x] = "NFe"+array[x]; 
@@ -79,5 +79,10 @@ for(p = 0; p < indices.length; p++){
          console.log('Done!');
          
      });
-
+      arquivos;
+      arq;
+      filter = [];
+      array = [];
+     file = [];
+     caminho = [];
  }
