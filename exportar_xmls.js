@@ -4,6 +4,7 @@ var filter = [];
 var array = [];
 var file = [];
 var caminho = [];
+var alerta = [];
 
 $("#pasta").change(function(event) {
   
@@ -39,7 +40,7 @@ var nfe = [];
 var idx = 0;
 var indices = [];
 var verificacao = [];
-var alerta = [];
+
 array = $("#codigos").val().toString().split("\n");
 
 for(a = 0;a<array.length;a++){
@@ -51,7 +52,9 @@ for(a = 0;a<array.length;a++){
   }
 }
 
-dialogs.alert('As seguintes notas não foram encontradas:'+alerta);
+if (alerta !== null && alerta.length !== 0){
+  Excecoes(alerta);
+}
 
 
 for(x = 0; x < verificacao.length;x++){
@@ -96,4 +99,25 @@ for(p = 0; p < indices.length; p++){
       array = [];
      file = [];
      caminho = [];
+
+     
+ }
+
+ function Excecoes(){
+   
+  window.open('./Notas.html');
+ }
+
+ function Lista(){
+   
+ var p = document.getElementById('Foo');
+  var li;
+  for(k = 2; k<alerta.length;k++){
+    li = document.createElement('li');
+     li.innerHTML = alerta[k];
+     p.appendChild(li);
+  }
+     
+
+     
  }
