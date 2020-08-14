@@ -38,14 +38,25 @@ function salvarXMLS() {
 var nfe = [];
 var idx = 0;
 var indices = [];
-
+var verificacao = [];
+var alerta = [];
 array = $("#codigos").val().toString().split("\n");
 
+for(a = 0;a<array.length;a++){
+  if(filter.indexOf('NFe'+array[a]) === -1){
+    alerta[a] = 'NFe'+array[a];            
+  }
+  else if (filter.indexOf('NFe'+array[a]) > -1){
+    verificacao[a] = array[a];  
+  }
+}
+
+dialogs.alert('As seguintes notas não foram encontradas:'+alerta);
 
 
-for(x = 0; x < array.length;x++){
-  array[x] = "NFe"+array[x]; 
-  indices[x] = filter.indexOf(array[x]);
+for(x = 0; x < verificacao.length;x++){
+  verificacao[x] = "NFe"+verificacao[x]; 
+  indices[x] = filter.indexOf(verificacao[x]);
    
 } 
 for(p = 0; p < indices.length; p++){
