@@ -36,10 +36,10 @@ function Atualizar(){
 
 function salvarXMLS() {
 
-var nfe = [];
-var idx = 0;
-var indices = [];
-var verificacao = [];
+nfe = [];
+idx = 0;
+indices = [];
+verificacao = [];
 
 array = $("#codigos").val().toString().split("\n");
 
@@ -72,7 +72,7 @@ for(p = 0; p < indices.length; p++){
 
  function CopiarXml(copias){
   
-  var async = require('async');
+  async = require('async');
 
   
    async.series([ 
@@ -110,10 +110,9 @@ for(p = 0; p < indices.length; p++){
 
  function Lista(){
    
- var p = document.getElementById('Foo');
-  var li;
+ p = document.getElementById('Foo');
   for(k = 2; k<alerta.length;k++){
-    li = document.createElement('li');
+     let li = document.createElement('li');
      li.innerHTML = alerta[k];
      p.appendChild(li);
   }

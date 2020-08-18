@@ -14,8 +14,7 @@ $("#pasta2").change(function(event) {
    
    file.pop();
  caminho = file.join('/');
- console.log(caminho);
-  salvarPdf();
+  salvarPdf(caminho);
      });
 
 
@@ -30,19 +29,18 @@ function PDF(){
       }
 
     })
-     console.log(filtragem); 
 }
 
 
 
-function salvarPdf(){
+function salvarPdf(caminho){
 
-var esc = [];
-var idy = 0;
-var indi = [];
+esc = [];
+idy = 0;
+indi = [];
 
- vt = $("#codigos").val().toString().split("\n");
-console.log(vt);
+vt = $("#codigos").val().toString().split("\n");
+
 
 for(x = 0; x < vt.length;x++){
   vt[x] = "NFe"+vt[x];
@@ -54,24 +52,34 @@ for(p = 0; p < indi.length; p++){
   idy = indi[p];
   esc[p] = filtragem[idy];
 }
-console.log(esc);
 
-var xml = [];
-var danfe = [];
-var html = [];
-var output = [];
 
-  for(j = 0;j < esc.length;j++){
+  for(j = 0; j < esc.length; j++){
 
-      xml[j] = fs.readFileSync('./database/xml/'+esc[j]+'.xml').toString()
+      let xml = fs.readFileSync('./database/xml/'+esc[j]+'.xml').toString()
 
-      danfe[j] = Danfe.fromXML(xml[j]);
-      html[j] = danfe[j].toHtml();
+      let danfe = Danfe.fromXML(xml);
+
+      let html = danfe.toHtml();
       
-      conversion({ html: html[j] }, function(err, pdf) {
-        output[j] = fs.createWriteStream(caminho+'/'+esc[j]+'.pdf')
+      let arquivo = caminho+'/'+esc[j]+'.pdf';
+
+      //ALTEREI AQUI CORVO
+      $("#pdf").html(html);
+
+      conversion({  html: html }, function(err, pdf) {
+
+        let output = fs.createWriteStream(arquivo);
+
+        output.on('error', function(err) {
+            console.log("Error");
+            console.log(err);
+            file.end();
+            console.log(arquivo);
+        });
           
-        pdf.stream.pipe(output[j]);
+        pdf.stream.pipe(output);
+
       });  
 
   }
