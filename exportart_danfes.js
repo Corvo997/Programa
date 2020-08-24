@@ -20,7 +20,7 @@ $("#pasta2").change(function(event) {
 
 function PDF(){
     const fs = require("fs")
-    fs.readdir("./database/xml", (err, paths) => {
+    fs.readdir("./database/xml/", (err, paths) => {
       docs = paths;
       qnt = paths.length;
 
@@ -43,7 +43,7 @@ vt = $("#codigos").val().toString().split("\n");
 
 
 for(x = 0; x < vt.length;x++){
-  vt[x] = "NFe"+vt[x];
+  vt[x] ="NFe"+vt[x];
   indi[x] = filtragem.indexOf(vt[x]);
    
 }
@@ -65,7 +65,7 @@ for(p = 0; p < indi.length; p++){
       let arquivo = caminho+'/'+esc[j]+'.pdf';
 
       //ALTEREI AQUI CORVO
-      $("#pdf").html(html);
+      /*$("#pdf").html(html);*/
 
       conversion({  html: html }, function(err, pdf) {
 
