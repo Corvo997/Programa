@@ -1,3 +1,5 @@
+/*const { dialog } = require('electron');*/
+
 var arquivos;
 var arq;
 var filter = [];
@@ -5,6 +7,7 @@ var array = [];
 var file = [];
 var caminho = [];
 var alerta = [];
+
 
 $("#pasta").change(function(event) {
   
@@ -35,7 +38,6 @@ function Atualizar(){
 }
 
 function salvarXMLS() {
-
 nfe = [];
 idx = 0;
 indices = [];
@@ -51,9 +53,14 @@ for(a = 0;a<array.length;a++){
     verificacao[a] = array[a];  
   }
 }
-
+ 
+ 
+    
+  
 if (alerta !== null && alerta.length !== 0){
-  Excecoes(alerta);
+  dialogs.alert("Códigos não encontrados:"+alerta);
+  
+
 }
 
 
@@ -103,20 +110,6 @@ for(p = 0; p < indices.length; p++){
      
  }
 
- function Excecoes(){
-   
-  window.open('./Notas.html');
- }
 
- function Lista(){
-   
- p = document.getElementById('Foo');
-  for(k = 2; k<alerta.length;k++){
-     let li = document.createElement('li');
-     li.innerHTML = alerta[k];
-     p.appendChild(li);
-  }
-     
 
-     
- }
+
